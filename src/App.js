@@ -3,12 +3,10 @@ import './App.css';
 
 import Header from './components/common/Header';
 import Footer from './components/common/footer';
-import Grid from '@material-ui/core/Grid';
 import SignUp from './components/Pages/SignUp';
-// import Login from './components/Login';
-// import SignUp from './components/SignUp';
+// import Login from './components/Pages/Login';
 // import ResetPassword from './components/ResetPassword';
-// import Copyright from './components/common/copyright';
+import Copyright from './components/common/copyright';
 
 
 class App extends Component {
@@ -16,8 +14,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <SignUp />
+        <SignUp/>
         <Footer />
+        <Copyright/>
       </div>
     );
   }

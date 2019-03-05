@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 
+import FormSelect from '../Forms/Input_Select';
+
 class SignUp extends Component {
 
     render(){
@@ -26,13 +28,7 @@ class SignUp extends Component {
                                 />
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
-                                <TextField 
-                                    style={{width:'60%', height:'45px'}}
-                                    id="outlined-bare"
-                                    placeholder="User Type"
-                                    margin="normal"
-                                    variant="outlined"
-                                />
+                                <FormSelect/>
                             </Grid>
 
                             <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -54,7 +50,7 @@ class SignUp extends Component {
                                 />
                             </Grid>
 
-                            <Grid item item xs={12} sm={12} md={12} lg={12} style={{paddingLeft:'20%'}}>
+                            <Grid item xs={12} sm={12} md={12} lg={12} style={{paddingLeft:'20%'}}>
                                 <Typography variant="body2" align="left"  >
                                         Password should contain:
                                     </Typography>
@@ -67,32 +63,26 @@ class SignUp extends Component {
                                             <li>one special character(s) - !@#$$%</li>
                                         </ul>
                                 </Typography>
-
                             </Grid>
 
-                            <Grid item item sm={12} md={12} lg={12}>
+                            <Grid item sm={12} md={12} lg={12}>
                                 <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff'}}>
                                     Sign Up
                                 </Button>
                             </Grid>
 
                         </Grid>
-
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={5} lg={5} style={{backgroundColor: '#000033'}}>
-                    <Grid container>
-                        <Grid item lg={12}>
-                            <Typography variant="headline" style={{color: '#fff'}}>
+                    <Grid container style={{height:550, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
+                        <Grid item sm={12} md={12} lg={12}>
+                            <Typography variant="headline" style={{color: '#fff', padding:''}}>
                                 Already have an account?
                             </Typography>
-                        </Grid>
-                        <Grid item lg={12}>
                             <Typography style={{color: '#fff', padding:'20px'}} variant="caption">
                                 Lorem Ipsum is the single greatest threat. We are not - we are <br/>not keeping up with other websites.
                             </Typography>
-                        </Grid>
-                        <Grid item lg={12}> 
                             <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>LOG IN</Button>
                         </Grid>
                     </Grid>

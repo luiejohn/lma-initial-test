@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import UserAccount from '@material-ui/icons/AccountCircleOutlined';
-import ArrowDown from '@material-ui/icons/ArrowDropDownOutlined';
 import { Grid } from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
+import Drawer from '@material-ui/core/Drawer';
+import ArrowDown from '@material-ui/icons/ArrowDropDownOutlined';
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+
+import MenuIcon from '@material-ui/icons/Menu';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 
 const styles = {
   root: {
@@ -34,21 +42,63 @@ const styles = {
   },
 };
 
-function ButtonAppBar(props) {
-  const { classes } = props;
-  return (
-    <div className={classes.root}>
+
+class ButtonAppBar extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      top: false,
+      left: false,
+      bottom: false,
+      right: false,
+    }; 
+  }
+
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open,
+    });
+  };
+
+
+  render (){
+    const { classes } = this.props;
+    // Drawer Content
+    const sideList = (
+      <div>
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </div>
+    );
+
+    return(  
+    <Fragment>
       <AppBar position="static" elevation={0}>
-        <Toolbar className={classes.Toolbar}>
+        <Toolbar style={{backgroundColor: '#fff'}}>
         <Hidden only="lg">
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                      <MenuIcon />
+          <IconButton onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu" style={{color:'#000'}}>
+                      <MenuIcon/>
           </IconButton>
         </Hidden>
 
         <Hidden only={['xs','sm', 'md']}>
           <div style={{color:'#000', marginLeft:'50px'}}>
-            LOGO
+            <img src="../../assets/images/LOGO.png" alt="LOGO"/>
           </div>
         </Hidden>
 
@@ -63,29 +113,38 @@ function ButtonAppBar(props) {
 
                 <Hidden only={['xs', 'sm', 'md']}>
                   <Button className={classes.grow}>
-                      My Course Bookings<ArrowDown style={{fontSize:'18px'}}/>
+                      Login
                   </Button>
                 </Hidden>
                 <Hidden only={['xs', 'sm', 'md']}>
                   <Button className={classes.grow}>
-                      History<ArrowDown style={{fontSize:'18px'}}/>
-                  </Button>
-                </Hidden>
-                <Hidden only={['xs', 'sm', 'md']}>
-                  <Button className={classes.grow}>
-                      Calendar<ArrowDown style={{fontSize:'18px'}}/>
+                      Sign Up
                   </Button>
                 </Hidden>
 
-                <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                     <UserAccount style={{color: '#ac3939'}}/>
-                </IconButton>
+                </IconButton> */}
             </Grid>
         </Grid>
         </Toolbar>
       </AppBar>
-    </div>
-  );
+      
+      {/* Drawer Container */}
+      <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+          <div
+            tabIndex={0}
+            role="button"
+            onClick={this.toggleDrawer('left', false)}
+            onKeyDown={this.toggleDrawer('left', false)}
+          >
+            {sideList}
+          </div>
+      </Drawer>
+    </Fragment>
+  )
+  
+  }
 }
 
 ButtonAppBar.propTypes = {

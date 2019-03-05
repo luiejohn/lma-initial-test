@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import ArrowDown from '@material-ui/icons/ArrowDropDownOutlined';
 import Location from '@material-ui/icons/LocationOnOutlined';
 import Phone from '@material-ui/icons/PhoneOutlined';
 import Mail from '@material-ui/icons/MailOutlined';
@@ -23,12 +21,12 @@ export default withStyles(styles)((props) => {
     return (
             <Fragment>
                 <CssBaseline />
-                <Grid container>
+                <Grid container style={{padding: '35px 80px', position:'relative'}}>
 
-                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'25px 0 25px 50px'}}>
+                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'15px 0'}}>
                         <div style={{textAlign:'left', backgroundColor:'#fff'}} className={classes.text}>
                             <b>OUR PRODUCTS &amp; SERVICES</b>
-
+                            
                             <div style={{textDecoration: 'underline', paddingTop:'15px'}}>
                                 RES
                             </div>
@@ -42,7 +40,7 @@ export default withStyles(styles)((props) => {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'25px 50px 25px 0'}}>
+                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'15px 0'}}>
                             <Grid container>
                                 <Grid item lg={12} style={{textAlign:'left', fontSize:'12px', fontWeight:700, color:'#333333'}}>
                                     Connect With Us
@@ -74,8 +72,8 @@ export default withStyles(styles)((props) => {
                                 </Grid>
                             </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
-                        <div style={{textAlign:'left', backgroundColor:'#fff', padding:'25px 50px 25px 0'}} className={classes.text}>
+                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'15px 0'}}>
+                        <div style={{textAlign:'left', backgroundColor:'#fff'}} className={classes.text}>
                             <b>LIFE MASTER ACADEMY PTE LTD</b>
                             <div>
                                 Life Mastery Academy was formed based on the conviction 
@@ -85,9 +83,6 @@ export default withStyles(styles)((props) => {
                                 enterprise with structure and rigour of the military.
                             </div>
                         </div>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={12} lg={12} style={{fontSize:'12px', backgroundColor:'#e6e6e6', padding:'20px 0'}}>
-                            Copyright® LIFE MASTERY ACADEMY
                     </Grid>
             </Grid>
             </Fragment>

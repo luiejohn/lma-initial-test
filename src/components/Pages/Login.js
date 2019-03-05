@@ -1,47 +1,91 @@
 import React, { Component } from 'react';
 import { Grid, Typography } from '@material-ui/core';
-
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
+import Input from '@material-ui/core/Input';
+import FormControl from '@material-ui/core/FormControl';
 
 class Login extends Component {
+    state = {
+        amount: '',
+        password: '',
+        weight: '',
+        weightRange: '',
+        showPassword: false,
+      };
+
+      handleChange = prop => event => {
+        this.setState({ [prop]: event.target.value });
+      };
+    
+      handleClickShowPassword = () => {
+        this.setState(state => ({ showPassword: !state.showPassword }));
+      };
+
 
     render(){
         return(
 
-            <Grid container style={{height:'500px', margin:'1px solid yellow'}}>
-                
-                <Grid item sm={12} md={6} lg={6} style={{backgroundColor: '#000033', margin:'1px solid black'}}>
-                    <Typography variant="headline" style={{color: '#fff'}}>
-                        Do you have an account?
-                    </Typography>
-
-                    <Typography style={{color: '#fff'}}>
-                          Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.
-                    </Typography>
-                    <Button variant="contained" color="secondary">Sign Up</Button>
+            <Grid container>
+                <Grid item sm={12} md={5} lg={5} style={{backgroundColor: '#000033'}}>
+                    <Grid container style={{height:500, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
+                        <Grid item sm={12} md={12} lg={12}>
+                            <Typography variant="headline" style={{color: '#fff', padding:''}}>
+                                Don't have an account?
+                            </Typography>
+                            <Typography style={{color: '#fff', padding:'20px'}} variant="caption">
+                                Lorem Ipsum is the single greatest threat. We are not - we are <br/>not keeping up with other websites.
+                            </Typography>
+                            <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>SIGN UP</Button>
+                        </Grid>
+                    </Grid>
                 </Grid>
 
-                <Grid item sm={12} md={6} lg={6} style={{margin:'1px solid black'}}>
-                        <Grid container>
+                <Grid item sm={12} md={7} lg={7} >
+                    <Grid container style={{height:500, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
+
                             <Grid item sm={12} md={12} lg={12}>
-                                <TextField
-                                    id="outlined-bare"
-                                    placeholder="Username"
-                                    margin="normal"
-                                    variant="outlined"
-                                />
-                            </Grid>
-                            <Grid item sm={12} md={12} lg={12}>
-                                <TextField
-                                    id="outlined-bare"
-                                    placeholder="Password"
-                                    margin="normal"
-                                    variant="outlined"
-                                />
-                                <Typography style={{marginLeft:'115px'}}>
-                                    <a href="#">Forgot Password</a>
+                                <Typography variant="display1">
+                                    Login
+                                </Typography>
+                                <FormControl style={{width:'50%', height:'50px', marginTop:'25px'}}>
+                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px'}}
+                                        id="adornment-password"
+                                        placeholder="Email"
+                                    />
+                                </FormControl>
+                                <br/>
+                                <FormControl style={{width:'50%', height:'50px', marginTop:'25px'}}>
+                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px'}}
+                                        id="adornment-password"
+                                        placeholder="Password"
+                                        type={this.state.showPassword ? 'text' : 'password'}
+                                        value={this.state.password}
+                                        onChange={this.handleChange('password')}
+                                        endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                            aria-label="Toggle password visibility"
+                                            onClick={this.handleClickShowPassword}
+                                            >
+                                            {this.state.showPassword ? <Visibility /> : <VisibilityOff />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                        }
+                                    />
+                                </FormControl>
+
+                                <Typography style={{marginTop:'13px'}} variant="caption">
+                                    <a 
+                                        style={{textDecoration: 'none'}}
+                                        href="https://facebook.com"
+                                    >
+                                    Forgot Password?
+                                    </a>
                                 </Typography>
 
                                 <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757'}}>
