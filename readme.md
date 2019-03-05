@@ -7,3 +7,7 @@ git add .
 git commit -m "Commit Message"
 git pull
 git push -u origin master
+
+
+git branch develop
+git branch --set-upstream-to=origin/develop develop
