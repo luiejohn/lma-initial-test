@@ -10,9 +10,9 @@ class SignUp extends Component {
     render(){
         return(
         <Fragment>
-            <Grid container style={{position:'relative', border: '1px solid black'}}>
+            <Grid container style={{position:'relative'}}>
                 <Grid item sm={12} md={7} lg={7}>
-                        <Grid container style={{border:'1px solid blue', justifyContent:'center'}}>
+                        <Grid container style={{justifyContent:'center', paddingTop:'35px', paddingBottom:'35px'}}>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <Typography  align="center" variant="display2">
                                     Sign Up

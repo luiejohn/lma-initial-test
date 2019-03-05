@@ -12,9 +12,7 @@ const styles = {
     text: {
         fontSize: '12px',
         backgroundColor: '#f2f2f2',
-        height:'45px',
         alignItem: 'center',
-        paddingTop: '25px',
         color: '#333333'
     }
 };
@@ -25,9 +23,9 @@ export default withStyles(styles)((props) => {
     return (
             <Fragment>
                 <CssBaseline />
-                <Grid container style={{postion:'relative', border: '1px solid black'}} >
+                <Grid container>
 
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
+                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'25px 0 25px 50px'}}>
                         <div style={{textAlign:'left', backgroundColor:'#fff'}} className={classes.text}>
                             <b>OUR PRODUCTS &amp; SERVICES</b>
 
@@ -44,14 +42,15 @@ export default withStyles(styles)((props) => {
                             </div>
                         </div>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={4} lg={4}>
-                        <div style={{textAlign:'left', backgroundColor:'#fff'}} className={classes.text}>
-                            <b>CONNECT WITH US</b>
+                    <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'25px 50px 25px 0'}}>
                             <Grid container>
+                                <Grid item lg={12} style={{textAlign:'left', fontSize:'12px', fontWeight:700, color:'#333333'}}>
+                                    Connect With Us
+                                </Grid>
                                 <Grid item>
                                     <Location style={{color:'#BA5757'}}/>
                                 </Grid>
-                                <Grid item>
+                                <Grid item style={{textAlign:'left', fontSize: '12px', color:'#333333'}}>
                                     Blk 190 Lor 6 Toa Payoh<br/>
                                     #02-510<br/>
                                     310190<br />
@@ -62,11 +61,11 @@ export default withStyles(styles)((props) => {
                                 <Grid item>
                                     <Phone style={{color:'#BA5757'}}/>
                                 </Grid>
-                                <Grid item>
+                                <Grid item style={{fontSize:'12px'}}>
                                     +65 6255 6091
                                 </Grid>
                             </Grid>
-                            <Grid container>
+                            <Grid container style={{fontSize:'12px'}}>
                                 <Grid item>
                                     <Mail style={{color:'#BA5757'}}/>
                                 </Grid>
@@ -74,10 +73,9 @@ export default withStyles(styles)((props) => {
                                     info@lifemasteryacademy.com
                                 </Grid>
                             </Grid>
-                        </div>
                     </Grid>
                     <Grid item xs={12} sm={12} md={4} lg={4}>
-                        <div style={{textAlign:'left', backgroundColor:'#fff'}} className={classes.text}>
+                        <div style={{textAlign:'left', backgroundColor:'#fff', padding:'25px 50px 25px 0'}} className={classes.text}>
                             <b>LIFE MASTER ACADEMY PTE LTD</b>
                             <div>
                                 Life Mastery Academy was formed based on the conviction 
@@ -88,15 +86,10 @@ export default withStyles(styles)((props) => {
                             </div>
                         </div>
                     </Grid>
-                </Grid>
-                <Grid container>
-                    <Grid item xs={12} sm={12} md={12} lg={12}>
-                        <div style={{textAlign:'left', backgroundColor:'#fff'}} className={classes.text}>
-                            <b>Copy</b>
-                        </div>
+                    <Grid item xs={12} sm={12} md={12} lg={12} style={{fontSize:'12px', backgroundColor:'#e6e6e6', padding:'20px 0'}}>
+                            Copyright® LIFE MASTERY ACADEMY
                     </Grid>
-                </Grid>
-
+            </Grid>
             </Fragment>
     )
 })
