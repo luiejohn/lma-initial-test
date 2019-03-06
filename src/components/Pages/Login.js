@@ -35,7 +35,7 @@ class Login extends Component {
 
             <Grid container>
                 <Grid item sm={12} md={5} lg={5} style={{backgroundColor: '#000033'}}>
-                    <Grid container style={{height:500, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
+                    <Grid container style={{height:550, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
                         <Grid item sm={12} md={12} lg={12}>
                             <Typography variant="headline" style={{color: '#fff', padding:''}}>
                                 Don't have an account?
@@ -83,12 +83,9 @@ class Login extends Component {
                                 </FormControl>
 
                                 <Typography style={{marginTop:'13px'}} variant="caption">
-                                    <a 
-                                        style={{textDecoration: 'none'}}
-                                        href="https://facebook.com"
-                                    >
-                                    Forgot Password?
-                                    </a>
+                                    <Link component={RouterLink} to="/reset-password">
+                                        Forgot Password?
+                                    </Link>
                                 </Typography>
 
                                 <Link component={RouterLink} to="/dashboard">

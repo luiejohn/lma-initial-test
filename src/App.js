@@ -12,7 +12,8 @@ import Login from './components/Pages/Login';
 import ResetPassword from './components/Pages/ResetPassword';
 import Copyright from './components/common/copyright';
 import Dashboard from './components/Pages/Dashboard';
-
+import ManageUsers from './components/Pages/ManageUsers';
+import LMA from './components/Pages/LMA';
 
 class App extends Component {
   render() {
@@ -22,8 +23,11 @@ class App extends Component {
             <Header />
               <Route path="/login" exact component={Login} />
               <Route path="/signup" exact component={SignUp} />
-              <Route path="/resetpassword" exact component={ResetPassword} />
+              <Route path="/reset-password" exact component={ResetPassword} />
+
               <Route path="/dashboard" exact component={Dashboard} />
+              <Route path="/lma" exact component={LMA} />
+              <Route path="/manage-users" exact component={ManageUsers} />
               <Route path="/" exact render={()=> <h3>Homepage still work in progress</h3>} />
             <Footer />
             <Copyright/>
