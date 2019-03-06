@@ -8,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import { Grid } from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
-import ArrowDown from '@material-ui/icons/ArrowDropDownOutlined';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -18,6 +17,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import ArrowDown from '@material-ui/icons/ArrowDropDownOutlined';
+
+import logo from '../../assets/images/LOGO.png';
 
 const styles = {
   root: {
@@ -97,11 +99,12 @@ class ButtonAppBar extends Component {
         </Hidden>
 
         <Hidden only={['xs','sm', 'md']}>
+          {/* <Logo/> */}
           <div style={{color:'#000', marginLeft:'50px'}}>
-            <img src="../../assets/images/LOGO.png" alt="LOGO"/>
+            <img src={logo} alt="LOGO" style={{height:'45px', width:'55px'}}/>
           </div>
         </Hidden>
-
+        
         <Grid container style={{  justifyContent: 'flex-end' }}>
             
             <Grid item>
