@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  BrowserRouter } from 'react-router-dom';
+import {  BrowserRouter, Switch } from 'react-router-dom';
 
 import { Route } from 'react-router-dom';
 
@@ -14,9 +14,11 @@ import Copyright from './components/common/copyright';
 import Dashboard from './components/Pages/Dashboard';
 import ManageUsers from './components/Pages/ManageUsers';
 import LMA from './components/Pages/LMA';
+import Home from './components/Pages/Home';
 
 class App extends Component {
   render() {
+    
     return (
       <BrowserRouter>
           <div className="App">
@@ -28,7 +30,8 @@ class App extends Component {
               <Route path="/dashboard" exact component={Dashboard} />
               <Route path="/lma" exact component={LMA} />
               <Route path="/manage-users" exact component={ManageUsers} />
-              <Route path="/" exact render={()=> <h3>Homepage still work in progress</h3>} />
+              <Route path="/" exact component={Home} />
+
             <Footer />
             <Copyright/>
           </div>

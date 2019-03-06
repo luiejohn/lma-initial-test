@@ -7,6 +7,9 @@ import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import { Grid, Button, Link } from '@material-ui/core';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+
 
 import KeyboardBackspace from '@material-ui/icons/KeyboardBackspaceOutlined';
 import ArrowDown from '@material-ui/icons/ArrowDropDown';
@@ -79,14 +82,18 @@ class SideMenu extends React.Component {
                             square
                             >
                                 <ExpansionPanelSummary>
-                                    <Grid item> 
-                                        <KeyboardBackspace style={{color: '#fff'}}/>
+                                <Link underline="none" component={RouterLink} to="/dashboard" style={{color:'#fff', marginLeft:'8px'}}>
+                                    <Grid container>
+                                        <Grid item> 
+                                            <KeyboardBackspace style={{color: '#fff'}}/>
+                                        </Grid>
+                                        <Grid item style={{color: '#fff', marginLeft:'9px'}}>
+
+                                                Back
+                                        </Grid>
                                     </Grid>
-                                    <Grid item style={{color: '#fff'}}>
-                                        <Link underline="none" component={RouterLink} to="/dashboard" style={{color:'#fff', marginLeft:'8px'}}>
-                                            Back
-                                        </Link>
-                                    </Grid>
+
+                                </Link>
 
                                 </ExpansionPanelSummary>
 
@@ -107,10 +114,14 @@ class SideMenu extends React.Component {
                                 <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left'}}>Course Management</Typography>
                                 </ExpansionPanelSummary>
-                                <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
-                                    <Typography style={{color: '#fff', marginLeft:"25px"}}>
-                                        Courses
-                                    </Typography>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Courses
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
                                 </ExpansionPanelDetails>
 
                             </ExpansionPanel>
@@ -124,20 +135,19 @@ class SideMenu extends React.Component {
                                     <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                         <Typography style={{color: '#fff',textAlign:'left'}}>Events Management</Typography>
                                     </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
-                                        <Grid container>
-                                            <Grid item lg={12}>
-                                                <Button style={{width:'100%', color: '#fff'}}>
-                                                    Events
-                                                </Button>
-                                            </Grid>
-                                            <Grid item lg={12}>
-                                                <Button style={{width:'100%', color: '#fff'}}>
-                                                    Attendance Scanning
-                                                </Button>
-                                            </Grid>
-                                        </Grid>
-
+                                    <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Events
+                                                    </ListItem>
+                                                </Link>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>All Courses Registration
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
                                     </ExpansionPanelDetails>
                             </ExpansionPanel>
 
@@ -150,10 +160,35 @@ class SideMenu extends React.Component {
                                 <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left'}}> Registration Management</Typography>
                                 </ExpansionPanelSummary>
-                                <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
-                                    <Typography style={{color: '#fff'}}>
-                                        Link 1
-                                    </Typography>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:'0'}}>
+                                    <List style={{flexGrow:1}}>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                                <span style={{width:'15px'}}></span>Participant Registration Form
+                                            </ListItem>
+                                        </Link>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                            <span style={{width:'15px'}}></span>Corporate Registration Form
+                                            </ListItem>
+                                        </Link>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                            <span style={{width:'15px'}}></span>Custormer Invoices
+                                            </ListItem>
+                                        </Link>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                            <span style={{width:'15px'}}></span>Custormer Payments
+                                            </ListItem>
+                                        </Link>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                            <span style={{width:'15px'}}></span>Transfer Course
+                                            </ListItem>
+                                        </Link>
+                                    </List>
+
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>
 
@@ -166,11 +201,15 @@ class SideMenu extends React.Component {
                                 <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left'}}> Trainer Management</Typography>
                                 </ExpansionPanelSummary>
-                                <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
-                                    <Typography style={{color: '#fff'}}>
-                                        Link 1
-                                    </Typography>
-                                </ExpansionPanelDetails>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Trainers
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
+                                    </ExpansionPanelDetails>
                             </ExpansionPanel>
 
                             <ExpansionPanel
@@ -182,10 +221,53 @@ class SideMenu extends React.Component {
                                 <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff'}}> Member Management</Typography>
                                 </ExpansionPanelSummary>
-                                <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
-                                    <Typography style={{color: '#fff'}}>
-                                        Link 1
-                                    </Typography>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Members
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff'}}> Configuration</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Courses
+                                                    </ListItem>
+                                                </Link>
+
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Participant
+                                                    </ListItem>
+                                                </Link>
+
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Events
+                                                    </ListItem>
+                                                </Link>
+
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Course Evaluation Details
+                                                    </ListItem>
+                                                </Link>
+
+                                            </List>
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>
                     </Grid>

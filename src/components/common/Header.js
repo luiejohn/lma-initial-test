@@ -110,7 +110,7 @@ class ButtonAppBar extends Component {
         
         <Grid container style={{  justifyContent: 'flex-end' }}>
             
-            <Grid item>
+            <Grid item style={{marginRight:'100px'}}>
                 <Hidden only={['xs','sm', 'md']}>
                   <Button className={classes.grow}>
                       Course Registration<ArrowDown style={{fontSize:'18px'}} />
