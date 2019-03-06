@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import { Grid, Button, Link } from '@material-ui/core';
 
 import KeyboardBackspace from '@material-ui/icons/KeyboardBackspaceOutlined';
+import ArrowDown from '@material-ui/icons/ArrowDropDown';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const ExpansionPanel = withStyles({
@@ -82,7 +83,7 @@ class SideMenu extends React.Component {
                                         <KeyboardBackspace style={{color: '#fff'}}/>
                                     </Grid>
                                     <Grid item style={{color: '#fff'}}>
-                                        <Link component={RouterLink} to="/dashboard">
+                                        <Link underline="none" component={RouterLink} to="/dashboard" style={{color:'#fff', marginLeft:'8px'}}>
                                             Back
                                         </Link>
                                     </Grid>
@@ -103,7 +104,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel1'}
                             // onChange={this.handleChange('panel1')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left'}}>Course Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
@@ -120,7 +121,7 @@ class SideMenu extends React.Component {
                             // onChange={this.handleChange('panel2')}
                             >
 
-                                    <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{color:'#57CB8F'}}/>}>
+                                    <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                         <Typography style={{color: '#fff',textAlign:'left'}}>Events Management</Typography>
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
@@ -146,7 +147,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel3'}
                             // onChange={this.handleChange('panel3')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left'}}> Registration Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
@@ -162,7 +163,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel4'}
                             // onChange={this.handleChange('panel4')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left'}}> Trainer Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
@@ -178,8 +179,8 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{color:'#57CB8F'}}/>}>
-                                    <Typography style={{color: '#fff'}}> Membership Management</Typography>
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff'}}> Member Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356'}}>
                                     <Typography style={{color: '#fff'}}>

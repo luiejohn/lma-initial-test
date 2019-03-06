@@ -31,7 +31,7 @@ const resetPassword = () => {
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <Button variant="contained" style={{marginTop:'30px', width:'33%', backgroundColor:'#BA5757', color: '#fff'}}>
-                                    Login
+                                    Reset Password
                                 </Button>
                             </Grid>
 

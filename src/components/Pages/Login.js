@@ -43,7 +43,11 @@ class Login extends Component {
                             <Typography style={{color: '#fff', padding:'20px'}} variant="caption">
                                 Lorem Ipsum is the single greatest threat. We are not - we are <br/>not keeping up with other websites.
                             </Typography>
-                            <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>SIGN UP</Button>
+                            <Link component={RouterLink} underline="none" to="/signup">
+                                <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>
+                                    SIGN UP
+                                </Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -88,8 +92,8 @@ class Login extends Component {
                                     </Link>
                                 </Typography>
 
-                                <Link component={RouterLink} to="/dashboard">
-                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757'}}>
+                                <Link component={RouterLink} underline="none" to="/dashboard">
+                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff'}}>
                                         LOGIN
                                     </Button>
                                 </Link>

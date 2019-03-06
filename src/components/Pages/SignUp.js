@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
+
+import { Grid, Typography, Link } from '@material-ui/core';
 
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -83,7 +85,12 @@ class SignUp extends Component {
                             <Typography style={{color: '#fff', padding:'20px'}} variant="caption">
                                 Lorem Ipsum is the single greatest threat. We are not - we are <br/>not keeping up with other websites.
                             </Typography>
-                            <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>LOG IN</Button>
+
+                            <Link component={RouterLink} underline="none" to="/login">
+                                <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>
+                                    LOG IN
+                                </Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Grid>

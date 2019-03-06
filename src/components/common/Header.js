@@ -98,7 +98,7 @@ class ButtonAppBar extends Component {
         <Toolbar style={{backgroundColor: '#fff'}}>
         <Hidden only="lg">
           <IconButton onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu" style={{color:'#000'}}>
-                      <MenuIcon/>
+              <MenuIcon/>
           </IconButton>
         </Hidden>
 

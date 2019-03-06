@@ -5,8 +5,10 @@ import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import SideMenu from '../common/sideMenu';
-import MyCourseTable from '../common/courseTable';
+import SideMenu from './sideMenu';
+
+
+// EDIT TO CREATE COURSE COMPONENT
 
 class LMA extends React.Component {
 
@@ -20,17 +22,13 @@ class LMA extends React.Component {
             </Grid>
 
 
+
             <Grid item lg={10}>
                 <Divider />
-                <Grid container style={{backgroundColor:'#F0F5F8'}}>
+                <Grid container>
 
                   <Grid item lg={12}>
-                      <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
-
-                          <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px'}}>
-                              COURSES
-                          </Typography>
-
+                      <Grid container lg={12}style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
                         <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px'}}>
                             Save
@@ -38,32 +36,22 @@ class LMA extends React.Component {
                         </Grid>
                         <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px'}}>
-                            IMPORT
+                            Discard
                           </Button>
                         </Grid>
                       </Grid>
                   </Grid>
                 
-
                   <Grid item lg={12}>
-                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px'}}>
+                    <Typography style={{textAlign:'left', marginLeft:'15px'}}>
                         LMA > Course Management > Courses
                     </Typography>
                   </Grid>
 
                   <Grid item lg={12}>
                       <Paper style={{margin:'15px'}}>
-                        <Grid container style={{height:'50px'}}>
-                              <Grid item>
+                        <Grid container style={{height:'550px'}}>
 
-                              </Grid>
-                              <Grid item>
-
-                              </Grid>
-                        </Grid>
-                        <Divider/>
-                        <Grid container style={{height:'550px'}}>   
-                          <MyCourseTable />
                         </Grid>
                       </Paper>
                   </Grid>
