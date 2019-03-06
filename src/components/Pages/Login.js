@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Link as RouterLink } from 'react-router-dom';
+
+import { Grid, Typography, Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 import Visibility from '@material-ui/icons/Visibility';
@@ -8,6 +10,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
+
 
 class Login extends Component {
     state = {
@@ -88,9 +91,12 @@ class Login extends Component {
                                     </a>
                                 </Typography>
 
-                                <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757'}}>
-                                    Login
-                                </Button>
+                                <Link component={RouterLink} to="/dashboard">
+                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757'}}>
+                                        LOGIN
+                                    </Button>
+                                </Link>
+
                             </Grid>
                             <Grid>
 

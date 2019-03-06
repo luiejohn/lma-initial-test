@@ -1,11 +1,15 @@
 import React, { Component, Fragment } from 'react';
+import { Link as RouterLink } from 'react-router-dom'
+
+import Dashboard from '../Pages/Dashboard';
+
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
-import { Grid } from '@material-ui/core';
+import { Grid, Link } from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -99,7 +103,6 @@ class ButtonAppBar extends Component {
         </Hidden>
 
         <Hidden only={['xs','sm', 'md']}>
-          {/* <Logo/> */}
           <div style={{color:'#000', marginLeft:'50px'}}>
             <img src={logo} alt="LOGO" style={{height:'45px', width:'55px'}}/>
           </div>
@@ -115,14 +118,20 @@ class ButtonAppBar extends Component {
                 </Hidden>
 
                 <Hidden only={['xs', 'sm', 'md']}>
-                  <Button className={classes.grow}>
-                      Login
-                  </Button>
+
+                    <Link component={RouterLink} to='/login'>
+                      <Button className={classes.grow}>
+                        Login
+                      </Button>
+                    </Link>
+
                 </Hidden>
                 <Hidden only={['xs', 'sm', 'md']}>
-                  <Button className={classes.grow}>
-                      Sign Up
-                  </Button>
+                    <Link component={RouterLink} to="/signup">
+                          <Button className={classes.grow}>
+                            Sign Up
+                          </Button>
+                    </Link>
                 </Hidden>
 
                 {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
