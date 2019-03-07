@@ -32,17 +32,17 @@ class LMA extends React.Component {
                   <Grid item lg={12}>
                       <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
 
-                          <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px'}}>
+                          <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
                               Participant Registration Form
                           </Typography>
 
                         <Grid item style={{padding:'0 10px 0 0'}}>
-                          <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px'}}>
+                          <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
                             Save
                           </Button>
                         </Grid>
                         <Grid item style={{padding:'0 10px 0 0'}}>
-                          <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px'}}>
+                          <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
                             IMPORT
                           </Button>
                         </Grid>
@@ -51,7 +51,7 @@ class LMA extends React.Component {
                 
 
                   <Grid item lg={12}>
-                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px'}}>
+                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px', fontFamily:'Open Sans'}}>
                         LMA > Registration Management > Participant Registration Form
                     </Typography>
                   </Grid>

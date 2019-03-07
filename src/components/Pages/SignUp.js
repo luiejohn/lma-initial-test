@@ -24,7 +24,7 @@ class SignUp extends Component {
                 <Grid item sm={12} md={7} lg={7}>
                         <Grid container style={{justifyContent:'center', paddingTop:'35px', paddingBottom:'35px'}}>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
-                                <Typography  align="center" variant="display2">
+                                <Typography  align="center" variant="display2" style={{fontFamily:'Open Sans'}}>
                                     Sign Up
                                 </Typography>
                                 <TextField 
@@ -59,11 +59,11 @@ class SignUp extends Component {
                             </Grid>
 
                             <Grid item xs={12} sm={12} md={12} lg={12} style={{paddingLeft:'20%'}}>
-                                <Typography variant="body2" align="left"  >
+                                <Typography variant="body2" align="left" style={{fontFamily:'Open Sans'}} >
                                         Password should contain:
                                     </Typography>
                                     <Typography  variant="caption" align="left" style={{marginLeft: ''}}>
-                                        <ul>
+                                        <ul style={{fontFamily:'Open Sans'}}>
                                             <li>at least 8-12 characters</li>
                                             <li>at least one uppercase</li>
                                             <li>at least one lowercase</li>
@@ -74,7 +74,7 @@ class SignUp extends Component {
                             </Grid>
 
                             <Grid item sm={12} md={12} lg={12}>
-                                <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff'}}>
+                                <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans'}}>
                                     Sign Up
                                 </Button>
                             </Grid>

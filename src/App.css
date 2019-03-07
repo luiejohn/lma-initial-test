@@ -1,5 +1,8 @@
+@import url('//fonts.googleapis.com/css?family=Open+Sans');
+
 .App {
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .homeImage {
@@ -8,9 +11,9 @@
 }
 
 body {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans'!important;
 }
 
 .myFont {
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', sans-serif;
 }
