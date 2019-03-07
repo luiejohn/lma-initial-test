@@ -111,7 +111,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel1'}
                             // onChange={this.handleChange('panel1')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}>Course Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -157,13 +157,13 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel3'}
                             // onChange={this.handleChange('panel3')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Registration Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:'0'}}>
                                     <List style={{flexGrow:1}}>
                                         <Link underline="none" component={RouterLink} to="/dashboard/participant-registration-form" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
-                                            <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'12px'}}> 
+                                            <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'11px'}}> 
                                                 <span style={{width:'15px'}}></span>Participant Registration Form
                                             </ListItem>
                                         </Link>
@@ -199,7 +199,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel3'}
                             // onChange={this.handleChange('panel3')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Participant Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:'0'}}>
@@ -226,7 +226,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel4'}
                             // onChange={this.handleChange('panel4')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Trainer Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -253,7 +253,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Membership Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -273,7 +273,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Marketing Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -306,7 +306,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Sales Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -326,7 +326,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Attendance Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -346,7 +346,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Post Course Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
