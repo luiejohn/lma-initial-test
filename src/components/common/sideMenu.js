@@ -137,14 +137,14 @@ class SideMenu extends React.Component {
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/events" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Events
                                                     </ListItem>
                                                 </Link>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/all-course-registration" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
-                                                    <span style={{width:'15px'}}></span>All Courses Registration
+                                                    <span style={{width:'15px'}}></span>Sessions
                                                     </ListItem>
                                                 </Link>
                                             </List>
@@ -162,35 +162,63 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:'0'}}>
                                     <List style={{flexGrow:1}}>
-                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                        <Link underline="none" component={RouterLink} to="/dashboard/participant-registration-form" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                             <ListItem button style={{margin:'0'}}> 
                                                 <span style={{width:'15px'}}></span>Participant Registration Form
                                             </ListItem>
                                         </Link>
-                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                        <Link underline="none" component={RouterLink} to="/dashboard/corporate-registration-form" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                             <ListItem button style={{margin:'0'}}> 
                                             <span style={{width:'15px'}}></span>Corporate Registration Form
                                             </ListItem>
                                         </Link>
-                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                        <Link underline="none" component={RouterLink} to="/dashboard/customer-invoices" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                             <ListItem button style={{margin:'0'}}> 
                                             <span style={{width:'15px'}}></span>Custormer Invoices
                                             </ListItem>
                                         </Link>
-                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
-                                            <ListItem button style={{margin:'0'}}> 
-                                            <span style={{width:'15px'}}></span>Custormer Payments
-                                            </ListItem>
-                                        </Link>
-                                        <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                        <Link underline="none" component={RouterLink} to="/dashboard/transfer-course" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                             <ListItem button style={{margin:'0'}}> 
                                             <span style={{width:'15px'}}></span>Transfer Course
+                                            </ListItem>
+                                        </Link>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/refund-course" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                            <span style={{width:'15px'}}></span>Refund Course
                                             </ListItem>
                                         </Link>
                                     </List>
 
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>
+
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel3'}
+                            // onChange={this.handleChange('panel3')}
+                            >
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Participant Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:'0'}}>
+                                    <List style={{flexGrow:1}}>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/participants" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                                <span style={{width:'15px'}}></span>Participants
+                                            </ListItem>
+                                        </Link>
+                                        <Link underline="none" component={RouterLink} to="/dashboard/import-database" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                            <ListItem button style={{margin:'0'}}> 
+                                            <span style={{width:'15px'}}></span>Import Database
+                                            </ListItem>
+                                        </Link>
+                                    </List>
+
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
 
                             <ExpansionPanel
                             style={{backgroundColor:'#2E3142'}}
@@ -203,12 +231,19 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/trainers" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Trainers
                                                     </ListItem>
                                                 </Link>
+
+                                                <Link underline="none" component={RouterLink} to="/dashboard/trainings" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Trainings
+                                                    </ListItem>
+                                                </Link>
                                             </List>
+                                            
                                     </ExpansionPanelDetails>
                             </ExpansionPanel>
 
@@ -219,11 +254,11 @@ class SideMenu extends React.Component {
                             // onChange={this.handleChange('panel5')}
                             >
                                 <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
-                                    <Typography style={{color: '#fff'}}> Member Management</Typography>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Membership Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/members" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Members
                                                     </ListItem>
@@ -239,34 +274,118 @@ class SideMenu extends React.Component {
                             // onChange={this.handleChange('panel5')}
                             >
                                 <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
-                                    <Typography style={{color: '#fff'}}> Configuration</Typography>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Marketing Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
                                                 <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
-                                                    <span style={{width:'15px'}}></span>Courses
+                                                    <span style={{width:'15px'}}></span>Activities
                                                     </ListItem>
                                                 </Link>
 
                                                 <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
-                                                    <span style={{width:'15px'}}></span>Participant
+                                                    <span style={{width:'15px'}}></span>Inventory
                                                     </ListItem>
                                                 </Link>
 
                                                 <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
-                                                    <span style={{width:'15px'}}></span>Events
+                                                    <span style={{width:'15px'}}></span>Email Blasts
                                                     </ListItem>
                                                 </Link>
 
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Sales Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
                                                 <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
-                                                    <span style={{width:'15px'}}></span>Course Evaluation Details
+                                                    <span style={{width:'15px'}}></span>Promos
                                                     </ListItem>
                                                 </Link>
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
 
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Attendance Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Attendance
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Post Course Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Feedback Form
+                                                    </ListItem>
+                                                </Link>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Feedback Results
+                                                    </ListItem>
+                                                </Link>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Certificates of Attendance
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left'}}> Room Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0'}}> 
+                                                    <span style={{width:'15px'}}></span>Rooms
+                                                    </ListItem>
+                                                </Link>
                                             </List>
                                 </ExpansionPanelDetails>
                             </ExpansionPanel>

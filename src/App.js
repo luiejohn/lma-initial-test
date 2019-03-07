@@ -16,6 +16,19 @@ import Dashboard from './components/Pages/Dashboard';
 import ManageUsers from './components/Pages/ManageUsers';
 import LMA from './components/Pages/LMA';
 import Home from './components/Pages/Home';
+import Courses from './components/Pages/Courses';
+import Events from './components/Pages/Events';
+import CourseRegistration from './components/Pages/CourseRegistration';
+import PartRegForm from './components/Pages/PartRegForm';
+import CorpRegForm from './components/Pages/CorpRegForm';
+import CustomerInvoices from './components/Pages/CustomerInvoice';
+import TransferCourse from './components/Pages/TransferCourse';
+import RefundCourse from './components/Pages/RefundCourse';
+import Participants from './components/Pages/Participants';
+import PartImportDatabase from './components/Pages/PartImportDatabase.js';
+import Trainers from './components/Pages/Trainers';
+import Trainings from './components/Pages/Trainings';
+import Members from './components/Pages/Members';
 
 class App extends Component {
   render() {
@@ -33,6 +46,24 @@ class App extends Component {
               <Route path="/lma" exact component={LMA} />
               <Route path="/manage-users" exact component={ManageUsers} />
 
+              <Route path="/dashboard/courses" exact component={Courses}/>
+              <Route path="/dashboard/events" exact component={Events}/>
+              {/* //Session page */}
+              <Route path="/dashboard/all-course-registration" exact component={CourseRegistration}/>
+
+              <Route path="/dashboard/participant-registration-form" exact component={PartRegForm}/>
+              <Route path="/dashboard/corporate-registration-form" exact component={CorpRegForm}/>
+              <Route path="/dashboard/customer-invoices" exact component={CustomerInvoices}/>
+              <Route path="/dashboard/transfer-course" exact component={TransferCourse}/>
+              <Route path="/dashboard/refund-course" exact component={RefundCourse}/>
+
+              <Route path="/dashboard/participants" exact component={Participants}/>
+              <Route path="/dashboard/import-database" exact component={PartImportDatabase}/>
+
+              <Route path="/dashboard/trainers" exact component={Trainers}/>
+              <Route path="/dashboard/trainings" exact component={Trainings}/>
+
+              <Route path="/dashboard/members" exact component={Members}/>
             {/* <Footer />
             <Copyright/> */}
           </div>
