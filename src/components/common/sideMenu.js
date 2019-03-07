@@ -132,7 +132,7 @@ class SideMenu extends React.Component {
                             // onChange={this.handleChange('panel2')}
                             >
 
-                                    <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                         <Typography style={{color: '#fff',textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}>Events Management</Typography>
                                     </ExpansionPanelSummary>
                                     <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
@@ -376,7 +376,7 @@ class SideMenu extends React.Component {
                             // expanded={expanded === 'panel5'}
                             // onChange={this.handleChange('panel5')}
                             >
-                                <ExpansionPanelSummary expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
                                     <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Room Management</Typography>
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
