@@ -278,19 +278,19 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/activities" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Activities
                                                     </ListItem>
                                                 </Link>
 
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/inventory" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Inventory
                                                     </ListItem>
                                                 </Link>
 
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/email-blasts" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Email Blasts
                                                     </ListItem>
@@ -311,7 +311,7 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/promos" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Promos
                                                     </ListItem>
@@ -331,7 +331,7 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/attendance" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Attendance
                                                     </ListItem>
@@ -351,17 +351,17 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/feedback-form" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Feedback Form
                                                     </ListItem>
                                                 </Link>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/feedback-results" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Feedback Results
                                                     </ListItem>
                                                 </Link>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/certificate-of-attendance" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Certificates of Attendance
                                                     </ListItem>
@@ -381,7 +381,7 @@ class SideMenu extends React.Component {
                                 </ExpansionPanelSummary>
                                 <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
                                             <List style={{flexGrow:1, margin:0}}>
-                                                <Link underline="none" component={RouterLink} to="/dashboard/courses" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                <Link underline="none" component={RouterLink} to="/dashboard/rooms" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0'}}> 
                                                     <span style={{width:'15px'}}></span>Rooms
                                                     </ListItem>

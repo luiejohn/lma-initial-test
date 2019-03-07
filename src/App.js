@@ -29,6 +29,15 @@ import PartImportDatabase from './components/Pages/PartImportDatabase.js';
 import Trainers from './components/Pages/Trainers';
 import Trainings from './components/Pages/Trainings';
 import Members from './components/Pages/Members';
+import activities from './components/Pages/Activities';
+import inventory from './components/Pages/Inventory';
+import EmailBlasts from './components/Pages/EmailBlasts';
+import Promos from './components/Pages/Promos';
+import Attendance from './components/Pages/Attendance';
+import FeedBackForm from './components/Pages/FeedbackForm';
+import FeedBackResults from './components/Pages/FeedBackResults';
+import Certificate from './components/Pages/CertificatesOfAttendance';
+import Rooms from './components/Pages/Rooms';
 
 class App extends Component {
   render() {
@@ -64,6 +73,19 @@ class App extends Component {
               <Route path="/dashboard/trainings" exact component={Trainings}/>
 
               <Route path="/dashboard/members" exact component={Members}/>
+
+              <Route path="/dashboard/activities" exact component={activities}/>
+              <Route path="/dashboard/inventory" exact component={inventory}/>
+              <Route path="/dashboard/email-blasts" exact component={EmailBlasts}/>
+
+              <Route path="/dashboard/promos" exact component={Promos}/>
+
+              <Route path="/dashboard/attendance" exact component={Attendance}/>
+
+              <Route path="/dashboard/feedback-form" exact component={FeedBackForm}/>
+              <Route path="/dashboard/feedback-results" exact component={FeedBackResults}/>
+              <Route path="/dashboard/certificate-of-attendance" exact component={Certificate}/>
+              <Route path="/dashboard/rooms" exact component={Rooms}/>
             {/* <Footer />
             <Copyright/> */}
           </div>
