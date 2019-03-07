@@ -4,11 +4,11 @@ services:
   - docker:dind
  
 stages:
-  - dev_deploy
+  - development_deploy
   - deploy
  
-dev_deploy:
-  stage: dev_deploy
+development_deploy:
+  stage: development_deploy
   only:
     - develop
     - staging
