@@ -6,3 +6,11 @@
   background-image: url('./assets/images/home-edit.jpg');
   background-size: cover;
 }
+
+body {
+  font-family: 'Open Sans';
+}
+
+.myFont {
+  font-family: 'Open Sans';
+}

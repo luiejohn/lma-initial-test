@@ -31,13 +31,13 @@ class Dashboard extends Component {
                             <Grid item lg={3} style={{textAlign:'left', fontSize:'35px',color:'#fff', fontWeight:'500', flexFlow:'row', justifyContent:'center'}}>
                                 <Grid container style={{height:'100%', flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
                                     <Grid item lg={12}>
-                                        <Typography style={{fontSize:'35px',color:'#fff', fontWeight:'500', marginBottom:'35px'}}>
+                                        <Typography style={{fontSize:'40px',color:'#fff', fontWeight:'500', marginBottom:'35px', marginLeft:'-25px', fontFamily:'Open Sans'}}>
                                             LET US GUIDE YOU<br/>
                                             TO GREATER<br />
                                             HEIGHTS<br />
                                         </Typography>
                                         <Link component={RouterLink} underline="none" to="/signup" style={{marginTop:'135px'}}>
-                                            <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>
+                                            <Button variant="outlined" style={{border:'2px solid #fff', padding: '3px 30px',  color:'#fff', marginLeft:'-25px', fontFamily:'Open Sans'}}>
                                                 Enroll Now
                                             </Button>
                                         </Link>
@@ -53,14 +53,37 @@ class Dashboard extends Component {
                             <Grid item lg={1} style={{flexGrow:1}}>
 
                             </Grid>
-                            <Grid item style={{flexGrow:1}}>
-                            
+                            <Grid item style={{flexGrow:1, paddingLeft:'25px'}}>
+                                <Typography style={{fontSize:'25px', color: '#fff', fontWeight:500, marginTop:'30px', borderRight:'3px solid #fff', fontFamily:'Open Sans'}} align="left">
+                                    2019<br/>
+                                    FEB. 20<br /><br />
+
+                                    Lorem ipsum dolor
+                                </Typography>
                             </Grid>
-                            <Grid item style={{flexGrow:1}}>
-                            
+                            <Grid item style={{flexGrow:1, paddingLeft:'25px'}}>
+                                <Typography style={{fontSize:'25px', color: '#fff', fontWeight:500, marginTop:'30px',borderRight:'3px solid #fff'}} align="left">
+                                    2019<br/>
+                                    FEB. 20<br /><br />
+
+                                    Lorem ipsum dolor
+                                </Typography>
                             </Grid>
-                            <Grid item style={{flexGrow:1}}>
-                            
+                            <Grid item style={{flexGrow:1, paddingLeft:'25px'}}>
+                                <Typography style={{fontSize:'25px', color: '#fff', fontWeight:500, marginTop:'30px',borderRight:'3px solid #fff'}} align="left">
+                                    2019<br/>
+                                    FEB. 20<br /><br />
+
+                                    Lorem ipsum dolor
+                                </Typography>
+                            </Grid>
+                            <Grid item style={{flexGrow:1, paddingLeft:'25px'}}>
+                                <Typography style={{fontSize:'25px', color: '#fff', fontWeight:500, marginTop:'30px'}} align="left">
+                                    2019<br/>
+                                    FEB. 20<br /><br />
+
+                                    <div style={{fontSize:'23px'}}>Lorem ipsum dolor</div>
+                                </Typography>
                             </Grid>
                             <Grid item lg={1}>
 
@@ -83,7 +106,16 @@ class Dashboard extends Component {
                                     </Grid>
 
                                     <Grid item lg={12}>
-                                        <Playarrow style={{fontSize:'40px'}}/>
+                                        <Grid container style={{height:'100%', flexFlow:'column', justifyContent:'flex-end'}}>
+                                            <Grid item lg={12} style={{height:'125px'}}>
+                                            
+                                            </Grid>
+                                            <Grid item lg={12}>
+                                                <Typography style={{textAlign:'right', marginRight:'10px'}}>
+                                                    <Playarrow style={{fontSize:'40px'}}/>  
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
                                     </Grid>
 
                                 </Grid>
@@ -102,7 +134,16 @@ class Dashboard extends Component {
                                     </Grid>
 
                                     <Grid item lg={12}>
-                                        <Playarrow style={{fontSize:'40px'}}/>
+                                        <Grid container style={{height:'100%', flexFlow:'column', justifyContent:'flex-end'}}>
+                                                <Grid item lg={12} style={{height:'125px'}}>
+                                                
+                                                </Grid>
+                                                <Grid item lg={12}>
+                                                    <Typography style={{textAlign:'right', marginRight:'10px'}}>
+                                                        <Playarrow style={{fontSize:'40px'}}/>  
+                                                    </Typography>
+                                                </Grid>
+                                            </Grid>
                                     </Grid>
 
                                 </Grid>
@@ -121,7 +162,16 @@ class Dashboard extends Component {
                                     </Grid>
 
                                     <Grid item lg={12}>
-                                        <Playarrow style={{fontSize:'40px'}}/>
+                                        <Grid container style={{height:'100%', flexFlow:'column', justifyContent:'flex-end'}}>
+                                            <Grid item lg={12} style={{height:'125px'}}>
+                                            
+                                            </Grid>
+                                            <Grid item lg={12}>
+                                                <Typography style={{textAlign:'right', marginRight:'10px'}}>
+                                                    <Playarrow style={{fontSize:'40px'}}/>  
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
                                     </Grid>
 
                                 </Grid>
