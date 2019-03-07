@@ -7,7 +7,7 @@ stages:
   - development_deploy
   - deploy
  
-development_deploy:
+developments:
   stage: development_deploy
   only:
     - develop
@@ -16,7 +16,7 @@ development_deploy:
     - echo running docker-compose down
     - docker-compose down
     - echo running docker-compose up --build
-    - docker-compose up --build
+    - docker-compose up --detach
     - echo deployment done
   
 deploy:
