@@ -14,7 +14,6 @@ developments:
     - staging
   script:
     - echo running docker-compose down
-    - curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     - docker-compose down
     - echo running docker-compose up --build
     - docker-compose up --detach
