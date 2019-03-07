@@ -14,9 +14,9 @@ dev_deploy:
     - staging
   script:
     - echo running docker-compose down
-    - sudo docker-compose down
+    - docker-compose down
     - echo running docker-compose up --build
-    - sudo docker-compose up --build
+    - docker-compose up --build
     - echo deployment done
   
 deploy:
