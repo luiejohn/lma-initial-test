@@ -14,6 +14,7 @@ developments:
     - staging
   script:
     - echo running docker-compose down
+    - npm install --save-dev docker-compose
     - docker-compose down
     - echo running docker-compose up --build
     - docker-compose up --detach
