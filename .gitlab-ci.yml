@@ -16,7 +16,7 @@ development_deploy:
     - echo running docker-compose down
     - docker-compose down
     - echo running docker-compose up --build
-    - docker-compose up --build
+    - docker-compose up --build --detach
     - echo deployment done
   
 deploy:
