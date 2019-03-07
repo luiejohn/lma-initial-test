@@ -1,7 +1,7 @@
 image: docker
 
 services:
-  - docker: dind
+  - docker:dind
  
 stages:
   - dev_deploy
@@ -23,4 +23,3 @@ deploy:
     - echo run deployment
   environment: master
   when: manual
-  
