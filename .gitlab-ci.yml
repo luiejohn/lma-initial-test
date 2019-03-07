@@ -13,10 +13,6 @@ developments:
     - develop
     - staging
   script:
-    - echo node -v
-    - node -v
-    - echo npm -v
-    - npm -v
     - echo installing docker-compose
     - npm install docker-compose
     - echo running docker-compose down...
