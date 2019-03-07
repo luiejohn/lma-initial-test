@@ -1,0 +1,26 @@
+image: docker
+
+services:
+  - docker: dind
+ 
+stages:
+  - dev_deploy
+  - deploy
+ 
+dev_deploy:
+  stage: dev_deploy
+  only:
+    - develop
+    - staging
+  script:
+    - echo run test in develop staging
+  
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo run deployment
+  environment: master
+  when: manual
+  
