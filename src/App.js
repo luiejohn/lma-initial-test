@@ -38,6 +38,8 @@ import FeedBackForm from './components/Pages/FeedbackForm';
 import FeedBackResults from './components/Pages/FeedBackResults';
 import Certificate from './components/Pages/CertificatesOfAttendance';
 import Rooms from './components/Pages/Rooms';
+import Office from './components/Pages/OfficeManagement';
+import Accounts from './components/Pages/AccountManagement';
 
 class App extends Component {
   render() {
@@ -86,6 +88,8 @@ class App extends Component {
               <Route path="/dashboard/feedback-results" exact component={FeedBackResults}/>
               <Route path="/dashboard/certificate-of-attendance" exact component={Certificate}/>
               <Route path="/dashboard/rooms" exact component={Rooms}/>
+              <Route path="/dashboard/office-management" exact component={Office}/>
+              <Route path="/dashboard/account-management" exact component={Accounts}/>
             {/* <Footer />
             <Copyright/> */}
           </div>

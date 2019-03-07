@@ -164,12 +164,12 @@ class SideMenu extends React.Component {
                                     <List style={{flexGrow:1}}>
                                         <Link underline="none" component={RouterLink} to="/dashboard/participant-registration-form" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                             <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'11px'}}> 
-                                                <span style={{width:'15px'}}></span>Participant Registration Form
+                                                <span style={{width:'15px'}}></span>Participant
                                             </ListItem>
                                         </Link>
                                         <Link underline="none" component={RouterLink} to="/dashboard/corporate-registration-form" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                             <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'12px'}}> 
-                                            <span style={{width:'15px'}}></span>Corporate Registration Form
+                                            <span style={{width:'15px'}}></span>Corporate
                                             </ListItem>
                                         </Link>
                                         <Link underline="none" component={RouterLink} to="/dashboard/customer-invoices" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
@@ -384,6 +384,46 @@ class SideMenu extends React.Component {
                                                 <Link underline="none" component={RouterLink} to="/dashboard/rooms" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
                                                     <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'12px'}}> 
                                                     <span style={{width:'15px'}}></span>Rooms
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}> Office Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/office-management" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'12px'}}> 
+                                                    <span style={{width:'15px'}}></span>Offices
+                                                    </ListItem>
+                                                </Link>
+                                            </List>
+                                </ExpansionPanelDetails>
+                            </ExpansionPanel>
+
+                            <ExpansionPanel
+                            style={{backgroundColor:'#2E3142'}}
+                            square
+                            // expanded={expanded === 'panel5'}
+                            // onChange={this.handleChange('panel5')}
+                            >
+                                <ExpansionPanelSummary style={{padding:'0 20px 0 20px'}} expandIcon={<ArrowDown style={{color:'#57CB8F'}}/>}>
+                                    <Typography style={{color: '#fff', textAlign:'left', fontFamily:'Open Sans', fontSize:'12px'}}>Accounts Management</Typography>
+                                </ExpansionPanelSummary>
+                                <ExpansionPanelDetails style={{backgroundColor:'#404356', padding:0}}>
+                                            <List style={{flexGrow:1, margin:0}}>
+                                                <Link underline="none" component={RouterLink} to="/dashboard/account-management" style={{color:'#fff', flexGrow:1, boder:'1px solid #000', textAlign:'left', fontSize:'14px'}}> 
+                                                    <ListItem button style={{margin:'0', fontFamily:'Open Sans', fontSize:'12px'}}> 
+                                                    <span style={{width:'15px'}}></span>Accounts
                                                     </ListItem>
                                                 </Link>
                                             </List>
