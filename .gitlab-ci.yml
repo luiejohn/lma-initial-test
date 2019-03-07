@@ -4,19 +4,19 @@ services:
   - docker:dind
  
 stages:
-  - dev_deploy
+  - development_deploy
   - deploy
  
-dev_deploy:
-  stage: dev_deploy
+development_deploy:
+  stage: development_deploy
   only:
     - develop
     - staging
   script:
     - echo running docker-compose down
-    - sudo docker-compose down
+    - docker-compose down
     - echo running docker-compose up --build
-    - sudo docker-compose up --build
+    - docker-compose up --build
     - echo deployment done
   
 deploy:
