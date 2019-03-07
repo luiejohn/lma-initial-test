@@ -18,7 +18,7 @@ class Dashboard extends Component {
                 <Divider />
                 <Grid container>
                     <Grid item lg={1}>
-                        <Grid container style={{minHeight:'650px', width:'50%', backgroundColor:'#000033', flexFlow:'column'}}>
+                        <Grid container style={{minHeight:'650px', width:'50%', backgroundColor:'#2E3142', flexFlow:'column'}}>
                             <Grid item style={{width:'50%', height:'50px'}}>
                                 <Link component={RouterLink} to="/lma" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>

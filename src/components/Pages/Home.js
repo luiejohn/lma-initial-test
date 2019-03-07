@@ -10,6 +10,9 @@ import Header from '../common/Header';
 import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
+import '../../../src/App.css';
+// import imageOne from '../../assets/images/home-header.jpg'
+
 class Dashboard extends Component {
 
 
@@ -17,10 +20,52 @@ class Dashboard extends Component {
         return(
             <Fragment>
                 <Header/>
-
                 <Grid container>
-                    <Grid item lg={12} style={{height:'550px', backgroundColor:'#ccc'}}>
+                    <Grid item lg={12} className="homeImage" style={{height:'720px'}}>
+                        {/* <img src={imageOne} alt="1" style={{postion:'absolute', zIndex:'-5', height:'100%', width:'100%'}}/> */}
+                        <Grid container style={{height:'510px'}}>
+                            <Grid item lg={8}>
 
+                            </Grid>
+
+                            <Grid item lg={3} style={{textAlign:'left', fontSize:'35px',color:'#fff', fontWeight:'500', flexFlow:'row', justifyContent:'center'}}>
+                                <Grid container style={{height:'100%', flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
+                                    <Grid item lg={12}>
+                                        <Typography style={{fontSize:'35px',color:'#fff', fontWeight:'500', marginBottom:'35px'}}>
+                                            LET US GUIDE YOU<br/>
+                                            TO GREATER<br />
+                                            HEIGHTS<br />
+                                        </Typography>
+                                        <Link component={RouterLink} underline="none" to="/signup" style={{marginTop:'135px'}}>
+                                            <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>
+                                                Enroll Now
+                                            </Button>
+                                        </Link>
+                                    </Grid>
+                                </Grid>
+                            
+                            </Grid>
+                            <Grid item>
+
+                            </Grid>
+                        </Grid>
+                        <Grid container style={{height:'210px'}}>
+                            <Grid item lg={1} style={{flexGrow:1}}>
+
+                            </Grid>
+                            <Grid item style={{flexGrow:1}}>
+                            
+                            </Grid>
+                            <Grid item style={{flexGrow:1}}>
+                            
+                            </Grid>
+                            <Grid item style={{flexGrow:1}}>
+                            
+                            </Grid>
+                            <Grid item lg={1}>
+
+                            </Grid>
+                        </Grid>
                     </Grid>
                     <Grid item lg={12} style={{height:'400px'}}>
                         <Grid container style={{height:'300px'}}>
