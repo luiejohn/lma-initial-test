@@ -6,7 +6,12 @@ import { Grid, Paper, Divider, Button } from '@material-ui/core';
 
 import Header from '../common/Header';
 import Footer from '../common/footer';
-import Copyright from '../common/copyright'
+import Copyright from '../common/copyright';
+
+import LMA from '../../assets/images/1.png';
+import Link2 from '../../assets/images/2.png';
+import Link3 from '../../assets/images/3.png';
+import Link4 from '../../assets/images/4.png';
 
 class Dashboard extends Component {
 
@@ -19,31 +24,31 @@ class Dashboard extends Component {
                 <Grid container>
                     <Grid item lg={1}>
                         <Grid container style={{minHeight:'650px', width:'50%', backgroundColor:'#2E3142', flexFlow:'column'}}>
-                            <Grid item style={{width:'50%', height:'50px'}}>
+                            <Grid item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/lma" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
-                                        01
+                                        <img src={LMA} alt="LMA" style={{width:'25px', height:'25px'}}/>
                                     </div>
                                 </Link>
                             </Grid>
-                            <Grid item item style={{width:'50%', height:'50px'}}>
+                            <Grid item item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/manage-users" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
-                                        02
+                                        <img src={Link2} alt="Link2" style={{width:'25px', height:'25px'}}/>
                                     </div>
                                 </Link>
                             </Grid>
-                            <Grid item item style={{width:'50%', height:'50px'}}>
+                            <Grid item item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/dashboard" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
-                                        03
+                                        <img src={Link3} alt="Link3" style={{width:'25px', height:'25px'}}/>
                                     </div>
                                 </Link>
                             </Grid>
-                            <Grid item item style={{width:'50%', height:'50px'}}>
+                            <Grid item item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/dashboard" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
-                                        04
+                                        <img src={Link4} alt="Link4" style={{width:'25px', height:'25px'}}/>  
                                     </div>
                                 </Link>
                             </Grid>

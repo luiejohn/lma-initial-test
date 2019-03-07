@@ -12,8 +12,8 @@ const styles = {
 const foot2 = (props) => {
     return(
       <Grid>
-          <Grid item xs={12} sm={12} md={12} lg={12} style={{fontSize:'12px', backgroundColor:'#e6e6e6', padding:'20px 0'}}>
-              Copyright® LIFE MASTERY ACADEMY PTE LTD
+          <Grid item xs={12} sm={12} md={12} lg={12} style={{fontSize:'12px', backgroundColor:'#e6e6e6', padding:'20px 0',fontFamily:'Open Sans'}}>
+              Copyright© LIFE MASTERY ACADEMY PTE LTD
           </Grid>
       </Grid>
     )

@@ -94,7 +94,7 @@ class ButtonAppBar extends Component {
 
     return(  
     <Fragment>
-      <AppBar position="static" elevation={0}>
+      <AppBar position="static" elevation={0} style={{fontFamily:'Open Sans'}}>
         <Toolbar style={{backgroundColor: '#fff'}}>
         <Hidden only="lg">
           <IconButton onClick={this.toggleDrawer('left', true)} color="inherit" aria-label="Menu" style={{color:'#000'}}>
@@ -112,8 +112,8 @@ class ButtonAppBar extends Component {
             
             <Grid item style={{marginRight:'100px'}}>
                 <Hidden only={['xs','sm', 'md']}>
-                  <Button className={classes.grow}>
-                      Course Registration<ArrowDown style={{fontSize:'18px'}} />
+                  <Button className={classes.grow} style={{height:'height', fontSize:'12px'}}>
+                      Course Registration<ArrowDown style={{fontSize:'20px', fontWeight:'100'}}/>
                   </Button>                
                 </Hidden>
 

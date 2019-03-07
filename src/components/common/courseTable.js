@@ -43,16 +43,16 @@ function courseTable(props) {
 
   return (
     // <Paper className={classes.root}>
-      <Table className={classes.table}>
+      <Table className={classes.table} style={{fontFamily:'Open Sans'}}>
         <TableHead>
-          <TableRow>
+          <TableRow >
             <TableCell align="left"><b>LMA Course Code</b></TableCell>
             <TableCell align="left">Course Name</TableCell>
             <TableCell align="left">Course Type</TableCell>
             <TableCell align="left">Duration</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody style={{fontFamily:'Open Sans'}}>
           {rows.map(row => (
             row.id % 2 === 0 
             ?

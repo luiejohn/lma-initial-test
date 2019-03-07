@@ -42,14 +42,14 @@ class Login extends Component {
                 <Grid item sm={12} md={5} lg={5} style={{backgroundColor: '#000033'}}>
                     <Grid container style={{height:550, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
                         <Grid item sm={12} md={12} lg={12}>
-                            <Typography variant="headline" style={{color: '#fff', padding:''}}>
+                            <Typography variant="headline" style={{color: '#fff', fontFamily:'Open Sans'}}>
                                 Don't have an account?
                             </Typography>
-                            <Typography style={{color: '#fff', padding:'20px'}} variant="caption">
+                            <Typography style={{color: '#fff', padding:'20px',fontFamily:'Open Sans'}} variant="caption">
                                 Lorem Ipsum is the single greatest threat. We are not - we are <br/>not keeping up with other websites.
                             </Typography>
                             <Link component={RouterLink} underline="none" to="/signup">
-                                <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff'}}>
+                                <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff',fontFamily:'Open Sans'}}>
                                     SIGN UP
                                 </Button>
                             </Link>
@@ -61,11 +61,11 @@ class Login extends Component {
                     <Grid container style={{height:500, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
 
                             <Grid item sm={12} md={12} lg={12}>
-                                <Typography variant="display1">
+                                <Typography variant="display1" style={{fontFamily:'Open Sans'}}>
                                     Login
                                 </Typography>
                                 <FormControl style={{width:'50%', height:'50px', marginTop:'25px'}}>
-                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px'}}
+                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px',fontFamily:'Open Sans'}}
                                         id="adornment-password"
                                         placeholder="Email"
                                     />
@@ -92,7 +92,7 @@ class Login extends Component {
                                 </FormControl>
 
                                 <Typography style={{marginTop:'13px'}} variant="caption">
-                                    <Link component={RouterLink} to="/reset-password">
+                                    <Link component={RouterLink} to="/reset-password" style={{fontFamily:'Open Sans'}}>
                                         Forgot Password?
                                     </Link>
                                 </Typography>
