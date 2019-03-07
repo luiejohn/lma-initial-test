@@ -7,7 +7,7 @@ stages:
   - development_deploy
   - deploy
  
-development:
+developments:
   stage: development_deploy
   only:
     - develop
