@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Grid, Typography, Link } from '@material-ui/core';
@@ -11,6 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 
+import Header from '../common/Header';
+import Footer from '../common/footer';
+import Copyright from '../common/copyright';
 
 class Login extends Component {
     state = {
@@ -32,6 +35,8 @@ class Login extends Component {
 
     render(){
         return(
+        <Fragment>
+            <Header />
 
             <Grid container>
                 <Grid item sm={12} md={5} lg={5} style={{backgroundColor: '#000033'}}>
@@ -108,6 +113,9 @@ class Login extends Component {
 
             </Grid>
 
+            <Footer />
+            <Copyright />
+        </Fragment>                                        
         )
     }
 }

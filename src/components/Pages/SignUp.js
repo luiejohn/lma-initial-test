@@ -6,14 +6,20 @@ import { Grid, Typography, Link } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-
 import FormSelect from '../Forms/Input_Select';
+
+
+import Header from '../common/Header';
+import Footer from '../common/footer';
+import Copyright from '../common/copyright';
+
 
 class SignUp extends Component {
 
     render(){
         return(
         <Fragment>
+            <Header />
             <Grid container style={{position:'relative'}}>
                 <Grid item sm={12} md={7} lg={7}>
                         <Grid container style={{justifyContent:'center', paddingTop:'35px', paddingBottom:'35px'}}>
@@ -95,8 +101,10 @@ class SignUp extends Component {
                     </Grid>
                 </Grid>
 
-
             </Grid>
+
+            <Copyright/>
+            <Footer />
         </Fragment>
         )
     }

@@ -8,12 +8,17 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SideMenu from '../common/sideMenu';
 import MyCourseTable from '../common/courseTable';
 
+import Header from '../common/Header';
+import Footer from '../common/footer';
+import Copyright from '../common/copyright'
+
 class LMA extends React.Component {
 
 
   render() {
     return (
       <Fragment>
+        <Header />
         <Grid container>
             <Grid item lg={2} style={{backgroundColor:'#2E3142'}}>
                 <SideMenu />
@@ -75,6 +80,7 @@ class LMA extends React.Component {
         
         </Grid>
 
+      <Copyright />
       </Fragment>
     );
   }

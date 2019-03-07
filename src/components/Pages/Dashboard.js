@@ -4,12 +4,17 @@ import Link from '@material-ui/core/Link';
 
 import { Grid, Paper, Divider, Button } from '@material-ui/core';
 
+import Header from '../common/Header';
+import Footer from '../common/footer';
+import Copyright from '../common/copyright'
+
 class Dashboard extends Component {
 
 
     render() {
         return(
             <Fragment>
+                <Header />
                 <Divider />
                 <Grid container>
                     <Grid item lg={1}>
@@ -55,11 +60,15 @@ class Dashboard extends Component {
 
                                     </Grid>
                                 </Paper>
-                            </Grid>
 
+                                <Grid item lg={12} style={{height:'30px'}}>
+
+                                </Grid>
+                            </Grid>
 
                         </Grid>
                     </Grid> 
+
                 </Grid>
 
 
@@ -80,6 +89,8 @@ class Dashboard extends Component {
                         </Link>
                     </div>
                 </div> */}
+
+                <Copyright />
             </Fragment>
 
         )

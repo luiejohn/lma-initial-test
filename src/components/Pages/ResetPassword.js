@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Grid } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import Header from '../common/Header';
+import Footer from '../common/footer';
+import Copyright from '../common/copyright';
 
 const resetPassword = () => {
     return (
+            <Fragment>
+                <Header />
+
                     <Grid container style={{marginTop:'100px', marginBottom: '100px'}}>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <Typography  align="center" variant="display1">
@@ -37,6 +43,10 @@ const resetPassword = () => {
 
 
                     </Grid>
+
+                    <Footer />
+                    <Copyright/>
+                </Fragment>
     )
 }
 

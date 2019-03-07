@@ -6,12 +6,18 @@ import { Grid, Paper, Divider, Button, Typography } from '@material-ui/core';
 
 import Playarrow from '@material-ui/icons/PlayArrow';
 
+import Header from '../common/Header';
+import Footer from '../common/footer';
+import Copyright from '../common/copyright';
+
 class Dashboard extends Component {
 
 
     render() {
         return(
             <Fragment>
+                <Header/>
+
                 <Grid container>
                     <Grid item lg={12} style={{height:'550px', backgroundColor:'#ccc'}}>
 
@@ -130,6 +136,8 @@ class Dashboard extends Component {
 
                 </Grid>
 
+            <Footer />
+            <Copyright />
             </Fragment>
 
         )
