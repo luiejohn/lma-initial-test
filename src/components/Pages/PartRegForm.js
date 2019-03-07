@@ -38,7 +38,7 @@ class LMA extends React.Component {
 
                         <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
-                            Save
+                            Create
                           </Button>
                         </Grid>
                         <Grid item style={{padding:'0 10px 0 0'}}>
