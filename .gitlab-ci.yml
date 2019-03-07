@@ -13,9 +13,15 @@ developments:
     - develop
     - staging
   script:
-    - echo running docker-compose down
+    - echo node -v
+    - node -v
+    - echo npm -v
+    - npm -v
+    - echo installing docker-compose
+    - npm install docker-compose
+    - echo running docker-compose down...
     - docker-compose down
-    - echo running docker-compose up --build
+    - echo running docker-compose up...
     - docker-compose up --detach
     - echo deployment done
   
