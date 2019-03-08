@@ -15,14 +15,20 @@ import Header from '../common/Header';
 import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
+import { graphql } from 'react-apollo';
+import { getUserQuery } from '../queries/queries';
+
+
 class Login extends Component {
-    state = {
-        amount: '',
-        password: '',
-        weight: '',
-        weightRange: '',
-        showPassword: false,
-      };
+    constructor(props){
+        super(props)
+
+        this.state = {
+            email:'',
+            password:'',
+            showPassword: false,
+          };
+    }
 
       handleChange = prop => event => {
         this.setState({ [prop]: event.target.value });
@@ -32,8 +38,13 @@ class Login extends Component {
         this.setState(state => ({ showPassword: !state.showPassword }));
       };
 
+      logIn = () => {
+          console.log(this.state);
+          //GraphQL query goes here!
+      }
 
     render(){
+
         return(
         <Fragment>
             <Header />
@@ -68,6 +79,7 @@ class Login extends Component {
                                     <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px',fontFamily:'Open Sans'}}
                                         id="adornment-password"
                                         placeholder="Email"
+                                        onChange={this.handleChange('email')}
                                     />
                                 </FormControl>
                                 <br/>
@@ -98,7 +110,9 @@ class Login extends Component {
                                 </Typography>
 
                                 <Link component={RouterLink} underline="none" to="/dashboard">
-                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}>
+                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}
+                                        onClick={this.logIn}
+                                    >
                                         LOGIN
                                     </Button>
                                 </Link>
@@ -121,4 +135,4 @@ class Login extends Component {
 }
 
   
-export default Login;
+export default graphql(getUserQuery)(Login);

@@ -5,32 +5,25 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
-const theme = createMuiTheme({
-    typography: {
-        // Use the system font instead of the default Roboto font.
-        fontFamily: [
-            '-apple-system',
-            'BlinkMacSystemFont',
-            '"Segoe UI"',
-            'Roboto',
-            '"Helvetica Neue"',
-            'Arial',
-            'sans-serif',
-            '"Apple Color Emoji"',
-            '"Segoe UI Emoji"',
-            '"Segoe UI Symbol"',
-        ].join(','),
-        useNextVariants: true,
-      },
-});
+//This needs to imported first before Apollo Packages
+import {  BrowserRouter } from 'react-router-dom';
 
-console.log(theme);
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+
+//apollo client setup
+const client = new ApolloClient({
+  uri:'http://localhost:4000/graphql'
+})
 
 
 ReactDOM.render(
-    <MuiThemeProvider theme={theme}>
-        <App />
-    </MuiThemeProvider>
+    <BrowserRouter>
+        <ApolloProvider client={client}>
+            <App />
+        </ApolloProvider>
+    </BrowserRouter>
+
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

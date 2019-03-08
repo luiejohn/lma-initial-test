@@ -403,10 +403,9 @@ class Dashboard extends Component {
 
                             </Grid>
 
-                            <Grid item lg={8} style={{border:'1px solid #ccc'}}>
+                            <Grid item lg={8}>
                                 <Grid container>
                                     <Grid item lg={12} style={{width:'100%', height:'350px', background:'#ccc'}}>
-
 
                                     </Grid>
                                     <Grid item lg={4} style={{padding:'15px'}}>
@@ -443,8 +442,8 @@ class Dashboard extends Component {
                                         </div>
                                     </Grid>
                                     <Grid item lg={4} style={{padding:'15px'}}>
-                                        <Typography style={{textAlign:'left', fontSize:'16px'}}>
-                                                <b>Life Mastery Academy Training Centre</b><br/>
+                                        <div style={{textAlign:'left', fontSize:'16px'}}>
+                                                <b>Office Hours</b><br/>
 
                                                 Blk 190 Lorong 6, Toa Payoh<br/>
 
@@ -453,7 +452,7 @@ class Dashboard extends Component {
                                                 S(310190)<br/>
 
                                                 (the block opposite Starbucks, HDB Hub. Take the lift behind the Grand  Optical to the 2nd floor, turn left)  
-                                        </Typography>
+                                        </div>
                                     </Grid>
 
                                 </Grid>
@@ -467,8 +466,8 @@ class Dashboard extends Component {
 
 
 
-                    <Grid item lg={12} style={{margin:'50px 0'}}>
-                        <Grid container style={{height:'250px'}}>
+                    <Grid item lg={12} style={{margin:'20px 0'}}>
+                        <Grid container style={{height:'200px'}}>
                             <Grid item lg={10} style={{border:'1px solid #ccc'}}>
 
                             </Grid>
