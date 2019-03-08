@@ -12,10 +12,16 @@ import Link2 from '../../assets/images/2.png';
 import Link3 from '../../assets/images/3.png';
 import Link4 from '../../assets/images/4.png';
 
+import { withStyles } from '@material-ui/core/styles';
+import Tooltip from '@material-ui/core/Tooltip';
+import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+
 class Dashboard extends Component {
 
-
     render() {
+
         return(
             <Fragment>
                 <Header />
@@ -24,14 +30,15 @@ class Dashboard extends Component {
                     <Grid item lg={1}>
                         <Grid container style={{minHeight:'650px', width:'50%', backgroundColor:'#2E3142', flexFlow:'column'}}>
                             <Grid item style={{width:'50%', height:'55px'}}>
-                                <Link component={RouterLink} to="/lma" style={{padding:'15px', color:'#fff'}}>
+                                <Link title="LMA Page" component={RouterLink} to="/lma" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
                                         <img src={LMA} alt="LMA" style={{width:'25px', height:'25px'}}/>
                                     </div>
                                 </Link>
+
                             </Grid>
                             <Grid item style={{width:'50%', height:'55px'}}>
-                                <Link component={RouterLink} to="/manage-users" style={{padding:'15px', color:'#fff'}}>
+                                <Link title="User Management Page" component={RouterLink} to="/manage-users" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
                                         <img src={Link2} alt="Link2" style={{width:'25px', height:'25px'}}/>
                                     </div>
@@ -74,7 +81,6 @@ class Dashboard extends Component {
                     </Grid> 
 
                 </Grid>
-
 
                 {/* <div style={{height:'500px'}}>
                     <h1>This is the Dashboard Page!</h1>

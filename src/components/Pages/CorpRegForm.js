@@ -5,17 +5,19 @@ import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
+
 import SideMenu from '../common/sideMenu';
 import MyCourseTable from '../common/courseTable';
 
 import Header from '../common/Header';
-import Footer from '../common/footer';
 import Copyright from '../common/copyright'
+
 
 class LMA extends React.Component {
 
 
   render() {
+
     return (
       <Fragment>
         <Header />
@@ -33,7 +35,7 @@ class LMA extends React.Component {
                       <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
 
                           <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
-                              Corporate Registration Form
+                              Corporate
                           </Typography>
 
                         <Grid item style={{padding:'0 10px 0 0'}}>
@@ -41,18 +43,17 @@ class LMA extends React.Component {
                             CREATE
                           </Button>
                         </Grid>
-                        <Grid item style={{padding:'0 10px 0 0'}}>
+                        {/* <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
                             IMPORT
                           </Button>
-                        </Grid>
+                        </Grid> */}
                       </Grid>
                   </Grid>
                 
-
                   <Grid item lg={12}>
                     <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px', fontFamily:'Open Sans', fontSize:'13px'}}>
-                        LMA > Registration Management > Corporate Registration Form
+                        LMA > Registration Management > Corporate
                     </Typography>
                   </Grid>
 
@@ -85,5 +86,6 @@ class LMA extends React.Component {
     );
   }
 }
+
 
 export default LMA;

@@ -40,11 +40,11 @@ class LMA extends React.Component {
                             CREATE
                           </Button>
                         </Grid>
-                        <Grid item style={{padding:'0 10px 0 0'}}>
+                        {/* <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px',fontFamily:'Open Sans'}}>
                             IMPORT
                           </Button>
-                        </Grid>
+                        </Grid> */}
                       </Grid>
                   </Grid>
                 

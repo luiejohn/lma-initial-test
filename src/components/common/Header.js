@@ -68,27 +68,29 @@ class ButtonAppBar extends Component {
   render (){
     const { classes } = this.props;
     // Drawer Content
-    const sideList = (
-      <div>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    );
+      const sideList = (
+            <div>
+              <List>
+                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+                  <ListItem button key={text}>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
+              </List>
+              <Divider />
+              <List>
+                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                  <ListItem button key={text}>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
+              </List>
+            </div>
+      );
+
+
 
     return(  
     <Fragment>
@@ -101,9 +103,11 @@ class ButtonAppBar extends Component {
         </Hidden>
 
         <Hidden only={['xs','sm', 'md']}>
-          <div style={{color:'#000', marginLeft:'50px'}}>
-            <img src={logo} alt="LOGO" style={{height:'45px', width:'55px'}}/>
-          </div>
+            <Link component={RouterLink} underline="none" to="/">
+              <div style={{color:'#000', marginLeft:'50px'}}>
+                <img src={logo} alt="LOGO" style={{height:'45px', width:'55px'}}/>
+              </div>
+            </Link>
         </Hidden>
         
         <Grid container style={{  justifyContent: 'flex-end' }}>

@@ -33,7 +33,7 @@ class LMA extends React.Component {
                       <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
 
                           <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
-                              Participant Registration Form
+                              Participant
                           </Typography>
 
                         <Grid item style={{padding:'0 10px 0 0'}}>
@@ -41,18 +41,18 @@ class LMA extends React.Component {
                             Create
                           </Button>
                         </Grid>
-                        <Grid item style={{padding:'0 10px 0 0'}}>
+                        {/* <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
                             IMPORT
                           </Button>
-                        </Grid>
+                        </Grid> */}
                       </Grid>
                   </Grid>
                 
 
                   <Grid item lg={12}>
                     <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px', fontFamily:'Open Sans'}}>
-                        LMA > Registration Management > Participant Registration Form
+                        LMA > Registration Management > Participant
                     </Typography>
                   </Grid>
 
