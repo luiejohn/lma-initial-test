@@ -1,0 +1,33 @@
+image: docker
+
+services:
+  - docker:dind
+
+before_script:
+  - echo "Killing docker image jairusm/lmafrontend..."
+  - docker kill jairusm/lmafrontend
+  - echo "Or perhaps you might print out some debugging details"
+
+stages:
+  - development_deploy
+  - deploy
+ 
+developments:
+  stage: development_deploy
+  only:
+    - develop
+    - staging
+  script:
+    - echo "Image building..."
+    - docker build -t jairusm/lmafrontend .
+    - docker run -p 5000:5000 jairusm/lmafrontend --detach
+    - echo "Deployment done."
+  
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo run deployment
+  environment: master
+  when: manual
