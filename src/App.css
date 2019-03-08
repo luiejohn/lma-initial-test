@@ -27,3 +27,9 @@ body {
 .myFont {
   font-family: 'Open Sans', sans-serif;
 }
+
+.aboutImage {
+  background-image: url('./assets/images/about-edit.jpg');
+  background-size: cover;
+
+}

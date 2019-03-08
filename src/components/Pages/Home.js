@@ -11,7 +11,11 @@ import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
 import '../../../src/App.css';
-// import imageOne from '../../assets/images/home-header.jpg'
+
+import vision from '../../assets/images/eyeglasses-red.png';
+import mission from '../../assets/images/flag-red.png';
+import coreValues from '../../assets/images/respect-red.png';
+import quote from '../../assets/images/quote.png';
 
 class Dashboard extends Component {
 
@@ -182,17 +186,22 @@ class Dashboard extends Component {
 
                     <Grid item lg={12}>
                         <Grid container style={{height:'500px'}}>
-                            <Grid item lg={1}>
-                            
-                            </Grid>
-                            <Grid item lg={2} style={{border:'1px solid #ccc', backgroundColor:'#2E3142', borderRadius:'5px'}}>
-                                <Typography align="right" style={{fontSize:'20px',color: '#fff', fontWeight:'600',padding:'40px 20px 0 0', fontFamily:'Open Sans'}}>
-                                    About<br/>
-                                    Us
-                                </Typography>
+                            <Grid item lg={3}>
+                                <Grid container style={{height:'100%'}}>
+                                    <Grid item lg={9} style={{backgroundColor:'#2E3142', borderRadius:'5px'}}>
+                                        <Typography align="right" style={{fontSize:'35px',color: '#fff', fontWeight:'600',padding:'40px 20px 0 0', fontFamily:'Open Sans'}}>
+                                            About<br/>
+                                            Us
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item lg={3}>
+
+                                    </Grid>
+                                </Grid>
+
                             </Grid>
                             <Grid item lg={4}>
-                                <Typography style={{padding:'70px 40px 0 40px', fontFamily:'Open Sans'}}>
+                                <Typography style={{padding:'70px 40px 0 0', fontFamily:'Open Sans', textAlign:'left', fontSize:'16px', align:'justify', letterSpacing:'1px', lineHeight:'1.6'}}>
                                 Life Mastery Academy (LMA) was founded on one firm belief - training is the most powerful way to positively contribute to people’s lives. 
                                 Training also helps them realise their dreams and achieve their true potential.
 
@@ -204,7 +213,7 @@ class Dashboard extends Component {
                                 </Typography>
 
                             </Grid>
-                            <Grid item lg={4} style={{border:'1px solid #ccc', backgroundColor:'#ccc'}}>
+                            <Grid item lg={4} className="aboutImage">
                             
                             </Grid>
                             <Grid item lg={1}>
@@ -214,15 +223,256 @@ class Dashboard extends Component {
 
                     </Grid>
 
-                    <Grid item lg={12} style={{margin:'50px 0'}}>
-                        <Grid container style={{height:'500px'}}>
+                    <Grid item lg={12} style={{margin:'100px 0'}}>
+                        <Grid container style={{height:'600px', fontFamily:'Open Sans'}}>
                             <Grid item lg={4}>
+                                <Grid container>
+                                    <Grid item lg={12} style={{paddingTop:'145px'}}>
+                                        <img style={{height:'100px', width:'100px'}} src={vision} alt="logo" />
 
+                                        <p style={{fontSize:'25px', fontWeight:600}}>VISION</p>
+                                    </Grid>
+                                    <Grid item lg={12} style={{padding:'0 25px'}}>
+                                        <p>
+                                            To become Asia's foremost personal, professional and success development agency
+                                        </p>
+                                    </Grid>
+                                    
+                                </Grid>
                             </Grid>
                             <Grid item lg={4} style={{borderRight:'1px solid #ccc', borderLeft:'1px solid #ccc'}}>
+                                <Grid container>
+                                    <Grid item lg={12} style={{paddingTop:'145px'}}>
+                                        <img style={{height:'100px', width:'100px'}} src={mission} alt="logo" />
 
+                                        <p style={{fontSize:'25px', fontWeight:600}}>MISSION</p>
+                                    </Grid>
+                                    <Grid item lg={12} style={{padding:'0 25px'}}>
+                                        <p>
+                                            We are commited to empowering lives and bringing out the highest potential in every person, helping them turn to
+                                            Possibility into Actuality and Dreams into Realities
+                                        </p>
+                                    </Grid>
+                                    
+                                </Grid>
                             </Grid>
                             <Grid item lg={4}>
+                            <Grid container>
+                                <Grid item lg={12} style={{paddingTop:'145px'}}>
+                                        <img style={{height:'100px', width:'100px'}} src={coreValues} alt="logo" />
+
+                                        <p style={{fontSize:'25px', fontWeight:600}}>CORE VALUES</p>
+                                    </Grid>
+                                    <Grid item lg={12} style={{padding:'0 35px', textAlign:'left', fontSize:'17px'}}>
+                                        <p style={{wordSpacing:'3px', letterSpacing:1}}>
+                                            <b>L:</b> Lifelong Learning <br />
+                                            <b>E:</b> Enriching Lives <br />
+                                            <b>A:</b> Achieving Goals <br />
+                                            <b>R:</b> Respect Others <br />
+                                            <b>N:</b> Nurturing Talents
+                                        </p>
+                                    </Grid>
+                                    
+                                </Grid>
+                            
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+                    <Grid item lg={12} style={{margin:'50px 0'}}>
+                        <Grid container style={{height:'500px', fontFamily:'Open Sans'}}>
+                            <Grid item lg={10}>
+                                <Grid container style={{paddingTop:'5%'}}>
+                                    <Grid item lg={1}>
+
+                                    </Grid>
+                                    <Grid item lg={3}>
+                                        <Grid container style={{padding:'20px 30px 20px 30px'}}>
+                                            <Grid item lg={2}>
+                                                <img src={quote} style={{height:'80%', width:'80%'}} alt="quote"/>
+                                            </Grid>
+                                            <Grid item lg={10}>
+
+                                            </Grid>
+                                        </Grid>
+
+                                        <Grid container style={{padding:'20px 30px 20px 30px'}}>
+                                            <Grid item lg={12}>
+                                                <Typography style={{fontSize:'17px', textAlign:'left'}}>
+                                                 <em>Thank you for helping me pass the RES Exams in just one sitting!</em>
+                                                </Typography>
+                                            </Grid>
+                                            <Grid item lg={12}>
+                                                <Typography style={{fontSize:'18px', textAlign:'left', paddingTop:'15px'}}>
+                                                    Christina
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid item lg={4}>
+                                        <Grid container style={{padding:'20px 30px 20px 30px'}}>
+                                            <Grid item lg={2}>
+                                                <img src={quote} style={{height:'80%', width:'80%'}} alt="quote"/>
+                                            </Grid>
+                                            <Grid item lg={10}>
+
+                                            </Grid>
+                                        </Grid>
+
+                                        <Grid container style={{padding:'20px 30px 20px 30px'}}>
+                                            <Grid item lg={12}>
+                                                <Typography style={{fontSize:'17px', textAlign:'left'}}>
+                                                <em>
+                                                    I would like to thank Sathia and Kelli for their good and wonderful support whenever I come here.
+                                                </em>
+                                                </Typography>
+                                            </Grid>
+                                            <Grid item lg={12}>
+                                                <Typography style={{fontSize:'18px', textAlign:'left', paddingTop:'15px'}}>
+                                                    Jimmy
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                    <Grid item lg={3}>
+                                        <Grid container style={{padding:'20px 30px 20px 30px'}}>
+                                            <Grid item lg={2}>
+                                                <img src={quote} style={{height:'80%', width:'80%'}} alt="quote"/>
+                                            </Grid>
+                                            <Grid item lg={10}>
+
+                                            </Grid>
+                                        </Grid>
+
+                                        <Grid container style={{padding:'20px 30px 20px 30px'}}>
+                                            <Grid item lg={12}>
+                                                <Typography style={{fontSize:'17px', textAlign:'left'}}>
+                                                    <em>
+                                                        Life Mastery Academy is a good training centre. Thank you for the useful notes and materials. I like to attend CPD courses here.
+                                                        <br/><br/>
+                                                        John is a good trainer
+                                                        <br/><br/>
+                                                        Thank you LMA!
+                                                    </em>
+                                                </Typography>
+                                            </Grid>
+                                            <Grid item lg={12}>
+                                                <Typography style={{fontSize:'18px', textAlign:'left', paddingTop:'15px'}}>
+                                                    Kelvin
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+
+                                    <Grid item lg={1}>
+                                    
+                                    </Grid>
+
+
+
+                                    <Grid item lg={12}>
+                                        Two buttons here
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                            <Grid item lg={2} style={{border:'1px solid #ccc', backgroundColor:'#2E3142', borderRadius:'5px 0 0 5px'}}>
+                                <Typography style={{fontSize:'30px', textAlign:'left', padding:'20px 0 0 15px', color:'#fff', fontWeight:600, fontFamily:'Open Sans'}}>
+                                    Client and
+                                    Testimonials
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+                    <Grid item lg={12} style={{margin:'50px 0'}}>
+                        <Grid container style={{height:'600px'}}>
+                            <Grid item lg={3}>
+                                <Grid container style={{height:'100%'}}>
+                                    <Grid item lg={9} style={{backgroundColor:'#2E3142', borderRadius:'5px'}}>
+                                        <Typography align="right" style={{fontSize:'30px',color: '#fff', fontWeight:'600',padding:'40px 20px 0 0', fontFamily:'Open Sans',letterSpacing:'1px'}}>
+                                            Where's<br/>
+                                            LMA
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item lg={3}>
+
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+
+                            <Grid item lg={8} style={{border:'1px solid #ccc'}}>
+                                <Grid container>
+                                    <Grid item lg={12} style={{width:'100%', height:'350px', background:'#ccc'}}>
+
+
+                                    </Grid>
+                                    <Grid item lg={4} style={{padding:'15px'}}>
+                                        <div style={{textAlign:'left', fontSize:'16px', fontFamily:'Open Sans'}}>
+                                            <b>Life Mastery Academy Training Centre</b><br/>
+                                            <p style={{padding:'5px 0 5px 8px', margin:'7px 0'}}>
+                                                Blk 190 Lorong 6, Toa Payoh<br/>
+
+                                                #02-510<br/>
+
+                                                S(310190)<br/>
+                                            </p>
+                                            (the block opposite Starbucks, HDB Hub. Take the lift behind the Grand  Optical to the 2nd floor, turn left)  
+                                        </div>
+                                    </Grid>
+                                    <Grid item lg={4} style={{padding:'15px'}}>
+                                        <div style={{textAlign:'left', fontSize:'16px'}}>
+                                                <b>{`Phone:   `}</b> {`  +65 6255 6083`}<br/>
+
+                                                <div style={{marginLeft:'57px'}}>+65 6255 6091</div>
+                                                <b>Email:</b>
+                                                <br />
+                                                info@lifemasteryacademy.com
+
+                                                (General Enquiry)
+
+                                                cpd@lifemasteryacademy.com
+
+                                                (CPD Enquiry)
+
+                                                res@lifemasteryacademy.com
+
+                                                (RES Enquiry)
+                                        </div>
+                                    </Grid>
+                                    <Grid item lg={4} style={{padding:'15px'}}>
+                                        <Typography style={{textAlign:'left', fontSize:'16px'}}>
+                                                <b>Life Mastery Academy Training Centre</b><br/>
+
+                                                Blk 190 Lorong 6, Toa Payoh<br/>
+
+                                                #02-510<br/>
+
+                                                S(310190)<br/>
+
+                                                (the block opposite Starbucks, HDB Hub. Take the lift behind the Grand  Optical to the 2nd floor, turn left)  
+                                        </Typography>
+                                    </Grid>
+
+                                </Grid>
+
+                            </Grid>
+                            <Grid item lg={1}>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+
+
+
+                    <Grid item lg={12} style={{margin:'50px 0'}}>
+                        <Grid container style={{height:'250px'}}>
+                            <Grid item lg={10} style={{border:'1px solid #ccc'}}>
+
+                            </Grid>
+                            <Grid item lg={2} style={{border:'1px solid #ccc'}}>
 
                             </Grid>
                         </Grid>
