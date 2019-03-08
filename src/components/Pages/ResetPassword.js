@@ -8,7 +8,11 @@ import Header from '../common/Header';
 import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
+// import { graphql } from 'react-apollo';
+// import { createNewUser } from '../queries/queries';
+
 const resetPassword = () => {
+
     return (
             <Fragment>
                 <Header />

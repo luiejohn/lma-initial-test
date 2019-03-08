@@ -12,8 +12,36 @@ import Header from '../common/Header';
 import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
+import { graphql } from 'react-apollo';
+import { createNewUser } from '../queries/queries';
 
 class SignUp extends Component {
+    constructor(props){
+        super(props)
+
+        this.state = {
+            email:'',
+            password:'',
+            confirmPassword: '',
+            showPassword: false,
+          };
+    }
+
+    handleChange = prop => event => {
+        this.setState({ [prop]: event.target.value });
+      };
+
+    signUp = () => {
+        console.log(this.state)
+        //GraphQL mutation should be here!
+        // query variables to be passed to createNewUser as argument
+        this.props.createNewUser({
+            variables: {
+                email: this.state.email,
+                password: this.state.password
+            }
+        });
+    }
 
     render(){
         return(
@@ -32,6 +60,7 @@ class SignUp extends Component {
                                     placeholder="Email"
                                     margin="normal"
                                     variant="outlined"
+                                    onChange={this.handleChange('email')}
                                 />
                             </Grid>
 
@@ -42,6 +71,7 @@ class SignUp extends Component {
                                     placeholder="Password"
                                     margin="normal"
                                     variant="outlined"
+                                    onChange={this.handleChange('password')}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -51,6 +81,7 @@ class SignUp extends Component {
                                     placeholder="Confirm Password"
                                     margin="normal"
                                     variant="outlined"
+                                    onChange={this.handleChange('confirmPassword')}
                                 />
                             </Grid>
 
@@ -70,7 +101,9 @@ class SignUp extends Component {
                             </Grid>
 
                             <Grid item sm={12} md={12} lg={12}>
-                                <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}>
+                                <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}
+                                    onClick={this.signUp}
+                                >
                                     Sign Up
                                 </Button>
                             </Grid>
@@ -107,4 +140,4 @@ class SignUp extends Component {
 }
 
   
-export default SignUp;
+export default graphql(createNewUser, {name: 'createNewUser'})(SignUp);
