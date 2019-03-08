@@ -14,7 +14,7 @@ developments:
     - staging
   script:
     - echo "Image building..."
-    - docker kill jairusm/lmafrontend
+    # - docker kill jairusm/lmafrontend
     - docker build -t jairusm/lmafrontend .
     - docker run -p 5000:5000 jairusm/lmafrontend --detach
     - echo "Deployment done."
