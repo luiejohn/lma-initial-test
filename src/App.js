@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {  BrowserRouter, Switch } from 'react-router-dom';
+import {  BrowserRouter } from 'react-router-dom';
 
 import { Route } from 'react-router-dom';
 
 import './App.css';
 
-import Header from './components/common/Header';
-import Copyright from './components/common/copyright';
-import Footer from './components/common/footer';
+// import Header from './components/common/Header';
+// import Copyright from './components/common/copyright';
+// import Footer from './components/common/footer';
 
 import SignUp from './components/Pages/SignUp';
 import Login from './components/Pages/Login';

@@ -2,10 +2,9 @@ import React, { Component, Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 import Link from '@material-ui/core/Link';
 
-import { Grid, Paper, Divider, Button } from '@material-ui/core';
+import { Grid, Paper, Divider } from '@material-ui/core';
 
 import Header from '../common/Header';
-import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
 import LMA from '../../assets/images/1.png';
@@ -31,21 +30,21 @@ class Dashboard extends Component {
                                     </div>
                                 </Link>
                             </Grid>
-                            <Grid item item style={{width:'50%', height:'55px'}}>
+                            <Grid item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/manage-users" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
                                         <img src={Link2} alt="Link2" style={{width:'25px', height:'25px'}}/>
                                     </div>
                                 </Link>
                             </Grid>
-                            <Grid item item style={{width:'50%', height:'55px'}}>
+                            <Grid item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/dashboard" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
                                         <img src={Link3} alt="Link3" style={{width:'25px', height:'25px'}}/>
                                     </div>
                                 </Link>
                             </Grid>
-                            <Grid item item style={{width:'50%', height:'55px'}}>
+                            <Grid item style={{width:'50%', height:'55px'}}>
                                 <Link component={RouterLink} to="/dashboard" style={{padding:'15px', color:'#fff'}}>
                                     <div style={{width:'50px', height:'50px'}}>
                                         <img src={Link4} alt="Link4" style={{width:'25px', height:'25px'}}/>  

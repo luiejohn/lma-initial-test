@@ -21,6 +21,15 @@ const resetPassword = () => {
                                 <TextField 
                                     style={{width:'33%', height:'45px'}}
                                     id="outlined-bare"
+                                    placeholder="Email Address"
+                                    margin="normal"
+                                    variant="outlined"
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={12} md={12} lg={12}>
+                                <TextField 
+                                    style={{width:'33%', height:'45px'}}
+                                    id="outlined-bare"
                                     placeholder="New Password"
                                     margin="normal"
                                     variant="outlined"
@@ -36,11 +45,10 @@ const resetPassword = () => {
                                 />
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
-                                <Button variant="contained" style={{marginTop:'30px', width:'33%', backgroundColor:'#BA5757', color: '#fff'}}>
+                                <Button variant="contained" style={{marginTop:'30px', width:'33%', backgroundColor:'#BA5757', color: '#fff', fontFamily: 'Open Sans', fontWeight:600}}>
                                     Reset Password
                                 </Button>
                             </Grid>
-
 
                     </Grid>
 

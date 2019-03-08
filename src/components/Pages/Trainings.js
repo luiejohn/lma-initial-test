@@ -2,14 +2,13 @@ import React, { Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
 
 import SideMenu from '../common/sideMenu';
-import MyCourseTable from '../common/courseTable';
+// import MyCourseTable from '../common/courseTable';
 
 import Header from '../common/Header';
-import Footer from '../common/footer';
 import Copyright from '../common/copyright'
 
 class LMA extends React.Component {

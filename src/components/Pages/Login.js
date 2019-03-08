@@ -39,17 +39,17 @@ class Login extends Component {
             <Header />
 
             <Grid container>
-                <Grid item sm={12} md={5} lg={5} style={{backgroundColor: '#000033'}}>
-                    <Grid container style={{height:550, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
+                <Grid item sm={12} md={5} lg={5} className="loginImage" style={{padding:'85px'}}>
+                    <Grid container style={{height:400, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
                         <Grid item sm={12} md={12} lg={12}>
-                            <Typography variant="headline" style={{color: '#fff', fontFamily:'Open Sans'}}>
+                            <Typography style={{color: '#fff', fontSize:'27px', fontWeight:600, fontFamily:'Open Sans'}}>
                                 Don't have an account?
                             </Typography>
-                            <Typography style={{color: '#fff', padding:'20px',fontFamily:'Open Sans'}} variant="caption">
-                                Lorem Ipsum is the single greatest threat. We are not - we are <br/>not keeping up with other websites.
+                            <Typography style={{color: '#fff', padding:'20px', fontSize:'15px', textAlign:'left'}} variant="caption">
+                                Lorem Ipsum is the single greatest threat. We are not we are not keeping up with other websites.
                             </Typography>
                             <Link component={RouterLink} underline="none" to="/signup">
-                                <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff',fontFamily:'Open Sans'}}>
+                                <Button variant="outlined" style={{border:'2px solid #fff', color:'#fff', fontFamily:'Open Sans', width:'165px', fontWeight:600}}>
                                     SIGN UP
                                 </Button>
                             </Link>
@@ -61,7 +61,7 @@ class Login extends Component {
                     <Grid container style={{height:500, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
 
                             <Grid item sm={12} md={12} lg={12}>
-                                <Typography variant="display1" style={{fontFamily:'Open Sans'}}>
+                                <Typography style={{fontFamily:'Open Sans', fontSize:'30px', fontWeight:600, color:'#404040', marginBottom:'25px'}}>
                                     Login
                                 </Typography>
                                 <FormControl style={{width:'50%', height:'50px', marginTop:'25px'}}>
@@ -91,14 +91,14 @@ class Login extends Component {
                                     />
                                 </FormControl>
 
-                                <Typography style={{marginTop:'13px'}} variant="caption">
+                                <Typography style={{marginTop:'13px',textAlign:'right', paddingRight:'25%'}} variant="caption">
                                     <Link component={RouterLink} to="/reset-password" style={{fontFamily:'Open Sans'}}>
                                         Forgot Password?
                                     </Link>
                                 </Typography>
 
                                 <Link component={RouterLink} underline="none" to="/dashboard">
-                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff'}}>
+                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}>
                                         LOGIN
                                     </Button>
                                 </Link>

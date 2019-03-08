@@ -10,6 +10,16 @@
   background-size: cover;
 }
 
+.signupImage {
+  background-image: url('./assets/images/signup_bg.jpg');
+  background-size: cover;
+}
+
+.loginImage {
+  background-image: url('./assets/images/login_bg.jpg');
+  background-size: cover;
+}
+
 body {
   font-family: 'Open Sans'!important;
 }

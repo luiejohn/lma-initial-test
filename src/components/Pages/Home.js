@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 import Link from '@material-ui/core/Link';
 
-import { Grid, Paper, Divider, Button, Typography } from '@material-ui/core';
+import { Grid, Divider, Button, Typography } from '@material-ui/core';
 
 import Playarrow from '@material-ui/icons/PlayArrow';
 

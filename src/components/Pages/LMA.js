@@ -49,7 +49,6 @@ class LMA extends React.Component {
                       </Grid>
                   </Grid>
                 
-
                   <Grid item lg={12}>
                     <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px'}}>
                         LMA > Course Management > Courses

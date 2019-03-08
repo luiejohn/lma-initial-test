@@ -1,8 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom'
 
-import Dashboard from '../Pages/Dashboard';
-
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
