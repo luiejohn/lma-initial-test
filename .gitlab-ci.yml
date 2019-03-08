@@ -16,7 +16,6 @@ developments:
     - develop
     - staging
   script:
-    - export DOCKER_HOST=tcp://localhost:2375
     - echo "Image building..."
     # - docker kill jairusm/lmafrontend
     - docker build -t jairusm/lmafrontend .
