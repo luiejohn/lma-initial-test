@@ -1,0 +1,29 @@
+image: docker
+
+services:
+  - docker:dind
+ 
+stages:
+  - development_deploy
+  - deploy
+ 
+developments:
+  stage: development_deploy
+  only:
+    - develop
+    - staging
+  script:
+    - echo installing docker-compose
+    - docker kill jairusm/lmafrontend
+    - docker build -t jairusm/lmafrontend .
+    - docker run -p 5000:5000 jairusm/lmafrontend --detach
+    - echo deployment done
+  
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo run deployment
+  environment: master
+  when: manual
