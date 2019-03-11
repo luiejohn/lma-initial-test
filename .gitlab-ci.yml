@@ -12,9 +12,9 @@ build_docker_image:
     - develop
     - staging
   script:
-    - sudo docker login -u jairusm -p $runnerPass registry.gitlab.com
-    - sudo docker build -t $REG_NAME .
-    - sudo docker push $REG_NAME
+    - docker login -u jairusm -p $runnerPass registry.gitlab.com
+    - docker build -t $REG_NAME .
+    - docker push $REG_NAME
   tags:
     - lmafrontendbuild
 
@@ -24,11 +24,11 @@ run_docker_image:
     - develop
     - staging
   script:
-    - sudo docker login -u jairusm -p $runnerPass registry.gitlab.com
-    - sudo docker pull $REG_NAME
-    - sudo docker kill $REG_NAME || true
-    - sudo docker rm $REG_NAME || true
-    - sudo docker run -dt -p 3000:5000 --name gitlabLMAContainer $REG_NAME
+    - docker login -u jairusm -p $runnerPass registry.gitlab.com
+    - docker pull $REG_NAME
+    - docker kill $REG_NAME || true
+    - docker rm $REG_NAME || true
+    - docker run -dt -p 3000:5000 --name gitlabLMAContainer $REG_NAME
   tags:
     - lmafrontendrun
 
