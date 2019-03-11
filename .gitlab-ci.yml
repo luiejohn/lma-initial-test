@@ -25,9 +25,9 @@ run_docker_image:
     - staging
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
-    - docker pull $REG_NAME
     - docker kill $REG_NAME || true
     - docker rm $REG_NAME || true
+    - docker pull $REG_NAME
     - docker run -d -p 3000:5000 $REG_NAME
   tags:
     - lmafrontendrun
