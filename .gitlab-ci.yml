@@ -31,7 +31,7 @@ run_docker_image:
     - docker pull $REG_NAME
     - docker kill $CONT_NAME || true
     - docker rm $CONT_NAME || true
-    - docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
+    - docker run -dt -p 5001:5000 --name $CONT_NAME $REG_NAME
   tags:
     - lmafrontendrun 
 
