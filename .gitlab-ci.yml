@@ -28,7 +28,7 @@ run_docker_image:
     - docker pull $REG_NAME
     - docker kill $REG_NAME || true
     - docker rm $REG_NAME || true
-    - docker run -dt -p 3000:5000 --name gitlabLMAContainer $REG_NAME
+    - docker run -d -p 3000:5000 $REG_NAME
   tags:
     - lmafrontendrun
 
