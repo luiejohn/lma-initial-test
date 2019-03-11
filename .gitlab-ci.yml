@@ -7,33 +7,59 @@ stages:
   - run
   - deploy
  
-build_docker_image:
+develop_build_docker_image:
   stage: build
   only:
     - develop
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $REG_NAME .
+    - docker push $REG_NAME
+  tags:
+    - lmafrontendbuilddevelop 
+
+develop_run_docker_image:
+  stage: run
+  only:
+    - develop
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker container prune -f
+    - docker image prune -f
+    - docker pull $REG_NAME
+    - docker kill $CONT_NAME || true
+    - docker rm $CONT_NAME || true
+    - docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
+  tags:
+    - lmafrontendrundevelop
+
+
+staging_build_docker_image:
+  stage: build
+  only:
     - staging
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker build -t $REG_NAME .
     - docker push $REG_NAME
   tags:
-    - lmafrontendbuild 
+    - lmafrontendbuildstaging 
 
 run_docker_image:
   stage: run
   only:
-    - develop
     - staging
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker container prune -f
+    - docker image prune -f
     - docker pull $REG_NAME
     - docker kill $CONT_NAME || true
     - docker rm $CONT_NAME || true
-    - docker run -dt -p 8000:5000 --name $CONT_NAME $REG_NAME
-    - docker container prune -f
-    - docker image prune -f
+    - docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
+
   tags:
-    - lmafrontendrun 
+    - lmafrontendrunstaging 
 
 
 deploy:
