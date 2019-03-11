@@ -41,6 +41,7 @@ class Login extends Component {
       logIn = () => {
           console.log(this.state);
           //GraphQL query goes here!
+          
       }
 
     render(){
