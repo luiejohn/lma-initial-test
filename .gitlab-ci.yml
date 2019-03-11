@@ -1,27 +1,39 @@
-image: docker:latest
-
-services:
-  - docker:dind
-
 variables:
-  DOCKER_DRIVER: overlay
+  REG_NAME: registry.gitlab.com/ideahub-devgroup/lma-sg/frontend:$CI_COMMIT_REF_NAME
+  CONT_NAME: lma_$CI_COMMIT_REF_NAME
 
 stages:
-  - development_deploy
+  - build
+  - run
   - deploy
  
-developments:
-  stage: development_deploy
+build_docker_image:
+  stage: build
   only:
     - develop
     - staging
   script:
-    - echo "Image building..."
-    - docker kill jairusm/lmafrontend
-    - docker build -t jairusm/lmafrontend .
-    - docker run -d -p 3000:5000 jairusm/lmafrontend
-    - echo "Deployment done."
-  
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $REG_NAME .
+    - docker push $REG_NAME
+  tags:
+    - lmafrontendbuild 
+
+run_docker_image:
+  stage: run
+  only:
+    - develop
+    - staging
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $REG_NAME
+    - docker kill $CONT_NAME || true
+    - docker rm $CONT_NAME || true
+    - docker run -dt -p 3000:5000 --name $CONT_NAME $REG_NAME
+  tags:
+    - lmafrontendrun
+
+
 deploy:
   stage: deploy
   only:
