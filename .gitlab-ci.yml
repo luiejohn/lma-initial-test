@@ -12,7 +12,7 @@ build_docker_image:
     - develop
     - staging
   script:
-    - docker login -u jairusm -p $runnerPass registry.gitlab.com
+    - docker login -u jairusm -p $CI_BUILD_PASSWORD registry.gitlab.com
     - docker build -t $REG_NAME .
     - docker push $REG_NAME
   tags:
@@ -24,7 +24,7 @@ run_docker_image:
     - develop
     - staging
   script:
-    - docker login -u jairusm -p $runnerPass registry.gitlab.com
+    - docker login -u jairusm -p $CI_RUN_PASSWORD registry.gitlab.com
     - docker pull $REG_NAME
     - docker kill $REG_NAME || true
     - docker rm $REG_NAME || true
