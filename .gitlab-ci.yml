@@ -1,5 +1,6 @@
 variables:
   REG_NAME: registry.gitlab.com/ideahub-devgroup/lma-sg/frontend:$CI_COMMIT_REF_NAME
+  CONT_NAME: lma:$CI_COMMIT_REF_NAME
 
 stages:
   - build
@@ -28,7 +29,7 @@ run_docker_image:
     - docker pull $REG_NAME
     - docker kill $REG_NAME || true
     - docker rm $REG_NAME || true
-    - docker run -dt -p 3000:5000 --name $REG_NAME $REG_NAME
+    - docker run -dt -p 3000:5000 --name $CONT_NAME $REG_NAME
   tags:
     - lmafrontendrun
 
