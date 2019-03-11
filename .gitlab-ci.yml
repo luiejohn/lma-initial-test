@@ -45,7 +45,7 @@ staging_build_docker_image:
   tags:
     - lmafrontendbuildstaging 
 
-run_docker_image:
+staging_run_docker_image:
   stage: run
   only:
     - staging
