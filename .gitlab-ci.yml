@@ -1,6 +1,6 @@
 variables:
   REG_NAME: registry.gitlab.com/ideahub-devgroup/lma-sg/frontend:$CI_COMMIT_REF_NAME
-  CONT_NAME: lma:$CI_COMMIT_REF_NAME
+  CONT_NAME: lma_$CI_COMMIT_REF_NAME
 
 stages:
   - build
