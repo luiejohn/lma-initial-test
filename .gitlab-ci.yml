@@ -27,6 +27,7 @@ run_docker_image:
   script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - docker container prune -f
+    - docker image prune -f
     - docker pull $REG_NAME
     - docker kill $CONT_NAME || true
     - docker rm $CONT_NAME || true
