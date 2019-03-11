@@ -21,7 +21,7 @@ export default withStyles(styles)((props) => {
     return (
             <Fragment>
                 <CssBaseline />
-                <Grid container style={{padding: '35px 80px', position:'relative'}}>
+                <Grid container style={{padding: '35px 80px', position:'relative', backgroundColor:'#fff'}}>
 
                     <Grid item xs={12} sm={12} md={4} lg={4} style={{padding:'15px 0'}}>
                         <div style={{textAlign:'left', backgroundColor:'#fff', fontFamily:'Open Sans'}} className={classes.text}>

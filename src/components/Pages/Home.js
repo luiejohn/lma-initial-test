@@ -17,6 +17,13 @@ import mission from '../../assets/images/flag-red.png';
 import coreValues from '../../assets/images/respect-red.png';
 import quote from '../../assets/images/quote.png';
 
+import URA from '../../assets/images/a-1.png';
+import SLA from '../../assets/images/a-2.png';
+import HBD from '../../assets/images/a-3.png';
+import PROV from '../../assets/images/a-4.png';
+import IAS from '../../assets/images/a-5.png';
+import CEA from '../../assets/images/a-6.png';
+
 class Dashboard extends Component {
 
 
@@ -313,7 +320,7 @@ class Dashboard extends Component {
                                     <Grid item lg={4}>
                                         <Grid container style={{padding:'20px 30px 20px 30px'}}>
                                             <Grid item lg={2}>
-                                                <img src={quote} style={{height:'80%', width:'80%'}} alt="quote"/>
+                                                <img src={quote} style={{height:'73%', width:'60%'}} alt="quote"/>
                                             </Grid>
                                             <Grid item lg={10}>
 
@@ -404,12 +411,12 @@ class Dashboard extends Component {
                             </Grid>
 
                             <Grid item lg={8}>
-                                <Grid container>
+                                <Grid container style={{color: '#4d4d4d'}}>
                                     <Grid item lg={12} style={{width:'100%', height:'350px', background:'#ccc'}}>
 
                                     </Grid>
-                                    <Grid item lg={4} style={{padding:'15px'}}>
-                                        <div style={{textAlign:'left', fontSize:'16px', fontFamily:'Open Sans'}}>
+                                    <Grid item lg={4} style={{padding:'35px 15px 15px 15px'}}>
+                                        <div style={{textAlign:'left', fontSize:'16px'}}>
                                             <b>Life Mastery Academy Training Centre</b><br/>
                                             <p style={{padding:'5px 0 5px 8px', margin:'7px 0'}}>
                                                 Blk 190 Lorong 6, Toa Payoh<br/>
@@ -421,7 +428,7 @@ class Dashboard extends Component {
                                             (the block opposite Starbucks, HDB Hub. Take the lift behind the Grand  Optical to the 2nd floor, turn left)  
                                         </div>
                                     </Grid>
-                                    <Grid item lg={4} style={{padding:'15px'}}>
+                                    <Grid item lg={4} style={{padding:'35px 15px 15px 15px'}}>
                                         <div style={{textAlign:'left', fontSize:'16px'}}>
                                                 <b>{`Phone:   `}</b> {`  +65 6255 6083`}<br/>
 
@@ -429,29 +436,55 @@ class Dashboard extends Component {
                                                 <b>Email:</b>
                                                 <br />
                                                 info@lifemasteryacademy.com
-
+                                                <br/>
                                                 (General Enquiry)
 
                                                 cpd@lifemasteryacademy.com
-
+                                                <br/>
                                                 (CPD Enquiry)
 
                                                 res@lifemasteryacademy.com
-
+                                                <br/>
                                                 (RES Enquiry)
                                         </div>
                                     </Grid>
-                                    <Grid item lg={4} style={{padding:'15px'}}>
+                                    <Grid item lg={4} style={{padding:'35px 15px 15px 15px'}}>
                                         <div style={{textAlign:'left', fontSize:'16px'}}>
-                                                <b>Office Hours</b><br/>
+                                                <Grid container>
+                                                    <Grid item lg={5}>
+                                                        <b>Office Hours:</b>
+                                                    </Grid>
+                                                    <Grid item lg={7}>
+                                                        Monday to Friday
+                                                    </Grid>
+                                                    <Grid item lg={5}>
+                                                     
+                                                    </Grid>
+                                                    <Grid item lg={7}>
+                                                        9am to 6:30pm
+                                                    </Grid>
+                                                    <Grid item lg={6}>
+                                                        <b>Data Protection</b>
+                                                    </Grid>
+                                                    <Grid item lg={6}>
+                                                        Office Tel: 62550402
+                                                    </Grid>
+                                                    <Grid item lg={5}>
+                                                        Officer (DPO): 
+                                                    </Grid>
+                                                    <Grid item lg={7}>
+                                                        /62556083
+                                                    </Grid>
+                                                    
+                                                    <Grid item lg={12}>
+                                                        <br/>
+                                                        Email:
+                                                    </Grid>
+                                                    <Grid item lg={12}>
+                                                        dpo@lifemasteryacademy.com
+                                                    </Grid>
+                                                </Grid>
 
-                                                Blk 190 Lorong 6, Toa Payoh<br/>
-
-                                                #02-510<br/>
-
-                                                S(310190)<br/>
-
-                                                (the block opposite Starbucks, HDB Hub. Take the lift behind the Grand  Optical to the 2nd floor, turn left)  
                                         </div>
                                     </Grid>
 
@@ -466,14 +499,38 @@ class Dashboard extends Component {
 
 
 
-                    <Grid item lg={12} style={{margin:'20px 0'}}>
-                        <Grid container style={{height:'200px'}}>
-                            <Grid item lg={10} style={{border:'1px solid #ccc'}}>
-
+                    <Grid item lg={12} style={{margin:'20px 0 0 0', backgroundColor:'#fff'}}>
+                        <Grid container style={{height:'250px', paddingTop:'75px'}}>
+                            <Grid item lg={2} style={{marginTop:'5px'}}>
+                                <a href="https://www.ura.gov.sg/uol/" >
+                                   <img src={URA} alt="URA"/>
+                                </a>
                             </Grid>
-                            <Grid item lg={2} style={{border:'1px solid #ccc'}}>
-
+                            <Grid item lg={2}>
+                                <a href="https://www.sla.gov.sg/">
+                                   <img src={SLA} alt="SLA"/>
+                                </a>
                             </Grid>
+                             <Grid item lg={2} style={{marginTop:'12px'}}>
+                                <a href="https://www.hdb.gov.sg/cs/infoweb/homepage">
+                                   <img src={HBD} alt="HBD"/>
+                                </a>
+                            </Grid>
+                            <Grid item lg={2} style={{marginTop:'-8px'}}>
+                                <a href="https://mycpf.cpf.gov.sg/members" >
+                                   <img src={PROV} alt="PROVI"/>
+                                </a>
+                            </Grid>
+                            <Grid item lg={2} style={{marginTop:'-8px'}}>
+                                <a href="#" >
+                                   <img src={IAS} alt="IAS"/>
+                                </a>
+                            </Grid>
+                            <Grid item lg={2} style={{marginTop:'15px'}}>
+                                <a href="#" >
+                                   <img src={CEA} alt="CEA"/>
+                                </a>
+                            </Grid> 
                         </Grid>
                     </Grid>
 
