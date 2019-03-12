@@ -21,8 +21,11 @@ class SignUp extends Component {
 
         this.state = {
             email:'',
+            emailMessage:' ',
+            passwordMessage: '',
             password:'',
             confirmPassword: '',
+            isPasswordMatch: '',
             showPassword: false,
           };
     }
@@ -31,16 +34,49 @@ class SignUp extends Component {
         this.setState({ [prop]: event.target.value });
       };
 
+    validateEmail = (email) => {
+        //emailregex.com
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        const isEmailValid = re.test(email);
+        // console.log(isEmailValid);
+        {isEmailValid ? this.state.emailMessage =" ": this.state.emailMessage ="Please use a valid email"}
+
+        this.setState({isEmailValid: isEmailValid})
+    }
+
+    validatePassword = (password) => {
+        const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+        // should contain at least one digit
+        // should contain at least one lower case
+        // should contain at least one upper case
+        // should contain at least 8 from the mentioned characters
+        const isPasswordValid = re.test(password);
+        console.log(isPasswordValid);
+        {isPasswordValid ? this.setState({passwordMessage: " "}) : this.setState({passwordMessage: "Please use a valid password" })}
+    }
+
+
     signUp = () => {
-        console.log(this.state)
-        //GraphQL mutation should be here!
-        // query variables to be passed to createNewUser as argument
-        this.props.createNewUser({
-            variables: {
-                email: this.state.email,
-                password: this.state.password
-            }
-        });
+        
+        this.validateEmail(this.state.email);
+
+        this.validatePassword(this.state.password);
+        if(this.isEmailValid===true){
+            console.log(this.state)
+            //GraphQL mutation should be here!
+            // query variables to be passed to createNewUser as argument
+            this.props.createNewUser({
+                variables: {
+                    email: this.state.email,
+                    password: this.state.password
+                }
+            });
+        }
+        else {
+            return
+        }
+
     }
 
     render(){
@@ -62,6 +98,11 @@ class SignUp extends Component {
                                     variant="outlined"
                                     onChange={this.handleChange('email')}
                                 />
+
+                                { 
+                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%'}}>{this.state.emailMessage}</div>
+                                }
+
                             </Grid>
 
                             <Grid item xs={12} sm={12} md={12} lg={12}>
@@ -69,15 +110,22 @@ class SignUp extends Component {
                                     style={{width:'65%', height:'45px'}}
                                     id="outlined-bare"
                                     placeholder="Password"
+                                    type="password"
                                     margin="normal"
                                     variant="outlined"
                                     onChange={this.handleChange('password')}
                                 />
+
+                                { 
+                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%'}}>{this.state.passwordMessage}</div>
+                                }
+
                             </Grid>
                             <Grid item xs={12} sm={12} md={12} lg={12}>
                                 <TextField 
                                     style={{width:'65%', height:'45px'}}
                                     id="outlined-bare"
+                                    type="password"
                                     placeholder="Confirm Password"
                                     margin="normal"
                                     variant="outlined"
