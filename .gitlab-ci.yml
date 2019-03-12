@@ -7,7 +7,7 @@ stages:
   - run
   - deploy
  
-develop_build_docker_image:
+develop_build:
   stage: build
   only:
     - develop
@@ -16,9 +16,9 @@ develop_build_docker_image:
     - docker build -t $REG_NAME .
     - docker push $REG_NAME
   tags:
-    - lmafrontendbuilddevelop 
+    - lmadevelop 
 
-develop_run_docker_image:
+develop_run:
   stage: run
   only:
     - develop
@@ -31,10 +31,10 @@ develop_run_docker_image:
     - docker rm $CONT_NAME || true
     - docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
   tags:
-    - lmafrontendrundevelop
+    - lmadevelop
 
 
-staging_build_docker_image:
+staging_build:
   stage: build
   only:
     - staging
@@ -43,9 +43,9 @@ staging_build_docker_image:
     - sudo docker build -t $REG_NAME .
     - sudo docker push $REG_NAME
   tags:
-    - lmafrontendbuildstaging 
+    - lmastaging 
 
-staging_run_docker_image:
+staging_run:
   stage: run
   only:
     - staging
@@ -59,7 +59,7 @@ staging_run_docker_image:
     - sudo docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
 
   tags:
-    - lmafrontendrunstaging 
+    - lmastaging 
 
 
 deploy:
