@@ -1,15 +1,15 @@
 import React, { Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
-import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
+import { Grid, Button, Typography, Paper, Divider, Input, InputAdornment } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
 
 import MyCourseTable from '../../../common/courseTable';
 
 
 class Courses extends React.Component {
-
   render() {
     return (
       <Fragment>
@@ -44,14 +44,23 @@ class Courses extends React.Component {
                     </Typography>
                   </Grid>
 
+
+                  {/* Should be a new Component to be rerendered */}
                   <Grid item lg={12}>
                       <Paper style={{margin:'15px'}}>
-                        <Grid container style={{height:'50px'}}>
-                              <Grid item>
-
+                        <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
+                        <Grid item style={{margin: '14px 25px', textAlign:'left'}} lg={4}>
+                                  <Input type="search" disableUnderline style={{border:'1px solid #ccc', borderRadius:'10px', padding:'3px 10px 3px 14px', height:'25px',fontSize:'13px', color:'#666'}} 
+                                    endAdornment={
+                                      <InputAdornment position="end">
+                                          <SearchIcon />
+                                      </InputAdornment>
+                                    }
+                                  
+                                  />
                               </Grid>
-                              <Grid item>
-
+                              <Grid item style={{margin: '10px 30px'}}>
+                                  Pages
                               </Grid>
                         </Grid>
                         <Divider/>

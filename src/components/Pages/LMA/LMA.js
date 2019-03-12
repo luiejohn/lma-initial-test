@@ -8,7 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import SideMenu from '../../common/sideMenu';
 import MyCourseTable from '../../common/courseTable';
 
-import Header from '../../common/Header';
+import AdminNav from '../../common/adminNav';
 import Copyright from '../../common/copyright'
 
 import Courses from './Course Management/Courses';
@@ -36,9 +36,15 @@ import Rooms from './Room Management/Rooms';
 import Offices from './Office Management/Offices';
 import Accounts from './Accounts Management/Accounts';
 
+
+import AdminMenu from '../../common/adminMenu';
+
 class LMA extends React.Component {
   state = {
-    currentView: 'Courses'
+    currentView: 'Courses',
+    pageInfo:'> LMA',
+    homeIconPath: '/dashboard'
+
   }
 
   handleSelectView = (view) => {
@@ -130,15 +136,17 @@ class LMA extends React.Component {
     console.log(this.state.currentView)
     return (
       <Fragment>
-        <Header />
+        <AdminNav pageInfo={this.state.pageInfo} homeIconPath={this.state.homeIconPath}/>
         <Grid container>
-            <Grid item lg={2} style={{backgroundColor:'#2E3142'}}>
+            {/* <Grid item lg={2} style={{backgroundColor:'#2E3142'}}>
                 <SideMenu 
                   selectView={this.handleSelectView}
                 />
+            </Grid> */}
+            <Grid item lg={12}>
+                <AdminMenu/>
             </Grid>
-
-            <Grid item lg={10}>
+            <Grid item lg={12}>
                 <Divider />
                 <Grid container style={{backgroundColor:'#F0F5F8'}}>
                   {
@@ -149,7 +157,7 @@ class LMA extends React.Component {
         
         </Grid>
 
-      <Copyright />
+      {/* <Copyright /> */}
       </Fragment>
     );
   }

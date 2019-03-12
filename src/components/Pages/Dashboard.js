@@ -5,6 +5,7 @@ import Link from '@material-ui/core/Link';
 import { Grid, Paper, Divider } from '@material-ui/core';
 
 import Header from '../common/Header';
+import AdminNav from '../common/adminNav';
 import Copyright from '../common/copyright';
 
 import LMA from '../../assets/images/1.png';
@@ -12,19 +13,23 @@ import Link2 from '../../assets/images/2.png';
 import Link3 from '../../assets/images/3.png';
 import Link4 from '../../assets/images/4.png';
 
-import { withStyles } from '@material-ui/core/styles';
-import Tooltip from '@material-ui/core/Tooltip';
-import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+// import { withStyles } from '@material-ui/core/styles';
+// import Tooltip from '@material-ui/core/Tooltip';
+// import PropTypes from 'prop-types';
+// import Button from '@material-ui/core/Button';
+// import Typography from '@material-ui/core/Typography';
 
 class Dashboard extends Component {
+    state = {
+        pageInfo:'',
+        homeIconPath:"/"
+    }
 
     render() {
 
         return(
             <Fragment>
-                <Header />
+                <AdminNav pageinfo={this.state.pageInfo} homeIconPath={this.state.homeIconPath}/>
                 <Divider />
                 <Grid container>
                     <Grid item lg={1}>

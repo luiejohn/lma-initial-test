@@ -33,3 +33,7 @@ body {
   background-size: cover;
 
 }
+
+.myHover:hover{
+  background-color:#ccc;
+}
