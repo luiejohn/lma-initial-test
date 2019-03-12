@@ -49,26 +49,26 @@ class adminMenu extends Component {
         });
       };
 
-      renderDropDownContent = (type) => {
-        let list = this.state.coursesDropDown;
-        return(
-            <List>
-                {
-                    list.map( el=> {
-                        return(
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <DraftsIcon />
-                                </ListItemIcon>
-                                <ListItemText primary={el.title} />
-                            </ListItem>
-                        )
-                    })
-                }
-            </List>
-        )
+    //   renderDropDownContent = (type) => {
+        // let list = this.state.coursesDropDown;
+        // return(
+        //     <List>
+        //         {
+        //             list.map( el=> {
+        //                 return(
+        //                     <ListItem button>
+        //                         <ListItemIcon>
+        //                             <DraftsIcon />
+        //                         </ListItemIcon>
+        //                         <ListItemText primary={el.title} />
+        //                     </ListItem>
+        //                 )
+        //             })
+        //         }
+        //     </List>
+    //     )
 
-      }
+    //   }
     
     render(){
         const { anchorEl } = this.state;
@@ -82,7 +82,7 @@ class adminMenu extends Component {
                         <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%'}}
                             aria-owns={open ? 'for-courses' : undefined}
                             aria-haspopup="true"
-                            onClick={() => this.handleClick('Courses') }
+                            onClick={this.handleClick }
                         >
                             Courses
                         </Button>
@@ -102,7 +102,32 @@ class adminMenu extends Component {
                             }}
                             style={{marginTop:'2px'}}
                             >
-
+                                <List>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <DraftsIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary='Courses' />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <DraftsIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary='Event' />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <DraftsIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary='Session' />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <DraftsIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary='Sales' />
+                                    </ListItem>
+                                </List>
                         </Popover>
 
                     </Grid>
