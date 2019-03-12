@@ -34,11 +34,13 @@ class adminMenu extends Component {
         ]
       };
 
-    handleClick = event => {
+    handleClick = (event, title) => {
         console.log(event.currentTarget);
         this.setState({
           anchorEl: event.currentTarget,
         });
+
+
       };
     
       handleClose = () => {
@@ -46,6 +48,27 @@ class adminMenu extends Component {
           anchorEl: null,
         });
       };
+
+      renderDropDownContent = (type) => {
+        let list = this.state.coursesDropDown;
+        return(
+            <List>
+                {
+                    list.map( el=> {
+                        return(
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <DraftsIcon />
+                                </ListItemIcon>
+                                <ListItemText primary={el.title} />
+                            </ListItem>
+                        )
+                    })
+                }
+            </List>
+        )
+
+      }
     
     render(){
         const { anchorEl } = this.state;
@@ -54,12 +77,12 @@ class adminMenu extends Component {
         return(
             <Fragment>
                 <Divider />
-                <Grid container style={{height:'50px', fontSize:'14px', color:'#595959',textAlign:'center'}}>
+                <Grid container style={{height:'50px', fontSize:'14px', color:'#595959',textAlign:'center', fontFamily:'Open Sans'}}>
                     <Grid item lg={1}>
                         <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%'}}
                             aria-owns={open ? 'for-courses' : undefined}
                             aria-haspopup="true"
-                            onClick={this.handleClick}
+                            onClick={() => this.handleClick('Courses') }
                         >
                             Courses
                         </Button>
@@ -79,32 +102,7 @@ class adminMenu extends Component {
                             }}
                             style={{marginTop:'2px'}}
                             >
-                            <List>
-                                <ListItem button>
-                                    <ListItemIcon>
-                                        <DraftsIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Course" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemIcon>
-                                        <DraftsIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Event" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemIcon>
-                                        <DraftsIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Session" />
-                                </ListItem>
-                                <ListItem button>
-                                    <ListItemIcon>
-                                        <DraftsIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Sales" />
-                                </ListItem>
-                            </List>
+
                         </Popover>
 
                     </Grid>
