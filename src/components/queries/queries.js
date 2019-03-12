@@ -1,24 +1,42 @@
 import { gql } from 'apollo-boost';
 
-const getUserQuery = gql`
-    {
-        user {
-            id
-            email
-            password
-        }
-    }
-  `
+// const getUserQuery = gql`
+//     {
+//         user {
+//             id
+//             email
+//             password
+//         }
+//     }
+//   `
 
  // ------------------------ MUTATIONS --------------------------------
 
 
+// 
+const login = gql`
+    mutation($data: LoginInput!) {
+        login(data: $data){
+            access_token
+        }
+    }`
+  
+// const login = gql`
+//      mutation($email: String!, $password: String!) {
+//          login (email: $email, password: $password){
+//              email
+//              password
+//          }
+//      }
+//    `
+
 //$name, $password are query variables from SignUp Component
   const createNewUser = gql`
     mutation($email: String!, $password: String!) {
-        createNewUser (email: $email, password: $password){
-            id
+        createNewUser (name: "", email: $email, password: $password, usertype_id: 1){
             email
+            password
+            usertype_id
         }
     }
   `
@@ -34,4 +52,4 @@ const getUserQuery = gql`
   
   `
 
-  export { getUserQuery, createNewUser, resetPassword };
+  export { login, createNewUser, resetPassword,  };

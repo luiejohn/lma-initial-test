@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, Redirect } from 'react-router-dom';
 
 import { Grid, Typography, Link } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
@@ -16,7 +16,7 @@ import Footer from '../common/footer';
 import Copyright from '../common/copyright';
 
 import { graphql } from 'react-apollo';
-import { getUserQuery } from '../queries/queries';
+import { login } from '../queries/queries'; //From getUserQuery, I changed it to login
 
 
 class Login extends Component {
@@ -27,6 +27,8 @@ class Login extends Component {
             email:'',
             password:'',
             showPassword: false,
+            loginError:'',
+            loginSuccess:''
           };
     }
 
@@ -38,18 +40,49 @@ class Login extends Component {
         this.setState(state => ({ showPassword: !state.showPassword }));
       };
 
+
       logIn = () => {
           console.log(this.state);
-          //GraphQL query goes here!
+          //Sends data towards login function in mutations
+          //test mail luie1@mail.com
+          //test pass Test1111
+          if(this.state.password === '' || this.state.email===''){
+              this.setState({loginError: 'Please enter an email or password.'});
+              return
+          }
+          this.props.login({
+            variables: {
+                data:{
+                    username: this.state.email, //Instead of email, I used username kay mao nang nakabutang didto sa backend sa pagkuha ug login inputs
+                    password: this.state.password
+                }
+            }
+        }).then((data) => {
+            /*Fetch data from user credentials*/
+            console.log(data);
+            localStorage.setItem('AUTH_TOKEN', "Test");
+            // localStorage.setItem('AUTH_TOKEN', JSON.stringify(data.data.login.access_token));
+            this.setState({loginError: '', loginSuccess: true});
+        }
+        ).catch((error) =>{
+            if(error){
+                this.setState({loginError: 'Incorrect Email or Password'});
+            }
+        }   
+        );
           
       }
+    
 
     render(){
-
+        let redirect = null;
+        if (this.state.loginSuccess){
+            redirect = <Redirect to="/dashboard" />
+        }
         return(
         <Fragment>
             <Header />
-
+            { redirect }
             <Grid container>
                 <Grid item sm={12} md={5} lg={5} className="loginImage" style={{padding:'85px'}}>
                     <Grid container style={{height:400, flexFlow:'row',alignItems:'center', justifyContent:'center'}}>
@@ -109,14 +142,14 @@ class Login extends Component {
                                         Forgot Password?
                                     </Link>
                                 </Typography>
-
-                                <Link component={RouterLink} underline="none" to="/dashboard">
-                                    <Button variant="contained" style={{marginTop:'30px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}
+                                    {(
+                                        <div style={{color:'#ff6666', fontSize:'14px'}}>{this.state.loginError}</div>
+                                    )}
+                                    <Button variant="contained" style={{marginTop:'10px', backgroundColor:'#BA5757', color:'#fff', fontFamily:'Open Sans', width:'160px', fontWeight:600}}
                                         onClick={this.logIn}
                                     >
                                         LOGIN
                                     </Button>
-                                </Link>
 
                             </Grid>
                             <Grid>
@@ -136,4 +169,4 @@ class Login extends Component {
 }
 
   
-export default graphql(getUserQuery)(Login);
+export default graphql(login, {name:'login'})(Login); //I just copied the code pattern from SignUp.js
