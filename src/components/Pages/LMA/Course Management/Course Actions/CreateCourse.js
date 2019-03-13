@@ -59,33 +59,15 @@ class CreateCourse extends Component {
     console.log(this.props);
     return (
       <Fragment>
-        <Grid container>
+        <Grid container style={{fontFamily:'Open Sans'}}>
             <Grid item lg={12}>
                 <Grid container style={{backgroundColor:'#F0F5F8'}}>
                   {/* Should be a new Component to be rerendered */}
                   <Grid item lg={12}>
                       <Paper style={{margin:'15px'}}>
                         <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
-                              <Grid item style={{margin: '14px 25px', textAlign:'left'}} lg={4}>
+                              <Grid item style={{margin: '20px 25px', textAlign:'left'}} lg={4}>
                                   Create Course
-                              </Grid>
-                              <Grid item style={{margin: '10px 30px'}}>
-                                <Grid container>
-                                  <Grid item style={{marginRight:'15px'}}>
-                                    <Button style={{backgroundColor:'#60C78F', color:'#fff'}}
-                                      onClick={()=> this.props.handleCourseAction('CourseList')}
-                                    >
-                                        Save
-                                    </Button> 
-                                  </Grid>
-                                  <Grid item>
-                                    <Link component={RouterLink} underline="none" to='/dashboard'>
-                                      <Button style={{color:'#fff', backgroundColor: '#ff8080'}}>
-                                        Cancel
-                                      </Button>
-                                    </Link>
-                                  </Grid>
-                                </Grid>
                               </Grid>
                         </Grid>
                         <Divider/>
@@ -119,7 +101,7 @@ class CreateCourse extends Component {
                                           helperText="Please select an option"
                                           margin="normal"
                                           variant="outlined"
-                                          style={{height:'70px'}}
+                                          style={{height:'70px', fontFamily:'Open Sans'}}
                                       >
                                           {currencies.map(option => (
                                             <option key={option.value} value={option.value}>

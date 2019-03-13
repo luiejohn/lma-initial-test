@@ -32,6 +32,51 @@ class Courses extends React.Component {
     return actionComponent;
   }
 
+  renderActionButtons() {
+    let action = this.state.actionView;
+    let actionComponent = '';
+
+    if( action=== 'CourseList'){
+      actionComponent = 
+        <Fragment>
+          <Grid item style={{padding:'0 10px 0 0'}}>
+          <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+            onClick={() => this.handleCourseAction('CreateCourse')}
+          >
+            CREATE
+          </Button>
+        </Grid>
+        {/* <Grid item style={{padding:'0 10px 0 0'}}>
+          <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
+            IMPORT
+          </Button>
+        </Grid> */}
+      </Fragment>
+      }
+    else if( action === 'CreateCourse'){
+      actionComponent = 
+      <Fragment>
+        <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.handleCourseAction('CourseList')}
+        >
+          SAVE
+        </Button>
+      </Grid>
+      <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#ff8080', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.handleCourseAction('CourseList')}
+        >
+          CANCEL
+        </Button>
+      </Grid>
+    </Fragment>
+    }
+    
+    return actionComponent;
+    
+  }
+
   render() {
     return (
       <Fragment>
@@ -45,19 +90,10 @@ class Courses extends React.Component {
                           <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
                               COURSES
                           </Typography>
+                          {
+                            this.renderActionButtons()
+                          }
 
-                        <Grid item style={{padding:'0 10px 0 0'}}>
-                          <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
-                            onClick={() => this.handleCourseAction('CreateCourse')}
-                          >
-                            CREATE
-                          </Button>
-                        </Grid>
-                        {/* <Grid item style={{padding:'0 10px 0 0'}}>
-                          <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
-                            IMPORT
-                          </Button>
-                        </Grid> */}
                       </Grid>
                   </Grid>
                 

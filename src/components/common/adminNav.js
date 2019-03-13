@@ -17,15 +17,15 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import Typography from '@material-ui/core/Typography';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import ArrowDown from '@material-ui/icons/ArrowDropDownOutlined';
 import AccountCircle from '@material-ui/icons/AccountCircleOutlined';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
 
+import RightArrow from '@material-ui/icons/ChevronRightOutlined';
 
 const styles = {
   root: {
@@ -123,8 +123,20 @@ class AdminNav extends Component {
         </Hidden>
 
         <Hidden only={['xs','sm', 'md']}>
-            <div style={{color:'#000', width:'75px'}}>
-                {this.props.pageInfo}
+            <div style={{color:'#000', width:'105px'}}>
+                <Grid container>
+                    <Grid item>
+                      <RightArrow />    
+                    </Grid>
+                    <Grid item>
+                      <Typography style={{marginTop:'2px', color:'#666'}}>
+                          {this.props.pageInfo}
+                      </Typography>
+                    </Grid>
+
+                </Grid>
+
+
             </div>
         </Hidden>
         

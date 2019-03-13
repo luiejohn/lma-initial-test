@@ -21,7 +21,7 @@ import Link4 from '../../assets/images/4.png';
 
 class Dashboard extends Component {
     state = {
-        pageInfo:'',
+        pageInfo:'Dashboard',
         homeIconPath:"/"
     }
 
@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
         return(
             <Fragment>
-                <AdminNav pageinfo={this.state.pageInfo} homeIconPath={this.state.homeIconPath}/>
+                <AdminNav pageInfo={this.state.pageInfo} homeIconPath={this.state.homeIconPath}/>
                 <Divider />
                 <Grid container>
                     <Grid item lg={1}>

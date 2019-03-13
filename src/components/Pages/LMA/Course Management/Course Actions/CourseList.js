@@ -5,6 +5,8 @@ import { Paper, Grid, Input, InputAdornment, Divider } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search';
 import MyCourseTable from '../../../../common/courseTable';
 
+
+
 const List = props => {
     return(
         <Paper style={{margin:'15px'}}>
@@ -20,7 +22,7 @@ const List = props => {
                   />
               </Grid>
               <Grid item style={{margin: '10px 30px'}}>
-                  Pages
+                  
               </Grid>
         </Grid>
         <Divider/>

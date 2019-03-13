@@ -36,13 +36,12 @@ import Rooms from './Room Management/Rooms';
 import Offices from './Office Management/Offices';
 import Accounts from './Accounts Management/Accounts';
 
-
 import AdminMenu from '../../common/adminMenu';
 
 class LMA extends React.Component {
   state = {
     currentView: 'Courses',
-    pageInfo:'> LMA',
+    pageInfo: `LMA`,
     homeIconPath: '/dashboard'
 
   }
