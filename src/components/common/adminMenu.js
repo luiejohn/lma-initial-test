@@ -8,31 +8,40 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import DraftsIcon from '@material-ui/icons/Drafts';
+import ClassIcon from '@material-ui/icons/ClassOutlined';
+import CalendarIcon from '@material-ui/icons/DateRangeOutlined';
+import EventIcon from '@material-ui/icons/EventOutlined';
+import MoneyIcon from '@material-ui/icons/AttachMoneyOutlined';
 
 import Dropdown from '../common/dropdown';
 
+
 class adminMenu extends Component {
-    state = {
-        anchorEl: null,
-        coursesDropDown: [
-            {
-                id:'for-courses',
-                title: 'Courses'
-            },
-            {
-                id:'for-courses',
-                title: 'Events',
-            },
-            {
-                id:'for-courses',
-                title: 'Session',
-            },
-            {
-                id:'for-courses',
-                title: 'Sales',
-            }
-        ]
-      };
+    constructor(props){
+        super(props);
+        this.state = {
+            anchorEl: null,
+            coursesDropDown: [
+                {
+                    id:'for-courses',
+                    title: 'Courses'
+                },
+                {
+                    id:'for-courses',
+                    title: 'Events',
+                },
+                {
+                    id:'for-courses',
+                    title: 'Session',
+                },
+                {
+                    id:'for-courses',
+                    title: 'Sales',
+                }
+            ]
+          };
+    }
+
 
     handleClick = (event, title) => {
         console.log(event.currentTarget);
@@ -73,6 +82,7 @@ class adminMenu extends Component {
     render(){
         const { anchorEl } = this.state;
         const open = Boolean(anchorEl);
+        const { selectView } = this.props;
 
         return(
             <Fragment>
@@ -103,27 +113,27 @@ class adminMenu extends Component {
                             style={{marginTop:'2px'}}
                             >
                                 <List>
-                                    <ListItem button>
+                                    <ListItem button  onClick={()=> {selectView('Courses'); this.handleClose()}} >
                                         <ListItemIcon>
-                                            <DraftsIcon />
+                                            <ClassIcon />
                                         </ListItemIcon>
                                         <ListItemText primary='Courses' />
                                     </ListItem>
-                                    <ListItem button>
+                                    <ListItem button  onClick={()=> {selectView('Events'); this.handleClose()}}>
                                         <ListItemIcon>
-                                            <DraftsIcon />
+                                            <CalendarIcon />
                                         </ListItemIcon>
                                         <ListItemText primary='Event' />
                                     </ListItem>
-                                    <ListItem button>
+                                    <ListItem button  onClick={()=> {selectView('Sessions'); this.handleClose()}}>
                                         <ListItemIcon>
-                                            <DraftsIcon />
+                                            <EventIcon />
                                         </ListItemIcon>
                                         <ListItemText primary='Session' />
                                     </ListItem>
-                                    <ListItem button>
+                                    <ListItem button  onClick={()=> selectView('Sales')}>
                                         <ListItemIcon>
-                                            <DraftsIcon />
+                                            <MoneyIcon />
                                         </ListItemIcon>
                                         <ListItemText primary='Sales' />
                                     </ListItem>
@@ -133,12 +143,13 @@ class adminMenu extends Component {
                     </Grid>
                     <Grid item lg={1}>
                         <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%'}}
+                   
                         >
                             Registration
                         </Button>
 
                     </Grid>
-                    <Grid item lg={1}>
+                    {/* <Grid item lg={1}>
                         <Button className="myHover" style={{height:'100%', textTransform:'capitalize', width:'100%'}}>
                             Participants
                         </Button>
@@ -177,7 +188,7 @@ class adminMenu extends Component {
                         <Button className="myHover" style={{height:'100%', textTransform:'capitalize', width:'100%'}}>
                             Accounts
                         </Button>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
 
             </Fragment>

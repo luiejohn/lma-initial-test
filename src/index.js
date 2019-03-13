@@ -10,6 +10,8 @@ import {  BrowserRouter } from 'react-router-dom';
 
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import { MuiPickersUtilsProvider } from 'material-ui-pickers';
+import DateFnsUtils from '@date-io/date-fns';
 
 //apollo client setup
 const client = new ApolloClient({
@@ -20,7 +22,9 @@ const client = new ApolloClient({
 ReactDOM.render(
     <BrowserRouter>
         <ApolloProvider client={client}>
-            <App />
+            < MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <App />
+            </MuiPickersUtilsProvider>
         </ApolloProvider>
     </BrowserRouter>
 

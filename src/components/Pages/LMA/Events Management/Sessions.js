@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+// import { Link as RouterLink } from 'react-router-dom';
 
 import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
 class Sessions extends React.Component {
 

@@ -6,7 +6,14 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import Modal from '@material-ui/core/Modal';
+
+
+import { Grid, Link } from '@material-ui/core';
 // import Paper from '@material-ui/core/Paper';
+
+import EditIcon from '@material-ui/icons/EditOutlined';
+import DeleteIcon from '@material-ui/icons/DeleteOutlined';
 
 const styles = theme => ({
   root: {
@@ -63,6 +70,30 @@ function courseTable(props) {
               <TableCell align="left">{row.calories}</TableCell>
               <TableCell align="left">{row.fat}</TableCell>
               <TableCell align="left">{row.carbs}</TableCell>
+              <TableCell align="right" style={{paddingRight:0}}>
+                <Link>
+                  <Grid container style={{borderBottom:'0'}}>
+                    <Grid item>
+                      <EditIcon style={{fontSize:'20px'}}/>
+                    </Grid>
+                    <Grid item>
+                      Edit
+                    </Grid>
+                  </Grid>
+                </Link>
+                </TableCell>
+                <TableCell align="left" style={{paddingLeft:0, paddingRight:0}}>
+                  <Link>
+                    <Grid container style={{borderBottom:'0'}}>
+                      <Grid item>
+                        <DeleteIcon style={{fontSize:'20px', color:'#ff8080'}}/>
+                      </Grid>
+                      <Grid item>
+                        Deactivate
+                      </Grid>
+                    </Grid>
+                  </Link>
+                </TableCell>
             </TableRow>
             :
             <TableRow key={row.id} style={{backgroundColor:'#F2F2F2'}}>
@@ -72,6 +103,30 @@ function courseTable(props) {
                 <TableCell align="left">{row.calories}</TableCell>
                 <TableCell align="left">{row.fat}</TableCell>
                 <TableCell align="left">{row.carbs}</TableCell>
+                <TableCell align="right" style={{paddingRight:0}}>
+                  <Link>
+                    <Grid container style={{borderBottom:'0'}}>
+                      <Grid item>
+                        <EditIcon style={{fontSize:'20px'}}/>
+                      </Grid>
+                      <Grid item>
+                        Edit
+                      </Grid>
+                    </Grid>
+                    </Link>
+                </TableCell>
+                <TableCell align="left" style={{paddingLeft:0, paddingRight:0}}>
+                  <Link>
+                    <Grid container style={{borderBottom:'0'}}>
+                      <Grid item>
+                        <DeleteIcon style={{fontSize:'20px', color:'#ff8080'}}/>
+                      </Grid>
+                      <Grid item>
+                        Deactivate
+                      </Grid>
+                    </Grid>
+                  </Link>
+                </TableCell>
           </TableRow>
 
           ))}

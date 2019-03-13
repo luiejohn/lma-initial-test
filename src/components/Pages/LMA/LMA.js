@@ -53,6 +53,10 @@ class LMA extends React.Component {
     })
   }
 
+
+
+
+
   renderSecondPanel(){
     let viewPage = '';
     if(this.state.currentView === 'Courses'){
@@ -127,7 +131,6 @@ class LMA extends React.Component {
     else if (this.state.currentView === 'Accounts'){
       viewPage = <Accounts />
     }
-
     return viewPage;
     
   }
@@ -144,7 +147,9 @@ class LMA extends React.Component {
                 />
             </Grid> */}
             <Grid item lg={12}>
-                <AdminMenu/>
+                <AdminMenu
+                  selectView={this.handleSelectView}
+                />
             </Grid>
             <Grid item lg={12}>
                 <Divider />
