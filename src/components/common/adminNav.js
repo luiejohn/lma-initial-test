@@ -145,7 +145,7 @@ class AdminNav extends Component {
             <Grid item style={{marginRight:'10px'}}>
                 <Hidden only={['xs', 'sm', 'md']}>
                     <Link component={RouterLink} to="/signup">
-                          <Button className={classes.grow}>
+                          <Button className={classes.grow} style={{fontFamily:'Open Sans'}}>
                             Notifications
                           </Button>
                     </Link>

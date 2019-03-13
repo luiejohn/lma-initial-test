@@ -89,7 +89,7 @@ class adminMenu extends Component {
                 <Divider />
                 <Grid container style={{height:'50px', fontSize:'14px', color:'#595959',textAlign:'center', fontFamily:'Open Sans'}}>
                     <Grid item lg={1}>
-                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%'}}
+                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%', fontFamily:'Open Sans'}}
                             aria-owns={open ? 'for-courses' : undefined}
                             aria-haspopup="true"
                             onClick={this.handleClick }
@@ -142,7 +142,7 @@ class adminMenu extends Component {
 
                     </Grid>
                     <Grid item lg={1}>
-                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%'}}
+                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%', fontFamily:'Open Sans'}}
                    
                         >
                             Registration
