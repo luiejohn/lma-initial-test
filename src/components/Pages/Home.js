@@ -376,10 +376,8 @@ class Dashboard extends Component {
                                     
                                     </Grid>
 
-
-
                                     <Grid item lg={12}>
-                                        Two buttons here
+                                        {/* <span>Two buttons here</span> */}
                                     </Grid>
                                 </Grid>
                             </Grid>

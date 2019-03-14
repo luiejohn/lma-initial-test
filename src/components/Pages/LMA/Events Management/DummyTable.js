@@ -33,16 +33,15 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 2',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 2',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 2',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
-  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 2,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 4,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 3,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 5,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 7,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 3,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 1,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 1,  'Active'),
+  createData('C.1 Dual Representation & Estate Agent Act ($35)', 'March 25,2019 - June 3,2019', '3rd St W, City, Country', 4,  'Active'),
 
 ];
 
@@ -54,11 +53,11 @@ function courseTable(props) {
       <Table className={classes.table} style={{fontFamily:'Open Sans'}}>
         <TableHead>
           <TableRow >
-            <TableCell align="left"><b>LMA Course Code</b></TableCell>
-            <TableCell align="left">Course Name</TableCell>
-            <TableCell align="left">Course Type</TableCell>
-            <TableCell align="left">Trainer</TableCell>
-            <TableCell align="left">Status</TableCell>
+            <TableCell align="left"><b>Events Name</b></TableCell>
+            <TableCell align="left"><b>Date</b></TableCell>
+            <TableCell align="left"><b>Location</b></TableCell>
+            <TableCell align="left"><b>Sessions</b></TableCell>
+            <TableCell align="left"><b>Status</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody style={{fontFamily:'Open Sans'}}>

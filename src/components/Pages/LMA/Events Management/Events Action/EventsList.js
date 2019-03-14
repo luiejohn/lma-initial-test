@@ -3,12 +3,11 @@ import React from 'react';
 import { Paper, Grid, Input, InputAdornment, Divider } from '@material-ui/core'
 
 import SearchIcon from '@material-ui/icons/Search';
-import MyCourseTable from '../../../../common/courseTable';
-
+// import MyCourseTable from '../../../../common/courseTable';
+import DummyTable from '../DummyTable';
 
 
 const List = props => {
-  const { handleCourseAction } = props;
     return(
         <Paper style={{margin:'15px'}}>
         <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
@@ -28,7 +27,7 @@ const List = props => {
         </Grid>
         <Divider/>
         <Grid container style={{height:'550px'}}>   
-          <MyCourseTable handleCourseAction={handleCourseAction}/>
+          <DummyTable />
         </Grid>
       </Paper>
     )

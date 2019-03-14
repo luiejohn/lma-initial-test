@@ -3,17 +3,33 @@ import React, { Fragment } from 'react';
 
 import { Grid, Button, Typography, Paper, Divider, Input, InputAdornment } from '@material-ui/core';
 
-
-import MyCourseTable from '../../../common/courseTable';
 import CreateCourse from './Course Actions/CreateCourse';
-
 import CourseList from './Course Actions/CourseList';
+import UpdateCourse from './Course Actions/UpdateCourse';
 
 class Courses extends React.Component {
 
   state = {
-    actionView: 'CourseList'
+    actionView: 'CourseList',
+      CourseTitle:'',
+      CourseCode: '',
+      CourseType: '',
+      CEAselectedDateFrom: new Date,
+      CEAselectedDateTo: new Date(),
+      SkillselectedDateFrom: new Date,
+      SkillselectedDateTo: new Date(),
+      selectedDateFrom: new Date(),
+      selectedDateTo: new Date(),
+      Trainer: '',
+      CourseFee: ''
+    
   }
+
+  handleFormChange = name => event => {
+    this.setState({ [name]: event.target.value });
+  };
+
+
 
   handleCourseAction = (action) => {
     this.setState({actionView: action});
@@ -23,10 +39,13 @@ class Courses extends React.Component {
     let action = this.state.actionView;
     let actionComponent = '';
     if( action=== 'CourseList'){
-      actionComponent = <CourseList />
+      actionComponent = <CourseList handleCourseAction={this.handleCourseAction}/>
     }
     else if( action === 'CreateCourse'){
-      actionComponent = <CreateCourse handleCourseAction={this.handleCourseAction}/>
+      actionComponent = <CreateCourse handleCourseAction={this.handleCourseAction} handleChange={this.handleFormChange}/>
+    }
+    else if ( action === 'UpdateCourse'){
+      actionComponent = <UpdateCourse handleCourseAction={this.handleCourseAction} />
     }
     
     return actionComponent;
@@ -35,7 +54,7 @@ class Courses extends React.Component {
   renderActionButtons() {
     let action = this.state.actionView;
     let actionComponent = '';
-
+    
     if( action=== 'CourseList'){
       actionComponent = 
         <Fragment>
@@ -58,6 +77,26 @@ class Courses extends React.Component {
       <Fragment>
         <Grid item style={{padding:'0 10px 0 0'}}>
         <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.tempoSave('CourseList')}
+        >
+          SAVE
+        </Button>
+      </Grid>
+      <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#ff8080', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.handleCourseAction('CourseList')}
+        >
+          CANCEL
+        </Button>
+      </Grid>
+    </Fragment>
+    }
+
+    else if( action === 'UpdateCourse'){
+      actionComponent = 
+      <Fragment>
+        <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
           onClick={() => this.handleCourseAction('CourseList')}
         >
           SAVE
@@ -73,8 +112,16 @@ class Courses extends React.Component {
     </Fragment>
     }
     
-    return actionComponent;
+    return actionComponent;  
+  }
     
+  createCourse = () => {
+    console.log(this.state);
+  }
+
+  tempoSave(name){
+    this.handleCourseAction(name);
+    this.createCourse();
   }
 
   render() {

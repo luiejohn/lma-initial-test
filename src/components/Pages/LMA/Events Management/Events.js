@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+
+import EventsList from '../Events Management/Events Action/EventsList';
 
 
 class Events extends React.Component {
@@ -43,21 +43,8 @@ class Events extends React.Component {
                     </Typography>
                   </Grid>
 
-                  <Grid item lg={12}>
-                      <Paper style={{margin:'15px'}}>
-                        <Grid container style={{height:'50px'}}>
-                              <Grid item>
-
-                              </Grid>
-                              <Grid item>
-
-                              </Grid>
-                        </Grid>
-                        <Divider/>
-                        <Grid container style={{height:'550px'}}>   
-
-                        </Grid>
-                      </Paper>
+                  <Grid item lg={12}> 
+                      <EventsList />
                   </Grid>
 
 

@@ -84,7 +84,7 @@ class CreateCourse extends Component {
             CEAselectedDateTo } = this.state;
 
     const { handleChange } = this.props;
-      console.log(this.props);
+
     return (
       <Fragment>
         <Grid container style={{fontFamily:'Open Sans'}}>
@@ -95,14 +95,14 @@ class CreateCourse extends Component {
                       <Paper style={{margin:'15px'}}>
                         <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
                               <Grid item style={{margin: '20px 25px', textAlign:'left'}} lg={4}>
-                                  <b>Create Course</b>
+                                  Update Course
                               </Grid>
                         </Grid>
                         <Divider/>
 
                         <Grid container style={{padding:'25px 75px'}}>  
                           <Grid item lg={12} style={{textAlign:'left'}}>
-                              <div><b>Course Title</b></div>
+                              <div>Course Title</div>
                               <TextField 
                                     style={{width:'100%', height:'45px'}}
                                     id="outlined-bare"
@@ -110,20 +110,20 @@ class CreateCourse extends Component {
                                     placeholder="Title"
                                     margin="normal"
                                     variant="outlined"
-                                    onChange={handleChange('CourseTitle')}
+                                    // onChange={handleChange('CourseTitle')}
                                 />
                           </Grid>
 
                           <Grid item lg={12}>
                             <Grid container>
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                <div><b>LMA Course Code</b></div>
+                                <div>LMA Course Code</div>
                                   <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
                                       <TextField
                                           id="outlined-select-currency-native"
                                           select
                                           value={this.state.currency}
-                                          onChange={handleChange('CourseCode')}
+                                        //   onChange={handleChange('CourseCode')}
                                           SelectProps={{
                                             native: true,
                                           }}
@@ -143,14 +143,14 @@ class CreateCourse extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                  <div><b>Course Type</b></div>
+                                  <div>Course Type</div>
                                   <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
                                     
                                     <TextField
                                         id="outlined-select-currency-native"
                                         select
                                         value={this.state.currency}
-                                        onChange={handleChange('CourseType')}
+                                        // onChange={handleChange('CourseType')}
                                         SelectProps={{
                                           native: true,
                                         }}
@@ -170,7 +170,7 @@ class CreateCourse extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                      <div><b>CEA</b></div>
+                                      <div>CEA</div>
                                       <Grid container>
                                           
                                           <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
@@ -194,7 +194,7 @@ class CreateCourse extends Component {
                                             />
                                           </Grid>
                                       </Grid>
-                                      <div style={{marginTop:'15px'}}><b>Skills Future</b></div>
+                                      <div style={{marginTop:'15px'}}>Skills Future</div>
                                       <Grid container>
                                         
                                           <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
@@ -222,7 +222,7 @@ class CreateCourse extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                      <div><b>NTUC</b></div>
+                                      <div>NTUC</div>
                                       <Grid container>
                                           
                                           <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
@@ -249,8 +249,7 @@ class CreateCourse extends Component {
                                     
                                     <Grid container>
                                           <Grid item lg={5}>
-                                            
-                                              {/* Radio */}
+                                              Radio
                                           </Grid>
                                     </Grid>  
 
@@ -261,13 +260,13 @@ class CreateCourse extends Component {
                                 <Grid item lg={12} style={{height:'200px', marginBottom:'25px'}}>
                                    <Grid container>
                                           <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                            <div><b>Trainer</b></div>
+                                            <div>Trainer</div>
                                               <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
                                                   <TextField
                                                       id="outlined-select-currency-native"
                                                       select
                                                       value={this.state.currency}
-                                                      onChange={handleChange('Trainer')}
+                                                    //   onChange={handleChange('Trainer')}
                                                       SelectProps={{
                                                         native: true,
                                                       }}
@@ -286,13 +285,13 @@ class CreateCourse extends Component {
 
                                           </Grid>
                                           <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                            <div><b>Course Fee</b></div>
+                                            <div>Course Fee</div>
                                               <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
                                                   <TextField
                                                       id="outlined-select-currency-native"
                                                       select
                                                       value={this.state.currency}
-                                                      onChange={handleChange('CourseFee')}
+                                                    //   onChange={handleChange('CourseFee')}
                                                       SelectProps={{
                                                         native: true,
                                                       }}
