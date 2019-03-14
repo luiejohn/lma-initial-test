@@ -249,7 +249,7 @@ class CreateCourse extends Component {
                                     
                                     <Grid container>
                                           <Grid item lg={5}>
-                                              Radio
+                                              {/* Radio */}
                                           </Grid>
                                     </Grid>  
 
