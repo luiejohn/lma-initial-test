@@ -3,8 +3,8 @@ import React from 'react';
 import { Paper, Grid, Input, InputAdornment, Divider } from '@material-ui/core'
 
 import SearchIcon from '@material-ui/icons/Search';
-// import MyCourseTable from '../../../../common/courseTable';
-import DummyTable from '../DummyTable';
+import DummySessionList from '../SessionDataDummy';
+
 
 
 const List = props => {
@@ -27,7 +27,7 @@ const List = props => {
         </Grid>
         <Divider/>
         <Grid container style={{minHeight:'550px'}}>   
-          <DummyTable />
+          <DummySessionList/>
         </Grid>
       </Paper>
     )

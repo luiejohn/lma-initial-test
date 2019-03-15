@@ -1,13 +1,128 @@
 import React, { Fragment } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+// import { Link as RouterLink } from 'react-router-dom';
 
-import { Grid, Button, Typography, Paper, Divider } from '@material-ui/core';
+import { Grid, Button, Typography, Paper, Divider, Input, InputAdornment } from '@material-ui/core';
 
-import EventsList from '../Events Management/Events Action/EventsList';
+import EventList from './Events Action/EventsList';
+import CreateEvent from './Events Action/CreateEvent';
+import UpdateEvent from './Events Action/UpdateEvent';
+
+class Courses extends React.Component {
+
+  state = {
+    actionView: 'EventList',
+      // CourseTitle:'',
+      // CourseCode: '',
+      // CourseType: '',
+      // CEAselectedDateFrom: new Date,
+      // CEAselectedDateTo: new Date(),
+      // SkillselectedDateFrom: new Date,
+      // SkillselectedDateTo: new Date(),
+      // selectedDateFrom: new Date(),
+      // selectedDateTo: new Date(),
+      // Trainer: '',
+      // CourseFee: ''
+    
+  }
+
+  handleFormChange = name => event => {
+    this.setState({ [name]: event.target.value });
+  };
 
 
-class Events extends React.Component {
 
+  handleCourseAction = (action) => {
+    this.setState({actionView: action});
+  }
+
+  renderActionComponent() {
+    let action = this.state.actionView;
+    let actionComponent = '';
+    if( action=== 'EventList'){
+      actionComponent = <EventList handleCourseAction={this.handleCourseAction}/>
+    }
+    else if( action === 'CreateEvent'){
+      actionComponent = <CreateEvent handleCourseAction={this.handleCourseAction} handleChange={this.handleFormChange}/>
+    }
+    else if ( action === 'UpdateEvent'){
+      actionComponent = <UpdateEvent handleCourseAction={this.handleCourseAction} />
+    }
+    
+    return actionComponent;
+  }
+
+  renderActionButtons() {
+    let action = this.state.actionView;
+    let actionComponent = '';
+    
+    if( action === 'EventList'){
+      actionComponent = 
+        <Fragment>
+          <Grid item style={{padding:'0 10px 0 0'}}>
+          <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+            onClick={() => this.handleCourseAction('CreateEvent')}
+          >
+            CREATE
+          </Button>
+        </Grid>
+        {/* <Grid item style={{padding:'0 10px 0 0'}}>
+          <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
+            IMPORT
+          </Button>
+        </Grid> */}
+      </Fragment>
+      }
+    else if( action === 'CreateEvent'){
+      actionComponent = 
+      <Fragment>
+        <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.tempoSave('EventList')}
+        >
+          SAVE
+        </Button>
+      </Grid>
+      <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#ff8080', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.handleCourseAction('EventList')}
+        >
+          CANCEL
+        </Button>
+      </Grid>
+    </Fragment>
+    }
+
+    else if( action === 'UpdateEvent'){
+      actionComponent = 
+      <Fragment>
+        <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.handleCourseAction('EventList')}
+        >
+          SAVE
+        </Button>
+      </Grid>
+      <Grid item style={{padding:'0 10px 0 0'}}>
+        <Button style={{backgroundColor:'#ff8080', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+          onClick={() => this.handleCourseAction('EventList')}
+        >
+          CANCEL
+        </Button>
+      </Grid>
+    </Fragment>
+    }
+    
+    return actionComponent;  
+  }
+    
+  createCourse = () => {
+    console.log(this.state);
+  }
+
+  tempoSave(name){
+    this.handleCourseAction(name);
+    this.createCourse();
+  }
 
   render() {
     return (
@@ -22,29 +137,26 @@ class Events extends React.Component {
                           <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
                               EVENTS
                           </Typography>
+                          {
+                            this.renderActionButtons()
+                          }
 
-                        <Grid item style={{padding:'0 10px 0 0'}}>
-                          <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
-                            CREATE
-                          </Button>
-                        </Grid>
-                        {/* <Grid item style={{padding:'0 10px 0 0'}}>
-                          <Button style={{backgroundColor:'#303144', color:'#fff', width:'95px', fontFamily:'Open Sans'}}>
-                            IMPORT
-                          </Button>
-                        </Grid> */}
                       </Grid>
                   </Grid>
                 
 
                   <Grid item lg={12}>
-                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px', fontSize:'13px'}}>
-                        LMA > Events Management > Events
+                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px', fontFamily:'Open Sans', fontSize:'13px'}}>
+                        LMA > Course Management > Events
                     </Typography>
                   </Grid>
 
-                  <Grid item lg={12}> 
-                      <EventsList />
+
+                  {/* Should be a new Component to be rerendered */}
+                  <Grid item lg={12}>
+                        {
+                          this.renderActionComponent()
+                        }
                   </Grid>
 
 
@@ -53,9 +165,10 @@ class Events extends React.Component {
             </Grid>
         
         </Grid>
+      
       </Fragment>
     );
   }
 }
 
-export default Events;
+export default Courses;

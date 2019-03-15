@@ -37,3 +37,7 @@ body {
 .myHover:hover{
   background-color:#ccc;
 }
+
+span {
+  font-family: 'Open Sans';
+}

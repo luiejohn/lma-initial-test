@@ -27,36 +27,32 @@ const styles = theme => ({
 });
 
 let id = 0;
-function createData( Ename, courseid, session, status) {
+function createData( Ename, date, time, room, slots, status) {
   id += 1;
-  return { id, Ename, courseid, session, status };
+  return { id, Ename, date, time, room, slots, status };
 }
 
 const rows = [
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 3, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 4, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 6, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 1, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 2, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 3, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 5, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 5, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 2, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 1, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 1, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 1, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 2, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 3, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 4, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 5, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 3, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 3, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 2, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 2, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 1, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 2, 'Active'),
-  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'C.1', 3, 'Active'),
-
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
+  createData( 'C.1 Dual Representation & Estate Agent Act ($35)', 'March 19 - June 23', '8:30AM-12:00PM', '5A', 50, 'Active'),
 ];
 
 function courseTable(props) {
@@ -67,10 +63,12 @@ function courseTable(props) {
       <Table className={classes.table} style={{fontFamily:'Open Sans'}}>
         <TableHead>
           <TableRow >
-            <TableCell align="left" style={{paddingRight:'10px'}}><b>Event ID</b></TableCell>
+            <TableCell align="left" style={{paddingRight:'10px'}}><b>Session ID</b></TableCell>
             <TableCell align="left" style={{paddingRight:'10px'}}><b>Event Name</b></TableCell>
-            <TableCell align="left" style={{paddingRight:'10px'}}><b>Course ID</b></TableCell>
-            <TableCell align="left" style={{paddingRight:'10px'}}><b>Sessions</b></TableCell>
+            <TableCell align="left" style={{paddingRight:'10px'}}><b>Session Date</b></TableCell>
+            <TableCell align="left" style={{paddingRight:'10px'}}><b>Time</b></TableCell>
+            <TableCell align="left" style={{paddingRight:'10px'}}><b>Room #</b></TableCell>
+            <TableCell align="left" style={{paddingRight:'10px'}}><b>Seats Left</b></TableCell>
             <TableCell align="left" style={{paddingRight:'10px'}}><b>Status</b></TableCell>
             <TableCell align="left" style={{paddingRight:'10px'}}><b>Actions</b></TableCell>
           </TableRow>
@@ -84,8 +82,10 @@ function courseTable(props) {
                 {row.id}
               </TableCell>
               <TableCell align="left" style={{paddingRight:'10px'}}>{row.Ename}</TableCell>
-              <TableCell align="left" style={{paddingRight:'10px'}}>{row.courseid}</TableCell>
-              <TableCell align="left" style={{paddingRight:'10px'}}>{row.session}</TableCell>
+              <TableCell align="left" style={{paddingRight:'10px'}}>{row.date}</TableCell>
+              <TableCell align="left" style={{paddingRight:'10px'}}>{row.time}</TableCell>
+              <TableCell align="left" style={{paddingRight:'10px'}}>{row.room}</TableCell>
+              <TableCell align="left" style={{paddingRight:'10px'}}>{row.slots}</TableCell>
               <TableCell align="left" style={{paddingRight:'10px'}}>{row.status}</TableCell>
               <TableCell align="right" style={{paddingRight:0}}>
                 <Link onClick={() => handleCourseAction('UpdateCourse')}>
@@ -118,8 +118,10 @@ function courseTable(props) {
                 {row.id}
                 </TableCell>
                 <TableCell align="left" style={{paddingRight:'10px'}}>{row.Ename}</TableCell>
-                <TableCell align="left" style={{paddingRight:'10px'}}>{row.courseid}</TableCell>
-                <TableCell align="left" style={{paddingRight:'10px'}}>{row.session}</TableCell>
+                <TableCell align="left" style={{paddingRight:'10px'}}>{row.date}</TableCell>
+                <TableCell align="left" style={{paddingRight:'10px'}}>{row.time}</TableCell>
+                <TableCell align="left" style={{paddingRight:'10px'}}>{row.room}</TableCell>
+                <TableCell align="left" style={{paddingRight:'10px'}}>{row.slots}</TableCell>
                 <TableCell align="left" style={{paddingRight:'10px'}}>{row.status}</TableCell>
                 <TableCell align="right" style={{paddingRight:0}}>
                   <Link onClick={() => handleCourseAction('UpdateCourse')}>
