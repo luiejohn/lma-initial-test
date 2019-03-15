@@ -143,14 +143,6 @@ class Courses extends React.Component {
 
                       </Grid>
                   </Grid>
-                
-
-                  <Grid item lg={12}>
-                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px', fontFamily:'Open Sans', fontSize:'13px'}}>
-                        LMA > Course Management > Events
-                    </Typography>
-                  </Grid>
-
 
                   {/* Should be a new Component to be rerendered */}
                   <Grid item lg={12}>

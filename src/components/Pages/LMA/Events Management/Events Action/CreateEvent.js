@@ -196,26 +196,17 @@ class CreateEvent extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                      <div><b>Location</b></div>
+                                      <div><b>Venue</b></div>
                                       <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>                                   
                                         <TextField
-                                            id="outlined-select-currency-native"
-                                            select
-                                            value={this.state.currency}
-                                            onChange={handleChange('CourseType')}
-                                            SelectProps={{
-                                              native: true,
-                                            }}
-                                            helperText="Please select an option"
+                                            style={{width:'100%', height:'45px'}}
+                                            id="outlined-bare"
+                                            type="text"
+                                            placeholder=""
                                             margin="normal"
                                             variant="outlined"
-                                            style={{height:'70px'}}
+                                            onChange={handleChange('CourseTitle')}
                                         >
-                                            {currencies.map(option => (
-                                              <option key={option.value} value={option.value}>
-                                                {option.label}
-                                              </option>
-                                            ))}
                                           </TextField>
                                     </FormControl>
                                       <div style={{marginTop:'15px'}}><b>Schedule</b></div>
@@ -249,7 +240,7 @@ class CreateEvent extends Component {
                                 
                                       <Grid container>
                                           <Grid item lg={4} style={{margin:'0 4% 0 4%'}}>
-                                          <b>Participant Type</b>
+                                          <b><span style={{marginLeft:"-23px"}}>Participant Type</span></b>
                                             <FormControl style={{width:'100%'}}>                                   
                                                   <TextField
                                                       id="outlined-select-currency-native"

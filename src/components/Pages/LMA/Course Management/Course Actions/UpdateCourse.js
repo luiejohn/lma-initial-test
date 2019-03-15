@@ -4,16 +4,34 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Button, Typography, Paper, Divider, TextField, Link } from '@material-ui/core';
 // import MyCourseTable from '../../../../common/courseTable';
 
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 import { DatePicker } from "material-ui-pickers";
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
+
+import CourseFeeTab from './Form Tab/CourseFeeTab';
+import TrainingCoordinatorTab from './Form Tab/Training';
+import CourseInformation from './Form Tab/CourseInformation';
+import TrainerDetails from './Form Tab/TrainerDetails';
 
 class CreateCourse extends Component {
   constructor(props){
     super(props);
     this.state = {
+      viewFormTab:'CourseFee',
 
       CourseTitle:'',
       CourseCode: '',
@@ -25,10 +43,14 @@ class CreateCourse extends Component {
       selectedDateFrom: new Date(),
       selectedDateTo: new Date(),
       Trainer: '',
-      CourseFee: ''
+      CourseFee: '',
+      selectedValue: 'a',
     };
   }
 
+  handleChange = event => {
+    this.setState({ selectedValue: event.target.value });
+  };
   
   // handleChange = name => event => {
   //   this.setState({ [name]: event.target.value });
@@ -60,6 +82,30 @@ class CreateCourse extends Component {
   };
 
 
+  handleChangeFormChange = action => {
+    this.setState({viewFormTab: action});
+
+  }
+
+  renderFormComponent() {
+    let action = this.state.viewFormTab;
+    let actionComponent = '';
+    if( action=== 'CourseFee'){
+      actionComponent = <CourseFeeTab />
+    }
+    else if( action === 'TrainingCoor'){
+      actionComponent = <TrainingCoordinatorTab />
+    }
+    else if ( action === 'CourseInformation'){
+      actionComponent = <CourseInformation />
+    }
+    else if ( action === 'TrainerDetails'){
+      actionComponent = <TrainerDetails />
+    }
+    
+    return actionComponent;
+  }
+
   render() {
     const currencies = [
       {
@@ -84,6 +130,7 @@ class CreateCourse extends Component {
             CEAselectedDateTo } = this.state;
 
     const { handleChange } = this.props;
+      console.log(this.props);
 
     return (
       <Fragment>
@@ -95,16 +142,16 @@ class CreateCourse extends Component {
                       <Paper style={{margin:'15px'}}>
                         <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
                               <Grid item style={{margin: '20px 25px', textAlign:'left'}} lg={4}>
-                                  Update Course
+                                  <b>Update Course</b>
                               </Grid>
                         </Grid>
                         <Divider/>
 
                         <Grid container style={{padding:'25px 75px'}}>  
-                          <Grid item lg={12} style={{textAlign:'left'}}>
-                              <div>Course Title</div>
+                          <Grid item lg={12} style={{textAlign:'left', padding:'25px'}}>
+                              <div><b>Course Title</b></div>
                               <TextField 
-                                    style={{width:'100%', height:'45px'}}
+                                    style={{width:'94%', height:'45px', marginLeft:'2%'}}
                                     id="outlined-bare"
                                     type="text"
                                     placeholder="Title"
@@ -117,13 +164,13 @@ class CreateCourse extends Component {
                           <Grid item lg={12}>
                             <Grid container>
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                <div>LMA Course Code</div>
+                                <div><b>LMA Course Code</b></div>
                                   <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
                                       <TextField
                                           id="outlined-select-currency-native"
                                           select
                                           value={this.state.currency}
-                                        //   onChange={handleChange('CourseCode')}
+                                          // onChange={handleChange('CourseCode')}
                                           SelectProps={{
                                             native: true,
                                           }}
@@ -143,7 +190,7 @@ class CreateCourse extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                  <div>Course Type</div>
+                                  <div><b>Course Type</b></div>
                                   <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
                                     
                                     <TextField
@@ -170,7 +217,7 @@ class CreateCourse extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                      <div>CEA</div>
+                                      <div><b>CEA</b></div>
                                       <Grid container>
                                           
                                           <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
@@ -194,7 +241,7 @@ class CreateCourse extends Component {
                                             />
                                           </Grid>
                                       </Grid>
-                                      <div style={{marginTop:'15px'}}>Skills Future</div>
+                                      <div style={{marginTop:'15px'}}><b>Skills Future</b></div>
                                       <Grid container>
                                         
                                           <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
@@ -222,7 +269,7 @@ class CreateCourse extends Component {
                                 </Grid>
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                      <div>NTUC</div>
+                                      <div><b>NTUC</b></div>
                                       <Grid container>
                                           
                                           <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
@@ -246,71 +293,79 @@ class CreateCourse extends Component {
                                             />
                                           </Grid>
                                     </Grid>
-                                    
+
                                     <Grid container>
-                                          <Grid item lg={5}>
-                                              {/* Radio */}
-                                          </Grid>
-                                    </Grid>  
+                                      <Grid item lg={12} style={{textAlign:'left', padding:'25px 25px 25px 0'}}>                            
+                                      <div><b>Status</b></div>
+                                          <div style={{marginTop:'22px'}}>
+                                            <Radio
+                                                checked={this.state.selectedValue === 'a'}
+                                                onChange={this.handleChange}
+                                                value="a"
+                                                name="radio-button-demo"
+                                                aria-label="A"
+                                                label="Active"
+                                              /><span>Active</span>
+                                            <Radio
+                                                checked={this.state.selectedValue === 'b'}
+                                                onChange={this.handleChange}
+                                                value="b"
+                                                name="radio-button-demo"
+                                                aria-label="B"
+                                                style={{marginLeft:'30px'}}
+                                              /> <span>Inactive</span>
+                                          </div>
+                                        </Grid>
+                                    </Grid>
 
- 
                                 </Grid>
 
+                                <Grid item lg={12} style={{minHeight:'500px', margin:'40px 0'}}>
+                                  <Grid container>
+                                    <Grid item lg={3} style={{ paddingRight:'35px', textAlign:'right'}}>
+                                      <Link underline="none" onClick={()=> this.handleChangeFormChange('CourseFee')} style={{color:'#000'}}>
+                                          <div style={{padding:'7px'}}>
+                                                {
+                                                  this.state.viewFormTab==='CourseFee' ?
+                                                  <b>Course Fee</b> : 'Course Fee'
+                                                }
+                                              </div>
+                                      </Link>
+                                      <Link underline="none" onClick={() => this.handleChangeFormChange('TrainingCoor')} style={{color:'#000'}}>
+                                          <div style={{padding:'7px'}}>
+                                                {
+                                                  this.state.viewFormTab==='TrainingCoor' ?
+                                                  <b>Training Coordinator</b> : 'Training Coordinator'
+                                                }
+                                          </div>
+                                      </Link>
+                                      <Link underline="none" onClick={() => this.handleChangeFormChange('TrainerDetails')} style={{color:'#000'}}>
+                                          <div style={{padding:'7px'}}>
+                                                {
+                                                  this.state.viewFormTab==='TrainerDetails' ?
+                                                  <b>Trainer Details</b> : 'Trainer Details'
+                                                }
+                                          </div>
+                                      </Link>
+                                      <Link underline="none" onClick={() => this.handleChangeFormChange('CourseInformation')} style={{color:'#000'}}>
+                                          <div style={{padding:'7px'}}>
+                                                {
+                                                  this.state.viewFormTab==='CourseInformation' ?
+                                                  <b>Course Information</b> : 'Course Information'
+                                                }
+                                          
+                                          </div>
+                                      </Link>
+                                      <Link underline="none" style={{color:'#000'}}>
+                                          <div style={{padding:'7px'}}>Accounting</div>
+                                      </Link>
+                                    </Grid>
 
-                                <Grid item lg={12} style={{height:'200px', marginBottom:'25px'}}>
-                                   <Grid container>
-                                          <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                            <div>Trainer</div>
-                                              <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
-                                                  <TextField
-                                                      id="outlined-select-currency-native"
-                                                      select
-                                                      value={this.state.currency}
-                                                    //   onChange={handleChange('Trainer')}
-                                                      SelectProps={{
-                                                        native: true,
-                                                      }}
-                                                      helperText="Please select an option"
-                                                      margin="normal"
-                                                      variant="outlined"
-                                                      style={{height:'70px', fontFamily:'Open Sans'}}
-                                                  >
-                                                      {currencies.map(option => (
-                                                        <option key={option.value} value={option.value}>
-                                                          {option.label}
-                                                        </option>
-                                                      ))}
-                                                    </TextField>
-                                              </FormControl>
-
-                                          </Grid>
-                                          <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
-                                            <div>Course Fee</div>
-                                              <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
-                                                  <TextField
-                                                      id="outlined-select-currency-native"
-                                                      select
-                                                      value={this.state.currency}
-                                                    //   onChange={handleChange('CourseFee')}
-                                                      SelectProps={{
-                                                        native: true,
-                                                      }}
-                                                      helperText="Please select an option"
-                                                      margin="normal"
-                                                      variant="outlined"
-                                                      style={{height:'70px', fontFamily:'Open Sans'}}
-                                                  >
-                                                      {currencies.map(option => (
-                                                        <option key={option.value} value={option.value}>
-                                                          {option.label}
-                                                        </option>
-                                                      ))}
-                                                    </TextField>
-                                              </FormControl>
-                                          </Grid>
-                                   </Grid>
+                                   {
+                                     this.renderFormComponent()
+                                   }
                                 </Grid>
-
+                              </Grid>
 
 
 
@@ -332,5 +387,6 @@ class CreateCourse extends Component {
     )
   }
 }
+
 
 export default CreateCourse;

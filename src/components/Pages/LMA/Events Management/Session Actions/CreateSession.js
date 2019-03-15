@@ -93,7 +93,7 @@ class CreateCourse extends Component {
                   {/* Should be a new Component to be rerendered */}
                   <Grid item lg={12}>
                       <Paper style={{margin:'15px'}}>
-                        <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
+                        {/* <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
                               <Grid item style={{margin: '20px 25px', textAlign:'left'}} lg={4}>
                                   <b>Create Session</b>
                               </Grid>
@@ -249,8 +249,7 @@ class CreateCourse extends Component {
                                     
                                     <Grid container>
                                           <Grid item lg={5}>
-                                            
-                                              {/* Radio */}
+                                           
                                           </Grid>
                                     </Grid>  
 
@@ -318,7 +317,7 @@ class CreateCourse extends Component {
                             </Grid>
                           </Grid>
 
-                        </Grid>
+                        </Grid> */}
                       </Paper>
                   </Grid>
 

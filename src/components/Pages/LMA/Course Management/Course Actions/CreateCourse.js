@@ -22,11 +22,16 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
 
+import CourseFeeTab from './Form Tab/CourseFeeTab';
+import TrainingCoordinatorTab from './Form Tab/Training';
+import CourseInformation from './Form Tab/CourseInformation';
+import TrainerDetails from './Form Tab/TrainerDetails';
 
 class CreateCourse extends Component {
   constructor(props){
     super(props);
     this.state = {
+      viewFormTab:'CourseFee',
 
       CourseTitle:'',
       CourseCode: '',
@@ -77,10 +82,29 @@ class CreateCourse extends Component {
   };
 
 
-  handleChange
+  handleChangeFormChange = action => {
+    this.setState({viewFormTab: action});
 
+  }
 
-
+  renderFormComponent() {
+    let action = this.state.viewFormTab;
+    let actionComponent = '';
+    if( action=== 'CourseFee'){
+      actionComponent = <CourseFeeTab />
+    }
+    else if( action === 'TrainingCoor'){
+      actionComponent = <TrainingCoordinatorTab />
+    }
+    else if ( action === 'CourseInformation'){
+      actionComponent = <CourseInformation />
+    }
+    else if ( action === 'TrainerDetails'){
+      actionComponent = <TrainerDetails />
+    }
+    
+    return actionComponent;
+  }
 
   render() {
     const currencies = [
@@ -127,7 +151,7 @@ class CreateCourse extends Component {
                           <Grid item lg={12} style={{textAlign:'left', padding:'25px'}}>
                               <div><b>Course Title</b></div>
                               <TextField 
-                                    style={{width:'90%', height:'45px'}}
+                                    style={{width:'94%', height:'45px', marginLeft:'2%'}}
                                     id="outlined-bare"
                                     type="text"
                                     placeholder="Title"
@@ -271,9 +295,9 @@ class CreateCourse extends Component {
                                     </Grid>
 
                                     <Grid container>
-                                      <Grid item lg={12} style={{textAlign:'left', padding:'25px'}}>                            
+                                      <Grid item lg={12} style={{textAlign:'left', padding:'25px 25px 25px 0'}}>                            
                                       <div><b>Status</b></div>
-                                          <div style={{marginTop:'28px'}}>
+                                          <div style={{marginTop:'22px'}}>
                                             <Radio
                                                 checked={this.state.selectedValue === 'a'}
                                                 onChange={this.handleChange}
@@ -296,132 +320,52 @@ class CreateCourse extends Component {
 
                                 </Grid>
 
+                                <Grid item lg={12} style={{minHeight:'500px', margin:'40px 0'}}>
+                                  <Grid container>
+                                    <Grid item lg={3} style={{ paddingRight:'35px', textAlign:'right'}}>
+                                    <Link underline="none" onClick={()=> this.handleChangeFormChange('CourseFee')} style={{color:'#000'}}>
+                                        <div style={{padding:'7px'}}>
+                                              {
+                                                this.state.viewFormTab==='CourseFee' ?
+                                                <b>Course Fee</b> : 'Course Fee'
+                                              }
+                                            </div>
+                                    </Link>
+                                    <Link underline="none" onClick={() => this.handleChangeFormChange('TrainingCoor')} style={{color:'#000'}}>
+                                        <div style={{padding:'7px'}}>
+                                              {
+                                                this.state.viewFormTab==='TrainingCoor' ?
+                                                <b>Training Coordinator</b> : 'Training Coordinator'
+                                              }
+                                        </div>
+                                    </Link>
+                                    <Link underline="none" onClick={() => this.handleChangeFormChange('TrainerDetails')} style={{color:'#000'}}>
+                                        <div style={{padding:'7px'}}>
+                                              {
+                                                this.state.viewFormTab==='TrainerDetails' ?
+                                                <b>Trainer Details</b> : 'Trainer Details'
+                                              }
+                                        </div>
+                                    </Link>
+                                    <Link underline="none" onClick={() => this.handleChangeFormChange('CourseInformation')} style={{color:'#000'}}>
+                                        <div style={{padding:'7px'}}>
+                                              {
+                                                this.state.viewFormTab==='CourseInformation' ?
+                                                <b>Course Information</b> : 'Course Information'
+                                              }
+                                        
+                                        </div>
+                                    </Link>
+                                    <Link underline="none" style={{color:'#000'}}>
+                                        <div style={{padding:'7px'}}>Accounting</div>
+                                    </Link>
+                                  </Grid>
 
-
-                                <Grid item lg={12} style={{minHeight:'200px', margin:'40px 0'}}>
-                                   <Grid container>
-                                          <Grid item lg={3} style={{ paddingRight:'35px', textAlign:'right'}}>
-                                            <div style={{padding:'7px'}}>Course Fee</div>
-                                            <div style={{padding:'7px'}}>Training Coordinator</div>
-                                            <div style={{padding:'7px'}}>Trainer Details</div>
-                                            <div style={{padding:'7px'}}>Course Information</div>
-                                            <div style={{padding:'7px'}}>Action</div>
-
-                                          </Grid>
-                                          <Grid item lg={9} style={{borderLeft:'1px solid #ccc', textAlign:'left'}}>
-                                                <Grid container style={{marginTop:'15px'}}>
-                                                    <Grid item lg={6}>
-                                                        
-                                                        <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
-                                                        <b>Type</b>
-                                                            <TextField
-                                                                id="outlined-select-currency-native"
-                                                                select
-                                                                value={this.state.currency}
-                                                                onChange={handleChange('CourseCode')}
-                                                                SelectProps={{
-                                                                  native: true,
-                                                                }}
-                                                                margin="normal"
-                                                                variant="outlined"
-                                                                style={{height:'45px', fontFamily:'Open Sans', marginTop:'10px'}}
-                                                            >
-                                                                {currencies.map(option => (
-                                                                  <option key={option.value} value={option.value}>
-                                                                    {option.label}
-                                                                  </option>
-                                                                ))}
-                                                              </TextField>
-                                                        </FormControl>
-                                                    </Grid>
-                                                    <Grid item lg={6}>
-                                                        <b>Valid From</b>
-                                                        <DatePicker
-                                                              margin="normal"
-                                                              value={selectedDateTo}
-                                                              variant="outlined"
-                                                              onChange={this.handleDateChangeTo}
-                                                              style={{width:'90%', borderRadius:'5px', padding:'5px 5px 0 5px', marginTop:'5px', height:'45px'}}
-                                                          />
-                                                    </Grid>
-
-                                                    </Grid>
-
-
-                                                  <Grid container style={{marginTop:'15px'}}>
-
-                                                    <Grid item lg={6} style={{paddingLeft:'20px'}}>
-                                                        <div><b>Amount</b></div>
-                                                        <TextField 
-                                                              style={{width:'90%', height:'45px', marginTop:'10px'}}
-                                                              id="outlined-bare"
-                                                              type="number"
-                                                              placeholder="Number"
-                                                              margin="normal"
-                                                              variant="outlined"
-                                                              onChange={handleChange('CourseTitle')}
-                                                          />
-                                                    </Grid>
-                                                    <Grid item lg={6}>
-                                                        <b>Valid From</b>
-                                                            <DatePicker
-                                                                  margin="normal"
-                                                                  value={selectedDateTo}
-                                                                  variant="outlined"
-                                                                  onChange={this.handleDateChangeTo}
-                                                                  style={{width:'90%', borderRadius:'5px', padding:'5px 5px 0 5px', marginTop:'5px', height:'45px'}}
-                                                              />
-                                                    </Grid>
-                                                  </Grid>
-
-                                                  <Grid container style={{margin:'15px 0'}}>
-                                                      <Grid item lg={12}>
-                                                          <Button style={{backgroundColor: 'rgb(96, 199, 143)', color: '#fff', width:'100px', marginLeft:'20px'}}>ADD</Button>
-                                                      </Grid>                    
-                                                  </Grid>
-
-
-                                                  <Grid container>
-                                                      <Table style={{margin:'15px 25px'}}>
-                                                        <TableHead>
-                                                          <TableRow style={{backgroundColor:'rgb(46, 49, 66)'}}>
-                                                            <TableCell style={{color:'#f2f2f2'}}>Type</TableCell>
-                                                            <TableCell style={{color:'#f2f2f2'}}>Amount</TableCell>
-                                                            <TableCell style={{color:'#f2f2f2'}}>Valid From</TableCell>
-                                                            <TableCell style={{color:'#f2f2f2'}}>Valid To</TableCell>
-                                                            <TableCell style={{color:'#f2f2f2'}}>Action</TableCell>
-                                                          </TableRow>
-                                                        </TableHead>
-                                                        <TableBody>
-
-                                                            <TableRow>
-                                                              <TableCell component="th" scope="row">
-                                                                Member Fee
-                                                              </TableCell>
-                                                              <TableCell>$40</TableCell>
-                                                              <TableCell>1/10/2018</TableCell>
-                                                              <TableCell>12/31/2018</TableCell>
-                                                              <TableCell></TableCell>
-                                                            </TableRow>
-
-                                                            <TableRow style={{backgroundColor: '#d9d9d9' }}>
-                                                              <TableCell component="th" scope="row">
-                                                                Total
-                                                              </TableCell>
-                                                              <TableCell>$40</TableCell>
-                                                              <TableCell></TableCell>
-                                                              <TableCell></TableCell>
-                                                              <TableCell></TableCell>
-                                                            </TableRow>
-                                                        </TableBody>
-                                                      </Table>
-                                                  </Grid>
-
-                                          </Grid>
-
-                                   </Grid>
+                                   {
+                                     this.renderFormComponent()
+                                   }
                                 </Grid>
-
+                              </Grid>
 
 
 
