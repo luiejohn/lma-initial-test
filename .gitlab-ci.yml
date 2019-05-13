@@ -1,0 +1,72 @@
+variables:
+  REG_NAME: registry.gitlab.com/ideahub-devgroup/lma-sg/frontend:$CI_COMMIT_REF_NAME
+  CONT_NAME: lma_$CI_COMMIT_REF_NAME
+
+stages:
+  - build
+  - run
+  - deploy
+ 
+develop_build:
+  stage: build
+  only:
+    - develop
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $REG_NAME .
+    - docker push $REG_NAME
+  tags:
+    - lmadevelop 
+
+develop_run:
+  stage: run
+  only:
+    - develop
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker container prune -f
+    - docker image prune -f
+    - docker pull $REG_NAME
+    - docker kill $CONT_NAME || true
+    - docker rm $CONT_NAME || true
+    - docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
+  tags:
+    - lmadevelop
+
+
+staging_build:
+  stage: build
+  only:
+    - staging
+  script:
+    - sudo docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - sudo docker build -t $REG_NAME .
+    - sudo docker push $REG_NAME
+  tags:
+    - lmastaging 
+
+staging_run:
+  stage: run
+  only:
+    - staging
+  script:
+    - sudo docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - sudo docker container prune -f
+    - sudo docker image prune -f
+    - sudo docker pull $REG_NAME
+    - sudo docker kill $CONT_NAME || true
+    - sudo docker rm $CONT_NAME || true
+    - sudo docker run -dt -p 5000:5000 --name $CONT_NAME $REG_NAME
+
+  tags:
+    - lmastaging 
+
+
+deploy:
+  stage: deploy
+  only:
+    - master
+  script:
+    - echo run deployment
+  environment: master
+  when: manual

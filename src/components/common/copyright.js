@@ -2,9 +2,6 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 
 const styles = {
   root: {
@@ -13,11 +10,12 @@ const styles = {
 };
 
 const foot2 = (props) => {
-    const { classes } = props;
     return(
-        <div>
-          Copyright
-        </div>
+      <Grid>
+          <Grid item xs={12} sm={12} md={12} lg={12} style={{fontSize:'12px', backgroundColor:'#e6e6e6', padding:'20px 0',fontFamily:'Open Sans'}}>
+              Copyright© LIFE MASTERY ACADEMY PTE LTD
+          </Grid>
+      </Grid>
     )
 }
 

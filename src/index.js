@@ -3,8 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+//This needs to imported first before Apollo Packages
+import {  BrowserRouter } from 'react-router-dom';
+
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
+import { MuiPickersUtilsProvider } from 'material-ui-pickers';
+import DateFnsUtils from '@date-io/date-fns';
+
+//apollo client setup
+const client = new ApolloClient({
+  uri:'http://localhost/lma-dev/server/public/graphql'
+})
+
+
+ReactDOM.render(
+    <BrowserRouter>
+        <ApolloProvider client={client}>
+            < MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <App />
+            </MuiPickersUtilsProvider>
+        </ApolloProvider>
+    </BrowserRouter>
+
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
