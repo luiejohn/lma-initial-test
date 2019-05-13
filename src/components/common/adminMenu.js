@@ -7,13 +7,15 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 
-import DraftsIcon from '@material-ui/icons/Drafts';
-import ClassIcon from '@material-ui/icons/ClassOutlined';
+// import DraftsIcon from '@material-ui/icons/Drafts';
+import ClassIcon from '@material-ui/icons/ClassTwoTone';
+import RegistrationIcon from '@material-ui/icons/RecentActorsTwoTone';
+import CourseIcon from '@material-ui/icons/AssignmentOutlined';
 import CalendarIcon from '@material-ui/icons/DateRangeOutlined';
 import EventIcon from '@material-ui/icons/EventOutlined';
 import MoneyIcon from '@material-ui/icons/AttachMoneyOutlined';
 
-import Dropdown from '../common/dropdown';
+// import Dropdown from '../common/dropdown';
 
 
 class adminMenu extends Component {
@@ -87,14 +89,14 @@ class adminMenu extends Component {
         return(
             <Fragment>
                 <Divider />
-                <Grid container style={{height:'50px', fontSize:'14px', color:'#595959',textAlign:'center', fontFamily:'Open Sans'}}>
+                <Grid container style={{height:'50px', fontSize:'14px', color:'#595959',textAlign:'center', fontFamily:'Open Sans', backgroundColor:'#2E3142'}}>
                     <Grid item lg={1}>
-                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%', fontFamily:'Open Sans'}}
+                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%', color:'#fff'}}
                             aria-owns={open ? 'for-courses' : undefined}
                             aria-haspopup="true"
                             onClick={this.handleClick }
                         >
-                            Courses
+                            <ClassIcon style={{fontSize:"20px", marginRight:'7px'}} />Courses
                         </Button>
 
                         <Popover
@@ -113,39 +115,39 @@ class adminMenu extends Component {
                             style={{marginTop:'2px'}}
                             >
                                 <List>
-                                    <ListItem button  onClick={()=> {selectView('Courses'); this.handleClose()}} >
+                                    <ListItem button  onClick={()=> {selectView('Courses'); this.handleClose()}}>
                                         <ListItemIcon>
-                                            <ClassIcon />
+                                            <CourseIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary='Courses' />
+                                        <ListItemText primary='Courses' style={{padding:'0 25px 0 0'}} />
                                     </ListItem>
                                     <ListItem button  onClick={()=> {selectView('Events'); this.handleClose()}}>
                                         <ListItemIcon>
                                             <CalendarIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary='Event' />
+                                        <ListItemText primary='Event' style={{padding:'0 25px 0 0'}}/>
                                     </ListItem>
                                     <ListItem button  onClick={()=> {selectView('Sessions'); this.handleClose()}}>
                                         <ListItemIcon>
                                             <EventIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary='Session' />
+                                        <ListItemText primary='Session' style={{padding:'0 25px 0 0'}}/>
                                     </ListItem>
                                     <ListItem button  onClick={()=> selectView('Sales')}>
                                         <ListItemIcon>
                                             <MoneyIcon />
                                         </ListItemIcon>
-                                        <ListItemText primary='Sales' />
+                                        <ListItemText primary='Sales' style={{padding:'0 25px 0 0'}}/>
                                     </ListItem>
                                 </List>
                         </Popover>
 
                     </Grid>
                     <Grid item lg={1}>
-                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%', fontFamily:'Open Sans'}}
-                   
+                        <Button className="myHover" style={{height:'50px', textTransform:'capitalize', width:'100%', color:'#fff'}}
+
                         >
-                            Registration
+                            <RegistrationIcon style={{fontSize:"20px", marginRight:'7px'}} />Registration
                         </Button>
 
                     </Grid>

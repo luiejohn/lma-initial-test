@@ -35,7 +35,7 @@ const CourseFee = () => {
                                     SelectProps={{
                                         native: true,
                                     }}
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     style={{height:'45px', fontFamily:'Open Sans', marginTop:'10px'}}
                                 >
@@ -49,7 +49,7 @@ const CourseFee = () => {
                         <Grid item lg={6}>
                             <b>Valid From</b>
                             <DatePicker
-                                    margin="normal"
+                                    margin="dense"
                                     // value={selectedDateTo}
                                     variant="outlined"
                                     // onChange={this.handleDateChangeTo}
@@ -69,7 +69,7 @@ const CourseFee = () => {
                                     id="outlined-bare"
                                     type="number"
                                     placeholder="Number"
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -77,7 +77,7 @@ const CourseFee = () => {
                         <Grid item lg={6}>
                             <b>Valid From</b>
                                 <DatePicker
-                                        margin="normal"
+                                        margin="dense"
                                         // value={selectedDateTo}
                                         variant="outlined"
                                         // onChange={this.handleDateChangeTo}

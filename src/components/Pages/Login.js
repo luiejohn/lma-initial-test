@@ -110,16 +110,18 @@ class Login extends Component {
                                     Login
                                 </Typography>
                                 <FormControl style={{width:'50%', height:'50px', marginTop:'25px'}}>
-                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px',fontFamily:'Open Sans'}}
+                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'9px 10px 6px 13px',boxSizing:'border-box',fontFamily:'Open Sans'}}
                                         id="adornment-password"
+                                        margin="dense"
                                         placeholder="Email"
                                         onChange={this.handleChange('email')}
                                     />
                                 </FormControl>
                                 <br/>
                                 <FormControl style={{width:'50%', height:'50px', marginTop:'25px'}}>
-                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'10px 10px 8px 13px'}}
+                                    <Input style={{border:'1px solid #cccccc', borderRadius:'5px', padding:'9px 10px 6px 13px'}}
                                         id="adornment-password"
+                                        margin="dense"
                                         placeholder="Password"
                                         type={this.state.showPassword ? 'text' : 'password'}
                                         value={this.state.password}

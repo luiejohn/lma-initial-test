@@ -50,7 +50,6 @@ class SignUp extends Component {
 
 
     validateEmail = (email) => {
-        //emailregex.com
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
         const isEmailValid = re.test(email);
@@ -144,13 +143,13 @@ class SignUp extends Component {
                                     style={{width:'65%', height:'45px'}}
                                     id="outlined-bare"
                                     placeholder="Email"
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     onChange={this.handleChange('email')}
                                 />
 
                                 { 
-                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%'}}>{this.state.emailMessage}</div>
+                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%', marginTop:'8px'}}>{this.state.emailMessage}</div>
                                 }
 
                             </Grid>
@@ -161,13 +160,13 @@ class SignUp extends Component {
                                     id="outlined-bare"
                                     placeholder="Password"
                                     type="password"
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     onChange={this.handleChange('password')}
                                 />
 
                                 { 
-                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%'}}>{this.state.passwordMessage}</div>
+                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%', marginTop:'8px'}}>{this.state.passwordMessage}</div>
                                 }
 
                             </Grid>
@@ -177,13 +176,13 @@ class SignUp extends Component {
                                     id="outlined-bare"
                                     type="password"
                                     placeholder="Confirm Password"
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     onChange={this.handleChange('confirmPassword')}
                                 />
 
                                 { 
-                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%'}}>{this.state.isPasswordMatch}</div>
+                                    <div style={{fontSize:'12px', color:'red', textAlign:'left',marginLeft:'17.5%', marginTop:'8px'}}>{this.state.isPasswordMatch}</div>
                                 }   
 
                             </Grid>

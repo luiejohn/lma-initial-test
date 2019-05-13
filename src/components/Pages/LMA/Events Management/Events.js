@@ -7,7 +7,7 @@ import EventList from './Events Action/EventsList';
 import CreateEvent from './Events Action/CreateEvent';
 import UpdateEvent from './Events Action/UpdateEvent';
 
-class Courses extends React.Component {
+class Events extends React.Component {
 
   state = {
     actionView: 'EventList',
@@ -128,15 +128,15 @@ class Courses extends React.Component {
     return (
       <Fragment>
         <Grid container>
-            <Grid item lg={12}>
+            <Grid item md={12} lg={12}>
                 <Grid container style={{backgroundColor:'#F0F5F8'}}>
 
-                  <Grid item lg={12}>
+                  <Grid item md={12} lg={12}>
                       <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
 
-                          <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
+                          <div className="lma-page-header">
                               EVENTS
-                          </Typography>
+                          </div>
                           {
                             this.renderActionButtons()
                           }
@@ -145,7 +145,7 @@ class Courses extends React.Component {
                   </Grid>
 
                   {/* Should be a new Component to be rerendered */}
-                  <Grid item lg={12}>
+                  <Grid item md={12} lg={12}>
                         {
                           this.renderActionComponent()
                         }
@@ -163,4 +163,4 @@ class Courses extends React.Component {
   }
 }
 
-export default Courses;
+export default Events;

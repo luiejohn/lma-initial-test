@@ -29,8 +29,6 @@ class Courses extends React.Component {
     this.setState({ [name]: event.target.value });
   };
 
-
-
   handleCourseAction = (action) => {
     this.setState({actionView: action});
   }
@@ -83,7 +81,7 @@ class Courses extends React.Component {
         </Button>
       </Grid>
       <Grid item style={{padding:'0 10px 0 0'}}>
-        <Button style={{backgroundColor:'#ff8080', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+        <Button style={{backgroundColor:'rgb(255, 102, 102)', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
           onClick={() => this.handleCourseAction('CourseList')}
         >
           CANCEL
@@ -103,7 +101,7 @@ class Courses extends React.Component {
         </Button>
       </Grid>
       <Grid item style={{padding:'0 10px 0 0'}}>
-        <Button style={{backgroundColor:'#ff8080', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
+        <Button style={{backgroundColor:'rgb(255, 102, 102)', color:'#fff', width:'95px', fontFamily:'Open Sans'}}
           onClick={() => this.handleCourseAction('CourseList')}
         >
           CANCEL
@@ -128,15 +126,15 @@ class Courses extends React.Component {
     return (
       <Fragment>
         <Grid container>
-            <Grid item lg={12}>
+            <Grid item md={12} lg={12}>
                 <Grid container style={{backgroundColor:'#F0F5F8'}}>
 
-                  <Grid item lg={12}>
+                  <Grid item md={12} lg={12}>
                       <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
 
-                          <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px', fontFamily:'Open Sans'}}>
+                          <div className="lma-page-header">
                               COURSES
-                          </Typography>
+                          </div>
                           {
                             this.renderActionButtons()
                           }
@@ -145,7 +143,7 @@ class Courses extends React.Component {
                   </Grid>
               
                   {/* Should be a new Component to be rerendered */}
-                  <Grid item lg={12}>
+                  <Grid item md={12} lg={12}>
                         {
                           this.renderActionComponent()
                         }

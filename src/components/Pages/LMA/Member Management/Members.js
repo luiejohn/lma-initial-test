@@ -19,9 +19,9 @@ class LMA extends React.Component {
                   <Grid item lg={12}>
                       <Grid container style={{  justifyContent: 'flex-end', backgroundColor:'#fff', padding:'5px' }}>
 
-                          <Typography style={{flexGrow:1, textAlign:'left', fontSize:'18px', fontWeight:600, padding:'5px 0 0 7px',fontFamily:'Open Sans'}}>
+                          <div className="lma-page-header">
                               Members
-                          </Typography>
+                          </div>
 
                         <Grid item style={{padding:'0 10px 0 0'}}>
                           <Button style={{backgroundColor:'#60C78F', color:'#fff', width:'95px',fontFamily:'Open Sans'}}>
@@ -35,14 +35,7 @@ class LMA extends React.Component {
                         </Grid> */}
                       </Grid>
                   </Grid>
-                
-
-                  <Grid item lg={12}>
-                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px',fontFamily:'Open Sans'}}>
-                        LMA > Members Management > Members
-                    </Typography>
-                  </Grid>
-
+              
                   <Grid item lg={12}>
                       <Paper style={{margin:'15px'}}>
                         <Grid container style={{height:'50px'}}>

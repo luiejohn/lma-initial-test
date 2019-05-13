@@ -43,6 +43,15 @@ const rows = [
   createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
   createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
   createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  createData(1.1, 'C.1 Dual Representation & Estate Agent Act ($35)', 'CPD', 'Trainer Name 1',  'Active'),
+  
 
 ];
 
@@ -55,10 +64,11 @@ function courseTable(props) {
         <TableHead>
           <TableRow >
             <TableCell align="left"><b>LMA Course Code</b></TableCell>
-            <TableCell align="left">Course Name</TableCell>
-            <TableCell align="left">Course Type</TableCell>
-            <TableCell align="left">Trainer</TableCell>
-            <TableCell align="left">Status</TableCell>
+            <TableCell align="left"><b>Course Name</b></TableCell>
+            <TableCell align="left"><b>Course Type</b></TableCell>
+            <TableCell align="left"><b>Trainer</b></TableCell>
+            <TableCell align="left"><b>Status</b></TableCell>
+            <TableCell align="left"><b>Action</b></TableCell>
           </TableRow>
         </TableHead>
         <TableBody style={{fontFamily:'Open Sans'}}>
@@ -80,23 +90,12 @@ function courseTable(props) {
                       <EditIcon style={{fontSize:'20px'}}/>
                     </Grid>
                     <Grid item>
-                      Edit
+                      View Details
                     </Grid>
                   </Grid>
                 </Link>
                 </TableCell>
-                <TableCell align="left" style={{paddingLeft:0, paddingRight:0}}>
-                  <Link>
-                    <Grid container style={{borderBottom:'0'}}>
-                      <Grid item>
-                        <DeleteIcon style={{fontSize:'20px', color:'#ff8080'}}/>
-                      </Grid>
-                      <Grid item>
-                        Deactivate
-                      </Grid>
-                    </Grid>
-                  </Link>
-                </TableCell>
+
             </TableRow>
             :
             <TableRow key={row.id} style={{backgroundColor:'#F2F2F2'}}>
@@ -114,22 +113,10 @@ function courseTable(props) {
                         <EditIcon style={{fontSize:'20px'}}/>
                       </Grid>
                       <Grid item>
-                        Edit
+                        View Details
                       </Grid>
                     </Grid>
                     </Link>
-                </TableCell>
-                <TableCell align="left" style={{paddingLeft:0, paddingRight:0}}>
-                  <Link>
-                    <Grid container style={{borderBottom:'0'}}>
-                      <Grid item>
-                        <DeleteIcon style={{fontSize:'20px', color:'#ff8080'}}/>
-                      </Grid>
-                      <Grid item>
-                        Deactivate
-                      </Grid>
-                    </Grid>
-                  </Link>
                 </TableCell>
           </TableRow>
 

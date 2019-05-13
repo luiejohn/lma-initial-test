@@ -36,7 +36,7 @@ class CreateCourse extends Component {
       CourseTitle:'',
       CourseCode: '',
       CourseType: '',
-      CEAselectedDateFrom: new Date,
+      CEAselectedDateFrom: new Date(),
       CEAselectedDateTo: new Date(),
       SkillselectedDateFrom: new Date,
       SkillselectedDateTo: new Date(),
@@ -52,6 +52,18 @@ class CreateCourse extends Component {
     this.setState({ selectedValue: event.target.value });
   };
   
+  
+  GetFormattedDate() {
+    var todayTime = new Date();
+    var month = todayTime.getMonth() + 1;
+    var day = todayTime .getDate();
+    var year = todayTime .getFullYear();
+    console.log(`${day}/${month}/${year}`);
+    // return day + "/" + month + "/" + year;
+    return `${day}/${month}/${year}`;
+  }
+
+
   // handleChange = name => event => {
   //   this.setState({ [name]: event.target.value });
   // };
@@ -149,13 +161,13 @@ class CreateCourse extends Component {
 
                         <Grid container style={{padding:'25px 75px'}}>  
                           <Grid item lg={12} style={{textAlign:'left', padding:'25px'}}>
-                              <div><b>Course Title</b></div>
+                              <div style={{color:'#4d4d4d'}}><b>Course Title</b></div>
                               <TextField 
-                                    style={{width:'94%', height:'45px', marginLeft:'2%'}}
+                                    style={{width:'94%', height:'45px', color:'#737373'}}
                                     id="outlined-bare"
                                     type="text"
                                     placeholder="Title"
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     onChange={handleChange('CourseTitle')}
                                 />
@@ -165,9 +177,10 @@ class CreateCourse extends Component {
                             <Grid container>
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
                                 <div><b>LMA Course Code</b></div>
-                                  <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
+                                  <FormControl style={{width:'85%'}}>
                                       <TextField
                                           id="outlined-select-currency-native"
+                                          margin="dense"
                                           select
                                           value={this.state.currency}
                                           onChange={handleChange('CourseCode')}
@@ -175,7 +188,6 @@ class CreateCourse extends Component {
                                             native: true,
                                           }}
                                           helperText="Please select an option"
-                                          margin="normal"
                                           variant="outlined"
                                           style={{height:'70px', fontFamily:'Open Sans'}}
                                       >
@@ -191,26 +203,35 @@ class CreateCourse extends Component {
 
                                 <Grid item lg={6} style={{textAlign:'left', padding:'25px'}}>
                                   <div><b>Course Type</b></div>
-                                  <FormControl style={{width:'85%', margin:'0 0 0 5%'}}>
+                                  <FormControl style={{width:'85%'}}>
                                     
                                     <TextField
                                         id="outlined-select-currency-native"
                                         select
+                                        margin="dense"
                                         value={this.state.currency}
                                         onChange={handleChange('CourseType')}
                                         SelectProps={{
                                           native: true,
                                         }}
                                         helperText="Please select an option"
-                                        margin="normal"
                                         variant="outlined"
                                         style={{height:'70px'}}
                                     >
-                                        {currencies.map(option => (
-                                          <option key={option.value} value={option.value}>
-                                            {option.label}
+
+                                          <option>
+                                            L1
                                           </option>
-                                        ))}
+                                          <option>
+                                            L2
+                                          </option>
+                                          <option>
+                                            L3
+                                          </option>
+                                          <option>
+                                            1
+                                          </option>
+
                                       </TextField>
                                 </FormControl>
  
@@ -220,20 +241,20 @@ class CreateCourse extends Component {
                                       <div><b>CEA</b></div>
                                       <Grid container>
                                           
-                                          <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
+                                          <Grid item lg={5} style={{margin:'10px 4% 0 0'}}>
                                             <div style={{fontSize:'13px', color:'#666'}}>Valid From</div>
                                             <DatePicker
-                                              margin="normal"
+                                              margin="dense"
                                               value={CEAselectedDateFrom}
                                               variant="outlined"
                                               onChange={this.CEAhandleDateChangeFrom}
                                               style={{width:'90%', borderRadius:'5px', padding:'5px 5px 0 5px', marginTop:'5px', height:'45px'}}
                                             />
                                           </Grid>
-                                          <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
+                                          <Grid item lg={5} style={{margin:'10px 4% 0 0'}}>
                                           <div style={{fontSize:'13px', color:'#666'}}>Valid To</div>
                                             <DatePicker
-                                                margin="normal"
+                                                margin="dense"
                                                 value={CEAselectedDateTo}
                                                 variant="outlined"
                                                 onChange={this.CEAhandleDateChangeTo}
@@ -244,20 +265,20 @@ class CreateCourse extends Component {
                                       <div style={{marginTop:'15px'}}><b>Skills Future</b></div>
                                       <Grid container>
                                         
-                                          <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
+                                          <Grid item lg={5} style={{margin:'10px 4% 0 0'}}>
                                           <div style={{fontSize:'13px', color:'#666'}}>Valid From</div>
                                             <DatePicker
-                                              margin="normal"
+                                              margin="dense"
                                               value={selectedDateFrom}
                                               variant="outlined"
                                               onChange={this.handleDateChangeFrom}
                                               style={{width:'90%', borderRadius:'5px', padding:'5px 5px 0 5px', marginTop:'5px', height:'45px'}}
                                             />
                                           </Grid>
-                                          <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
+                                          <Grid item lg={5} style={{margin:'10px 4% 0 0'}}>
                                           <div style={{fontSize:'13px', color:'#666'}}>Valid To</div>
                                             <DatePicker
-                                                margin="normal"
+                                                margin="dense"
                                                 value={selectedDateTo}
                                                 variant="outlined"
                                                 onChange={this.handleDateChangeTo}
@@ -272,20 +293,20 @@ class CreateCourse extends Component {
                                       <div><b>NTUC</b></div>
                                       <Grid container>
                                           
-                                          <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
+                                          <Grid item lg={5} style={{margin:'10px 4% 0 0'}}>
                                           <div style={{fontSize:'13px', color:'#666'}}>Valid From</div>
                                             <DatePicker
-                                              margin="normal"
+                                              margin="dense"
                                               value={selectedDateFrom}
                                               variant="outlined"
                                               onChange={this.handleDateChangeFrom}
                                               style={{width:'90%', borderRadius:'5px', padding:'5px 5px 0 5px', marginTop:'5px', height:'45px'}}
                                             />
                                           </Grid>
-                                          <Grid item lg={5} style={{margin:'10px 4% 0 4%'}}>
+                                          <Grid item lg={5} style={{margin:'10px 4% 0 0'}}>
                                           <div style={{fontSize:'13px', color:'#666'}}>Valid To</div>
                                             <DatePicker
-                                                margin="normal"
+                                                margin="dense"
                                                 value={selectedDateTo}
                                                 variant="outlined"
                                                 onChange={this.handleDateChangeTo}
@@ -299,6 +320,7 @@ class CreateCourse extends Component {
                                       <div><b>Status</b></div>
                                           <div style={{marginTop:'22px'}}>
                                             <Radio
+                                                margin="dense"
                                                 checked={this.state.selectedValue === 'a'}
                                                 onChange={this.handleChange}
                                                 value="a"

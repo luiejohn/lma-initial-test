@@ -14,7 +14,7 @@ const TrainingCoordinator = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -27,7 +27,7 @@ const TrainingCoordinator = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />

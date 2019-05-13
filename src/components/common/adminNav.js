@@ -123,7 +123,7 @@ class AdminNav extends Component {
         </Hidden>
 
         <Hidden only={['xs','sm', 'md']}>
-            <div style={{color:'#000', width:'105px'}}>
+            <div style={{color:'#000', width:'200px'}}>
                 <Grid container>
                     <Grid item>
                       <RightArrow />    
@@ -174,9 +174,15 @@ class AdminNav extends Component {
                         open={Boolean(anchorEl)}
                         onClose={this.handleClose}
                     >
-                        <MenuItem onClick={this.handleClose}>Profile</MenuItem>
-                        <MenuItem onClick={this.handleClose}>My account</MenuItem>
+                      <Link underline="none" component={RouterLink} to="/my-account">
+                        <MenuItem onClick={this.handleClose}>
+                            My account
+                        </MenuItem>                    
+                      </Link>
+
+                      <Link underline="none" component={RouterLink} to="/">
                         <MenuItem onClick={this.handleClose}>Logout</MenuItem>
+                      </Link>
                     </Menu>
 
                 </Hidden>

@@ -10,6 +10,8 @@ import Dashboard from './components/Pages/Dashboard';
 import ManageUsers from './components/Pages/Manage Users/ManageUsers';
 import LMA from './components/Pages/LMA/LMA';
 import Home from './components/Pages/Home';
+import MyAccount from './components/common/UserProfile';
+
 // import Courses from './components/Pages/Course Management/Courses';
 // import Events from './components/Pages/Events Management/Events';
 // import CourseRegistration from './components/Pages/CourseRegistration';
@@ -49,6 +51,7 @@ class App extends Component {
                 <Route path="/dashboard" exact component={Dashboard} />
                 <Route path="/lma" exact component={LMA} />
                 <Route path="/manage-users" exact component={ManageUsers} />
+                <Route path="/my-account" exact component={MyAccount} />
 
                 {/* <Route path="/dashboard/courses" exact component={Courses}/> */}
                 {/* <Route path="/dashboard/events" exact component={Events}/> */}

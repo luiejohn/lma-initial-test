@@ -14,7 +14,7 @@ const TrainerDetails = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -27,7 +27,7 @@ const TrainerDetails = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -43,7 +43,7 @@ const TrainerDetails = () => {
                                     multiline
                                     rows="4"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />

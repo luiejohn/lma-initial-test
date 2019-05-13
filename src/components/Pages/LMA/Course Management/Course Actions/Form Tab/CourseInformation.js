@@ -14,7 +14,7 @@ const CourseInformation = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -27,7 +27,7 @@ const CourseInformation = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -43,7 +43,7 @@ const CourseInformation = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -56,7 +56,7 @@ const CourseInformation = () => {
                                     id="outlined-bare"
                                     type="text"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -72,7 +72,7 @@ const CourseInformation = () => {
                                     multiline
                                     rows="4"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />
@@ -88,7 +88,7 @@ const CourseInformation = () => {
                                     multiline
                                     rows="4"
                                     placeholder=""
-                                    margin="normal"
+                                    margin="dense"
                                     variant="outlined"
                                     // onChange={handleChange('CourseTitle')}
                                 />

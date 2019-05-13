@@ -53,9 +53,6 @@ class LMA extends React.Component {
   }
 
 
-
-
-
   renderSecondPanel(){
     let viewPage = '';
     if(this.state.currentView === 'Courses'){
@@ -138,19 +135,22 @@ class LMA extends React.Component {
     console.log(this.state.currentView)
     return (
       <Fragment>
-        <AdminNav pageInfo={this.state.pageInfo} homeIconPath={this.state.homeIconPath}/>
+        <AdminNav 
+          pageInfo={this.state.pageInfo} homeIconPath={this.state.homeIconPath}
+        
+        />
         <Grid container>
-            {/* <Grid item lg={2} style={{backgroundColor:'#2E3142'}}>
+            <Grid item md={2} lg={2} style={{backgroundColor:'#2E3142'}}>
                 <SideMenu 
                   selectView={this.handleSelectView}
                 />
-            </Grid> */}
-            <Grid item lg={12}>
+            </Grid>
+            {/* <Grid item lg={12}>
                 <AdminMenu
                   selectView={this.handleSelectView}
                 />
-            </Grid>
-            <Grid item lg={12}>
+            </Grid> */}
+            <Grid item md={10} lg={10}>
                 <Divider />
                 <Grid container style={{backgroundColor:'#F0F5F8'}}>
                   {

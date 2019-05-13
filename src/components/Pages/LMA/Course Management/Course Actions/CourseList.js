@@ -12,11 +12,11 @@ const List = props => {
     return(
         <Paper style={{margin:'15px'}}>
         <Grid container style={{height:'60px', flexFlow:'row', justifyContent:'space-between', alignItems:'right'}}>
-        <Grid item style={{margin: '14px 25px', textAlign:'left'}} lg={4}>
+        <Grid item style={{margin: '14px 25px', textAlign:'left'}} md={4} lg={4}>
                   <Input type="search" placeholder="Search by Title" disableUnderline style={{border:'1px solid #ccc', borderRadius:'10px', padding:'3px 10px 3px 14px', height:'25px',fontSize:'13px', color:'#666'}} 
                     endAdornment={
                       <InputAdornment position="end">
-                          <SearchIcon />
+                          <SearchIcon style={{color:'rgb(96, 199, 143)'}}/>
                       </InputAdornment>
                     }
                   
@@ -27,7 +27,7 @@ const List = props => {
               </Grid>
         </Grid>
         <Divider/>
-        <Grid container style={{height:'550px'}}>   
+        <Grid container style={{minHeight:'550px'}}>   
           <MyCourseTable handleCourseAction={handleCourseAction}/>
         </Grid>
       </Paper>

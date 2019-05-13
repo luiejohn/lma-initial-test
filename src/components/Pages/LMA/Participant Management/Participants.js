@@ -34,13 +34,6 @@ class Participants extends React.Component {
                       </Grid>
                   </Grid>
                 
-
-                  <Grid item lg={12}>
-                    <Typography style={{textAlign:'left', marginLeft:'15px', marginTop:'10px',fontFamily:'Open Sans'}}>
-                        LMA > Participant Management > Participants
-                    </Typography>
-                  </Grid>
-
                   <Grid item lg={12}>
                       <Paper style={{margin:'15px'}}>
                         <Grid container style={{height:'50px'}}>
